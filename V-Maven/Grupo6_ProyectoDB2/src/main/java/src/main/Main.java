@@ -2161,12 +2161,12 @@ public class Main extends javax.swing.JFrame {
         Cebo.setLocationRelativeTo(this); 
         
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (Cebo temp : cebos) {
+        for (Bait temp : cebos) {
             modelo.addElement(temp);
         }
         cb_comBorrar.setModel(modelo);
         DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        for (Cebo temp : cebos) {
+        for (Bait temp : cebos) {
             modelo2.addElement(temp);
         }
         cb_comMod.setModel(modelo2);
@@ -2249,17 +2249,17 @@ public class Main extends javax.swing.JFrame {
     private void cb_comModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_comModItemStateChanged
         Community temporal = (Community)cb_comMod.getSelectedItem();
         com_idMod.setText(temporal.getId());
-        com_nombreMod.setText(temporal.getNombre());
+        com_nombreMod.setText(temporal.getName());
     }//GEN-LAST:event_cb_comModItemStateChanged
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         int indexComMod = cb_comMod.getSelectedIndex();
-        comunidades.get(indexComMod).setNombre(com_nombreMod.getText());
+        comunidades.get(indexComMod).setName(com_nombreMod.getText());
         JOptionPane.showMessageDialog(null,"Comunidad modificada.");
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void cebo_cbModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cebo_cbModItemStateChanged
-        Cebo temp = (Cebo)cebo_cbMod.getSelectedItem();
+        Bait temp = (Bait)cebo_cbMod.getSelectedItem();
         
     }//GEN-LAST:event_cebo_cbModItemStateChanged
 
@@ -2546,10 +2546,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_vegetal2;
     // End of variables declaration//GEN-END:variables
     ArrayList<Afiliado> afiliados;
-    ArrayList<Cebo> cebos;
+    ArrayList<Bait> cebos;
     ArrayList<Pez> peces;
     ArrayList<Comercio> comercios;
-    ArrayList<Lugar> lugares;
-    ArrayList<Licencia> licencias;
+    ArrayList<Place> lugares;
+    ArrayList<License> licencias;
     ArrayList<Community> comunidades;
 }

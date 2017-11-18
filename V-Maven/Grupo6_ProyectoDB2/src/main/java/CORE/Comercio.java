@@ -6,19 +6,19 @@ import java.util.ArrayList;
 public class Comercio {
     private String id;
     private String nombre;
-    private ArrayList<Cebo> cebosVenta;
+    private ArrayList<Bait> cebosVenta;
 
     public Comercio() {
     }
     
     
-    public Comercio(String id, String nombre, ArrayList<Cebo> cebosVenta) {
+    public Comercio(String id, String nombre, ArrayList<Bait> cebosVenta) {
         this.id = id;
         this.nombre = nombre;
         this.cebosVenta = cebosVenta;
     }
     
-    public Comercio(String nombre, ArrayList<Cebo> cebosVenta) {
+    public Comercio(String nombre, ArrayList<Bait> cebosVenta) {
         this.nombre = nombre;
         this.cebosVenta = cebosVenta;
     }
@@ -39,11 +39,11 @@ public class Comercio {
         this.nombre = nombre;
     }
 
-    public ArrayList<Cebo> getCebosVenta() {
+    public ArrayList<Bait> getCebosVenta() {
         return cebosVenta;
     }
 
-    public void addCebosVenta(Cebo add) {
+    public void addCebosVenta(Bait add) {
         this.cebosVenta.add(add);
     }
 

@@ -5,18 +5,18 @@ import java.util.ArrayList;
 public class Afiliado {
     private String id;
     private String nombre;
-    private ArrayList<Licencia> licencias;
+    private ArrayList<License> licencias;
 
     public Afiliado() {
     }
 
-    public Afiliado(String id, String nombre, ArrayList<Licencia> licencias) {
+    public Afiliado(String id, String nombre, ArrayList<License> licencias) {
         this.id = id;
         this.nombre = nombre;
         this.licencias = licencias;
     }
     
-    public Afiliado(String nombre, ArrayList<Licencia> licencias) {
+    public Afiliado(String nombre, ArrayList<License> licencias) {
         this.nombre = nombre;
         this.licencias = licencias;
     }
@@ -37,11 +37,11 @@ public class Afiliado {
         this.nombre = nombre;
     }
 
-    public ArrayList<Licencia> getLicencias() {
+    public ArrayList<License> getLicencias() {
         return licencias;
     }
 
-    public void setLicencias(ArrayList<Licencia> licencias) {
+    public void setLicencias(ArrayList<License> licencias) {
         this.licencias = licencias;
     }
 

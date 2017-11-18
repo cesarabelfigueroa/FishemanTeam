@@ -1,19 +1,25 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package CORE;
 
-public class Community {
+/**
+ *
+ * @author Agile
+ */
+class Company {
     private String id;
     private String name;
 
-    public Community(String id, String name) {
+    public Company(String id, String name) {
         this.id = id;
         this.name = name;
     }
-    
-    public Community(String name) {
-        this.name = name;
-    }
 
-    public Community() {
+    public Company(String name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -36,6 +42,5 @@ public class Community {
     public String toString() {
         return name;
     }
-    
     
 }

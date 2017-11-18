@@ -3,20 +3,20 @@ package CORE;
 public class Pez {
     private int id;
     private String nombre;
-    private Licencia capturaLic;
-    private Cebo CapturaCebo;
+    private License capturaLic;
+    private Bait CapturaCebo;
 
     public Pez() {
     }
 
-    public Pez(int id, String nombre, Licencia capturaLic, Cebo CapturaCebo) {
+    public Pez(int id, String nombre, License capturaLic, Bait CapturaCebo) {
         this.id = id;
         this.nombre = nombre;
         this.capturaLic = capturaLic;
         this.CapturaCebo = CapturaCebo;
     }
     
-    public Pez(String nombre, Licencia capturaLic, Cebo CapturaCebo) {
+    public Pez(String nombre, License capturaLic, Bait CapturaCebo) {
         this.nombre = nombre;
         this.capturaLic = capturaLic;
         this.CapturaCebo = CapturaCebo;
@@ -38,19 +38,19 @@ public class Pez {
         this.nombre = nombre;
     }
 
-    public Licencia getCapturaLic() {
+    public License getCapturaLic() {
         return capturaLic;
     }
 
-    public void setCapturaLic(Licencia capturaLic) {
+    public void setCapturaLic(License capturaLic) {
         this.capturaLic = capturaLic;
     }
 
-    public Cebo getCapturaCebo() {
+    public Bait getCapturaCebo() {
         return CapturaCebo;
     }
 
-    public void setCapturaCebo(Cebo CapturaCebo) {
+    public void setCapturaCebo(Bait CapturaCebo) {
         this.CapturaCebo = CapturaCebo;
     }
 
