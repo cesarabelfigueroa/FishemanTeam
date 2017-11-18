@@ -1,43 +1,23 @@
 package UI;
 
-import com.mongodb.*;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Projections;
-import com.mongodb.client.model.Filters;
-import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Projections.*;
-import com.mongodb.client.model.Sorts;
-import java.util.Arrays;
-import org.bson.Document;
+import BE.AffiliateService;
+import CORE.Affiliate;
+import java.util.ArrayList;
+
 
 public class Application extends javax.swing.JFrame {
 
-    Block<Document> printBlock = new Block<Document>() {
-        @Override
-        public void apply(final Document document) {
-            System.out.println(document.toJson());
-        }
-    };
 
     public Application() {
-        MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://cfigue:Sheldoncooper@ds259305.mlab.com:59305/fisheman"));
-        MongoDatabase database = mongoClient.getDatabase("fisheman");
-        MongoCollection<Document> collection = database.getCollection("users");
-
-        Document document = new Document("name", "Café Con Leche")
-                .append("contact", new Document("phone", "228-555-0149")
-                        .append("email", "cafeconleche@example.com")
-                        .append("location", Arrays.asList(-73.92502, 40.8279556)))
-                .append("stars", 3)
-                .append("categories", Arrays.asList("Bakery", "Coffee", "Pastries"));
-
-        collection.insertOne(document);
-        collection.find().forEach(printBlock);
-
-        System.out.println(database);
         initComponents();
+        Affiliate example  = new Affiliate("Mayra");   
+        AffiliateService affiliateService = new AffiliateService();
+        //affiliateService.create(example);
+        ArrayList<Affiliate> results =  affiliateService.find(example);
+        for (Affiliate a : results) {
+            System.out.println(a.toString());
+        }
+        
     }
 
     @SuppressWarnings("unchecked")
