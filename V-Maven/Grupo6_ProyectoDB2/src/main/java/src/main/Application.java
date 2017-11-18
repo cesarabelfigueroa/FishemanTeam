@@ -4,12 +4,14 @@ import BE.AffiliateService;
 import CORE.Affiliate;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 
 
 
 public class Application extends javax.swing.JFrame {
     MongoClient client = new MongoClient(new MongoClientURI("mongodb://cfigue:Sheldoncooper@ds259305.mlab.com:59305/fisheman"));
+    MongoDatabase database = client.getDatabase("fisheman");
 
 
  
@@ -19,7 +21,7 @@ public class Application extends javax.swing.JFrame {
         initComponents();
         
         Affiliate example  = new Affiliate("Mayra");   
-        AffiliateService affiliateService = new AffiliateService(client);
+        AffiliateService affiliateService = new AffiliateService(client, database);
         //affiliateService.create(example);
         ArrayList<Affiliate> results =  affiliateService.find(example);
         for (Affiliate a : results) {

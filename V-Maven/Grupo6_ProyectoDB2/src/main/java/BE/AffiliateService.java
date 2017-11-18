@@ -21,10 +21,10 @@ public class AffiliateService {
     MongoCollection<Document> collection;
     ArrayList<Affiliate> results = new ArrayList();
 
-    public AffiliateService(MongoClient mongoClient) {
-        client = mongoClient;
-        database = client.getDatabase("fisheman");
-        collection = database.getCollection("affiliate");
+    public AffiliateService(MongoClient client, MongoDatabase database) {
+        this.client = client;
+        this.database = database;
+        this.collection = database.getCollection("affiliate");
     }
 
     Block<Document> printBlock = new Block<Document>() {
