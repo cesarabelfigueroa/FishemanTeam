@@ -1,15 +1,19 @@
-package UI;
+package src.main;
 
 import BE.AffiliateService;
 import CORE.Affiliate;
 import java.util.ArrayList;
 
 
+
 public class Application extends javax.swing.JFrame {
 
+ 
 
     public Application() {
+        
         initComponents();
+        
         Affiliate example  = new Affiliate("Mayra");   
         AffiliateService affiliateService = new AffiliateService();
         //affiliateService.create(example);
@@ -17,7 +21,6 @@ public class Application extends javax.swing.JFrame {
         for (Affiliate a : results) {
             System.out.println(a.toString());
         }
-        
     }
 
     @SuppressWarnings("unchecked")
