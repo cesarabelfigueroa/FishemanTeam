@@ -2,14 +2,14 @@
 package CORE;
 
 
-public class Affiliate {
+public class AffiliateTest {
     private String name;
 
-    public Affiliate() {
+    public AffiliateTest() {
         
     }
 
-    public Affiliate(String name) {
+    public AffiliateTest(String name) {
         this.name = name;
     }
     

@@ -1,6 +1,6 @@
 package BE;
 
-import CORE.Affiliate;
+import CORE.AffiliateTest;
 import com.mongodb.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -19,7 +19,7 @@ public class AffiliateService {
     MongoClient client;
     MongoDatabase database;
     MongoCollection<Document> collection;
-    ArrayList<Affiliate> results = new ArrayList();
+    ArrayList<AffiliateTest> results = new ArrayList();
 
     public AffiliateService(MongoClient client, MongoDatabase database) {
         this.client = client;
@@ -32,13 +32,13 @@ public class AffiliateService {
         public void apply(final Document document) {
             results = new ArrayList();
             String name = document.get("name").toString();
-            Affiliate temporal = new Affiliate(name);
+            AffiliateTest temporal = new AffiliateTest(name);
             // System.out.println(name);
             results.add(temporal);
         }
     };
 
-    public ArrayList<Affiliate> find(Affiliate parameters) {
+    public ArrayList<AffiliateTest> find(AffiliateTest parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
@@ -47,7 +47,7 @@ public class AffiliateService {
         return results;
     }
 
-    public void create(Affiliate parameters) {
+    public void create(AffiliateTest parameters) {
         Document data = new Document();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());

@@ -1,7 +1,7 @@
 package src.main;
 
 import BE.AffiliateService;
-import CORE.Affiliate;
+import CORE.AffiliateTest;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
@@ -20,11 +20,11 @@ public class Application extends javax.swing.JFrame {
         
         initComponents();
         
-        Affiliate example  = new Affiliate("Mayra");   
+        AffiliateTest example  = new AffiliateTest("Mayra");   
         AffiliateService affiliateService = new AffiliateService(client, database);
         //affiliateService.create(example);
-        ArrayList<Affiliate> results =  affiliateService.find(example);
-        for (Affiliate a : results) {
+        ArrayList<AffiliateTest> results =  affiliateService.find(example);
+        for (AffiliateTest a : results) {
             System.out.println(a.toString());
         }
     }
