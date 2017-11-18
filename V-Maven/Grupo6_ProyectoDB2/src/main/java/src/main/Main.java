@@ -2545,9 +2545,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_vegetal;
     private javax.swing.JRadioButton rb_vegetal2;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Afiliado> afiliados;
+    ArrayList<Affiliate> afiliados;
     ArrayList<Bait> cebos;
-    ArrayList<Pez> peces;
+    ArrayList<Fish> peces;
     ArrayList<Comercio> comercios;
     ArrayList<Place> lugares;
     ArrayList<License> licencias;
