@@ -2579,7 +2579,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (evt.getStateChange()==0) {
             Fish sushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
-            Pez_Modificar_ID.setText(Integer.toString(sushi.getId()));
+            Pez_Modificar_ID.setText((sushi.getId()));
             Pez_Modificar_Nombre.setText(sushi.getName());
         }
     }//GEN-LAST:event_Pez_Modificar_SelectPezItemStateChanged
@@ -2642,7 +2642,7 @@ public class Main extends javax.swing.JFrame {
         Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
         for (Place lugar : lugares) {
             if (lugar.equals(temp)) {
-                lugar.setIdCommunity(Comm);
+                lugar.setCommunity(Comm);
                 lugar.setName(Nombre);
             }
         }

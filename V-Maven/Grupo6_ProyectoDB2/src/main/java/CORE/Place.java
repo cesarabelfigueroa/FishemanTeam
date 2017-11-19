@@ -36,9 +36,11 @@ public class Place {
         return name;
     }
 
-    
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
 
-    public Community getIdCommunity() {
+    public Community getCommunity() {
         return community;
     }
 

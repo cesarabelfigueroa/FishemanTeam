@@ -5,8 +5,11 @@
  */
 package BE;
 
+import CORE.Bait;
 import CORE.Company;
 import CORE.Fish;
+import com.mongodb.BasicDBList;
+import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -27,18 +30,25 @@ public class FishService {
     MongoDatabase database;
     MongoCollection<Document> collection;
     ArrayList<Fish> results;
+    BasicDBList listdb;
 
     public FishService(MongoClient client, MongoDatabase database) {
         this.client = client;
         this.database = database;
         this.collection = database.getCollection("fish");
         this.results = new ArrayList();
+        this.listdb = new BasicDBList();
     }
 
     public void create(Fish parameters) {
         Document data = new Document();
+        this.listdb = new BasicDBList();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
+            for(Bait bait: parameters.getBaits()){
+                listdb.add(new BasicDBObject("baitID", bait.getId()));
+            }
+            data.append("baits", listdb);
         }
         collection.insertOne(data);
     }

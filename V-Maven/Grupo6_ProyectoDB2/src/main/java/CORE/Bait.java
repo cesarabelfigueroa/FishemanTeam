@@ -18,7 +18,7 @@ public class Bait {
     public Bait() {
     }
 
-    public Bait(int id, String name, String type, String classification, String color, int size, int price, ArrayList<Material> materials, String group, Company company) {
+    public Bait(int id, String name, String type, String classification, String color, int size, int price) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -26,19 +26,15 @@ public class Bait {
         this.color = color;
         this.size = size;
         this.price = price;
-        this.materials = materials;
-        this.group = group;
-        this.company = company;
+        this.materials = new ArrayList();
     }
     
-    public Bait(String name, String type, String classification, String color, int size, int price, ArrayList<Material> materials, String group, Company company) {
+    public Bait(String name, String type, String color, int size, int price,String group, Company company) {
         this.name = name;
         this.type = type;
-        this.classification = classification;
         this.color = color;
         this.size = size;
         this.price = price;
-        this.materials = materials;
         this.group = group;
         this.company = company;
     }
