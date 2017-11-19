@@ -38,7 +38,7 @@ public class LicenseService {
             double price = Double.parseDouble(document.get("price").toString());
             String idCommunity = document.get("idCommunity").toString();
             String idPlace =  document.get("idPlace").toString();
-            License temporal = new License(_id, name, price, idPlace, idCommunity);
+            License temporal = new License(_id, name, price);
             results.add(temporal);
         }
     };
@@ -62,13 +62,7 @@ public class LicenseService {
             data.append("price", parameters.getPrice());
         }
         
-        if ((parameters.getIdCommunity() != null)) {
-            data.append("idComunnity", parameters.getIdCommunity());
-        }
-        
-        if ((parameters.getIdPlace()!= null)) {
-            data.append("idPlace", parameters.getIdPlace());
-        }
+       
         
         collection.insertOne(data);
     }

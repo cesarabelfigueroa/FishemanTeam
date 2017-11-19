@@ -37,7 +37,7 @@ public class PlaceService {
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
             String idComunity = document.get("name").toString();
-            Place temporal = new Place(_id, name, idComunity);
+            Place temporal = new Place(_id, name);
             results.add(temporal);
         }
     };
@@ -57,16 +57,16 @@ public class PlaceService {
             data.append("name", parameters.getName());
         }
         
-         if ((parameters.getIdcommunity() != null)) {
+        /* if ((parameters.getIdcommunity() != null)) {
             data.append("idComunity", parameters.getIdcommunity());
-        }
+        } */
 
         collection.insertOne(data);
     }
 
     public void update(Place parameters) {
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName()), set("idComunity", parameters.getIdcommunity())));
+                /*combine(*/set("name", parameters.getName())/*, set("idComunity", parameters.getIdcommunity()))*/);
     }
 
     public void delete(Place parameters) {

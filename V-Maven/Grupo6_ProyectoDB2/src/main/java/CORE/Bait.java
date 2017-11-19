@@ -11,14 +11,14 @@ public class Bait {
     private String color;
     private int size;
     private int price;
-    private ArrayList<String> materials;
+    private ArrayList<Material> materials;
     private String group;
-    private String company;
+    private Company company;
 
     public Bait() {
     }
 
-    public Bait(int id, String name, String type, String classification, String color, int size, int price, ArrayList<String> materials, String group, String company) {
+    public Bait(int id, String name, String type, String classification, String color, int size, int price, ArrayList<Material> materials, String group, Company company) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -31,7 +31,7 @@ public class Bait {
         this.company = company;
     }
     
-    public Bait(String name, String type, String classification, String color, int size, int price, ArrayList<String> materials, String group, String company) {
+    public Bait(String name, String type, String classification, String color, int size, int price, ArrayList<Material> materials, String group, Company company) {
         this.name = name;
         this.type = type;
         this.classification = classification;
@@ -99,11 +99,11 @@ public class Bait {
         this.price = price;
     }
 
-    public ArrayList<String> getMaterials() {
+    public ArrayList<Material> getMaterials() {
         return materials;
     }
 
-    public void setMaterials(ArrayList<String> materials) {
+    public void setMaterials(ArrayList<Material> materials) {
         this.materials = materials;
     }
 
@@ -115,11 +115,11 @@ public class Bait {
         this.group = group;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 
