@@ -1,7 +1,8 @@
 package src.main;
 
-import BE.AffiliateService;
-import CORE.AffiliateTest;
+
+import BE.CompanyService;
+import CORE.Company;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
@@ -19,14 +20,14 @@ public class Application extends javax.swing.JFrame {
     public Application() {
         
         initComponents();
-        
-        AffiliateTest example  = new AffiliateTest("Mayra");   
-        AffiliateService affiliateService = new AffiliateService(client, database);
-        //affiliateService.create(example);
-        ArrayList<AffiliateTest> results =  affiliateService.find(example);
-        for (AffiliateTest a : results) {
-            System.out.println(a.toString());
-        }
+        Company example  = new Company("myCompane");   
+        CompanyService companyService = new CompanyService(client, database);
+        companyService.create(example);
+//        ArrayList<Company> results =  companyService.find(example);
+//        for (Company a : results) {
+//            System.out.println(a.toString());
+//        }
+
     }
 
     @SuppressWarnings("unchecked")

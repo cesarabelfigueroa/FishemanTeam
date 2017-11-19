@@ -9,7 +9,7 @@ package CORE;
  *
  * @author Agile
  */
-class Company {
+public class Company {
     private String id;
     private String name;
 

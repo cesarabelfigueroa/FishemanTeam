@@ -1,6 +1,7 @@
 package CORE;
 
 public class Community {
+
     private String id;
     private String name;
 
@@ -8,7 +9,7 @@ public class Community {
         this.id = id;
         this.name = name;
     }
-    
+
     public Community(String name) {
         this.name = name;
     }
@@ -36,6 +37,4 @@ public class Community {
     public String toString() {
         return name;
     }
-    
-    
 }

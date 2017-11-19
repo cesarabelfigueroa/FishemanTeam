@@ -1,6 +1,6 @@
 package BE;
 
-import CORE.Affiliate;
+import CORE.Community;
 import com.mongodb.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -10,21 +10,24 @@ import com.mongodb.client.model.Filters;
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
 import com.mongodb.client.model.Sorts;
+import static com.mongodb.client.model.Updates.combine;
+import static com.mongodb.client.model.Updates.set;
 import java.util.Arrays;
 import java.util.ArrayList;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
-public class AffiliateService {
+public class CommunityService {
 
     MongoClient client;
     MongoDatabase database;
     MongoCollection<Document> collection;
-    ArrayList<Affiliate> results = new ArrayList();
+    ArrayList<Community> results = new ArrayList();
 
-    public AffiliateService(MongoClient client, MongoDatabase database) {
+    public CommunityService(MongoClient client, MongoDatabase database) {
         this.client = client;
         this.database = database;
-        this.collection = database.getCollection("affiliate");
+        this.collection = database.getCollection("community");
     }
 
     Block<Document> printBlock = new Block<Document>() {
@@ -32,13 +35,13 @@ public class AffiliateService {
         public void apply(final Document document) {
             results = new ArrayList();
             String name = document.get("name").toString();
-            String id = document.get("_id").toString();
-            Affiliate temp = new Affiliate(id, name);
-            results.add(temp);
+            String _id = document.get("_id").toString();
+            Community temporal = new Community(_id, name);
+            results.add(temporal);
         }
     };
 
-    public ArrayList<Affiliate> find(Affiliate parameters) {
+    public ArrayList<Community> find(Community parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
@@ -47,17 +50,22 @@ public class AffiliateService {
         return results;
     }
 
-    public void create(Affiliate parameters) {
+    public void create(Community parameters) {
         Document data = new Document();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
         }
-        
-        if ((parameters != null)) {
-            data.append("name", parameters.getName());
-        }
-
 
         collection.insertOne(data);
     }
+
+    public void update(Community parameters) {
+        collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+                combine(set("name", parameters.getName())));
+    }
+
+    public void delete(Community parameters) {
+        collection.deleteOne(eq("_id", new ObjectId(parameters.getId())));
+    }
+
 }

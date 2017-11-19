@@ -1,17 +1,22 @@
 package CORE;
 
 public class Place {
-    private int id;
+    private String id;
     private String name;
     private Community community;
 
     public Place() {
     }
+    
+    public Place(String id, String name){
+    
+    }
 
-    public Place(int id, String name, Community community) {
+
+    public Place(String id, String name, Community community) {
         this.id = id;
         this.name = name;
-         this.community = community;
+        this.community = community;
     }
     
     public Place(String name, Community community) {
@@ -19,11 +24,11 @@ public class Place {
          this.community = community;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -31,22 +36,14 @@ public class Place {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    
 
     public Community getIdCommunity() {
         return community;
     }
 
-    public void setIdCommunity(Community community) {
-         this.community = community;
+  
+    public void setName(String name) {
+        this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-    
-    
 }
