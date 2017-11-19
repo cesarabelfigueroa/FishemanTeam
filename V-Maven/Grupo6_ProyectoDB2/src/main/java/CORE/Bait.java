@@ -18,8 +18,7 @@ public class Bait {
     public Bait() {
     }
 
-    public Bait(int id, String name, String type, String classification, String color, int size, double price) {
-        this.id = id;
+    public Bait(String name, String type, String classification, String color, int size, double price) {
         this.name = name;
         this.type = type;
         this.classification = classification;
@@ -38,6 +37,20 @@ public class Bait {
         this.group = group;
         this.company = company;
     }
+
+    public Bait( String name, String type, String classification, String color, int size, double price, String group, Company company) {
+        this.name = name;
+        this.type = type;
+        this.classification = classification;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+        this.materials = new ArrayList();
+        this.group = group;
+        this.company = company;
+    }
+    
+    
 
     public int getId() {
         return id;
