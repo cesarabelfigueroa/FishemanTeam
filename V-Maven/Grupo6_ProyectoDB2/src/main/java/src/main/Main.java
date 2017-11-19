@@ -35,34 +35,34 @@ public class Main extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        ButtonAfiliados = new javax.swing.JButton();
+        ButtonLugares = new javax.swing.JButton();
+        ButtonPez = new javax.swing.JButton();
+        ButtonLicencia = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         Comercio = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
+        Comercio_CrearButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        Comercio_Crear_Nombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Comercio_Crear_SelectCebo = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        comercioModify = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
+        Comercio_Modificar_SelectComercio = new javax.swing.JComboBox<>();
+        Comercio_Modificar_ID = new javax.swing.JTextField();
+        Comercio_Modificar_Nombre = new javax.swing.JTextField();
+        Comercio_ModificarButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        Comercio_Modificar_SelectCebo = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         comercioDelete = new javax.swing.JComboBox<>();
@@ -93,24 +93,24 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel11 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        jButton29 = new javax.swing.JButton();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jTextField12 = new javax.swing.JTextField();
+        Afiliado_CreateButton = new javax.swing.JButton();
+        Afiliado_Create_License = new javax.swing.JComboBox<>();
+        Afiliado_Create_Nombre = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jButton30 = new javax.swing.JButton();
+        Afiliado_Create_AgregarLicencia = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
-        jTextField13 = new javax.swing.JTextField();
+        Afiliado_Modify_IDNumber = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        Afiliado_Modify_Nombre = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jComboBox12 = new javax.swing.JComboBox<>();
+        Afiliado_Modify_Licencia = new javax.swing.JComboBox<>();
+        Afiliado_Modify_AgregarLicencia = new javax.swing.JButton();
+        Afiliado_ModifyButton = new javax.swing.JButton();
+        Afiliado_Modify_SelectAfiliado = new javax.swing.JComboBox<>();
         jLabel76 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -119,28 +119,30 @@ public class Main extends javax.swing.JFrame {
         Licencia = new javax.swing.JDialog();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jPanel15 = new javax.swing.JPanel();
-        jButton28 = new javax.swing.JButton();
+        Licencia_CrearButton = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
+        Licencia_Crear_Precio = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        Licencia_Crear_Nombre = new javax.swing.JTextField();
+        Licencia_Crear_SelectComunidad = new javax.swing.JComboBox<>();
+        Licencia_Crear_SelectLugar = new javax.swing.JComboBox<>();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jPanel17 = new javax.swing.JPanel();
-        jButton33 = new javax.swing.JButton();
-        jTextField19 = new javax.swing.JTextField();
+        Licencia_ModificarButton = new javax.swing.JButton();
+        Licencia_Modificar_ID = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
+        Licencia_Modificar_Precio = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jComboBox13 = new javax.swing.JComboBox<>();
+        Licencia_Modificar_SelectLicencia = new javax.swing.JComboBox<>();
         jLabel38 = new javax.swing.JLabel();
+        Licencia_Modificar_SelectComunidad = new javax.swing.JComboBox<>();
+        Licencia_Modificar_SelectLugar = new javax.swing.JComboBox<>();
         jPanel18 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jComboBox6 = new javax.swing.JComboBox<>();
@@ -148,27 +150,27 @@ public class Main extends javax.swing.JFrame {
         Pez = new javax.swing.JDialog();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel19 = new javax.swing.JPanel();
-        jButton26 = new javax.swing.JButton();
+        Pez_CrearButton = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
+        Pez_Crear_Nombre = new javax.swing.JTextField();
+        Pez_Crear_Captura = new javax.swing.JTextField();
+        Pez_Crear_Cebo = new javax.swing.JTextField();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         jPanel21 = new javax.swing.JPanel();
-        jButton27 = new javax.swing.JButton();
-        jTextField27 = new javax.swing.JTextField();
+        Pez_ModificarButton = new javax.swing.JButton();
+        Pez_Modificar_ID = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
+        Pez_Modificar_Nombre = new javax.swing.JTextField();
+        Pez_Modificar_Captura = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
-        jComboBox14 = new javax.swing.JComboBox<>();
+        Pez_Modificar_Cebo = new javax.swing.JTextField();
+        Pez_Modificar_SelectPez = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jComboBox7 = new javax.swing.JComboBox<>();
@@ -177,24 +179,24 @@ public class Main extends javax.swing.JFrame {
         Lugar = new javax.swing.JDialog();
         jTabbedPane6 = new javax.swing.JTabbedPane();
         jPanel23 = new javax.swing.JPanel();
-        jButton25 = new javax.swing.JButton();
-        jTextField32 = new javax.swing.JTextField();
-        jTextField33 = new javax.swing.JTextField();
+        Lugar_CrearButton = new javax.swing.JButton();
+        Lugar_Crear_Nombre = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
+        Lugar_Create_SelectCommunity = new javax.swing.JComboBox<>();
         jPanel24 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
         jPanel25 = new javax.swing.JPanel();
-        jButton24 = new javax.swing.JButton();
+        Lugar_ModificarButton = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
+        Lugar_Modificar_ID = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jTextField35 = new javax.swing.JTextField();
+        Lugar_Modificar_Nombre = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
-        jComboBox15 = new javax.swing.JComboBox<>();
+        Lugar_Modificar_SelectLugar = new javax.swing.JComboBox<>();
         jLabel54 = new javax.swing.JLabel();
+        Lugar_Modificar_Comunidad = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
         jComboBox8 = new javax.swing.JComboBox<>();
         jButton20 = new javax.swing.JButton();
@@ -288,31 +290,31 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Afiliado");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ButtonAfiliados.setText("Afiliado");
+        ButtonAfiliados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ButtonAfiliadosActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Lugares");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ButtonLugares.setText("Lugares");
+        ButtonLugares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ButtonLugaresActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Pez");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        ButtonPez.setText("Pez");
+        ButtonPez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                ButtonPezActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Licencias");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        ButtonLicencia.setText("Licencias");
+        ButtonLicencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                ButtonLicenciaActionPerformed(evt);
             }
         });
 
@@ -342,10 +344,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonAfiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLugares, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonPez, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLicencia, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,13 +369,13 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(ButtonAfiliados)
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(ButtonLugares)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7)
+                .addComponent(ButtonPez)
                 .addGap(18, 18, 18)
-                .addComponent(jButton8)
+                .addComponent(ButtonLicencia)
                 .addGap(18, 18, 18)
                 .addComponent(jButton9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
@@ -392,13 +394,18 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jButton11.setText("Crear");
+        Comercio_CrearButton.setText("Crear");
+        Comercio_CrearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Comercio_CrearButtonActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Nombre");
 
         jLabel6.setText("Crear Comercio");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Comercio_Crear_SelectCebo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel11.setText("Cebo");
 
@@ -415,14 +422,14 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel11))
                         .addGap(32, 32, 32)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField4)
-                            .addComponent(jComboBox1, 0, 84, Short.MAX_VALUE)))
+                            .addComponent(Comercio_Crear_Nombre)
+                            .addComponent(Comercio_Crear_SelectCebo, 0, 84, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(jLabel6))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(jButton11)))
+                        .addComponent(Comercio_CrearButton)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -433,13 +440,13 @@ public class Main extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Comercio_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comercio_Crear_SelectCebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addGap(33, 33, 33)
-                .addComponent(jButton11)
+                .addComponent(Comercio_CrearButton)
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
@@ -482,11 +489,21 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Listar", jPanel6);
 
-        comercioModify.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Comercio_Modificar_SelectComercio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Comercio_Modificar_SelectComercio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Comercio_Modificar_SelectComercioItemStateChanged(evt);
+            }
+        });
 
-        jTextField5.setEnabled(false);
+        Comercio_Modificar_ID.setEnabled(false);
 
-        jButton12.setText("Modificar");
+        Comercio_ModificarButton.setText("Modificar");
+        Comercio_ModificarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Comercio_ModificarButtonActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Comercio");
 
@@ -494,7 +511,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel10.setText("Nombre");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Comercio_Modificar_SelectCebo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel14.setText("Cebo");
 
@@ -504,7 +521,7 @@ public class Main extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
-                .addComponent(jButton12)
+                .addComponent(Comercio_ModificarButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(79, Short.MAX_VALUE)
@@ -515,10 +532,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(comercioModify, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Comercio_Modificar_SelectComercio, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comercio_Modificar_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(Comercio_Modificar_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(Comercio_Modificar_SelectCebo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(118, 118, 118))
         );
         jPanel4Layout.setVerticalGroup(
@@ -527,21 +544,21 @@ public class Main extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(comercioModify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Comercio_Modificar_SelectComercio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comercio_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comercio_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Comercio_Modificar_SelectCebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jButton12)
+                .addComponent(Comercio_ModificarButton)
                 .addGap(31, 31, 31))
         );
 
@@ -781,34 +798,45 @@ public class Main extends javax.swing.JFrame {
 
         jLabel24.setText("Nombre");
 
-        jButton29.setText("Crear");
+        Afiliado_CreateButton.setText("Crear");
+        Afiliado_CreateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Afiliado_CreateButtonActionPerformed(evt);
+            }
+        });
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Afiliado_Create_License.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel26.setText("Licencia");
 
-        jButton30.setText("Agregar");
+        Afiliado_Create_AgregarLicencia.setText("Agregar");
+        Afiliado_Create_AgregarLicencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Afiliado_Create_AgregarLicenciaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel26))
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField12)
-                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton30))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(Afiliado_Create_License, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Afiliado_Create_AgregarLicencia, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Afiliado_Create_Nombre)))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addComponent(jButton29)))
+                        .addComponent(Afiliado_CreateButton)))
                 .addGap(60, 60, 60))
         );
         jPanel11Layout.setVerticalGroup(
@@ -817,15 +845,15 @@ public class Main extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Afiliado_Create_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Afiliado_Create_License, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26)
-                    .addComponent(jButton30))
+                    .addComponent(Afiliado_Create_AgregarLicencia))
                 .addGap(52, 52, 52)
-                .addComponent(jButton29)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addComponent(Afiliado_CreateButton)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Crear", jPanel11);
@@ -858,7 +886,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Listar", jPanel12);
 
-        jTextField13.setEnabled(false);
+        Afiliado_Modify_IDNumber.setEnabled(false);
 
         jLabel27.setText("ID");
 
@@ -866,13 +894,28 @@ public class Main extends javax.swing.JFrame {
 
         jLabel29.setText("Licencia");
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Afiliado_Modify_Licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton31.setText("Agregar");
+        Afiliado_Modify_AgregarLicencia.setText("Agregar");
+        Afiliado_Modify_AgregarLicencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Afiliado_Modify_AgregarLicenciaActionPerformed(evt);
+            }
+        });
 
-        jButton32.setText("Modificar");
+        Afiliado_ModifyButton.setText("Modificar");
+        Afiliado_ModifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Afiliado_ModifyButtonActionPerformed(evt);
+            }
+        });
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Afiliado_Modify_SelectAfiliado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Afiliado_Modify_SelectAfiliado.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Afiliado_Modify_SelectAfiliadoItemStateChanged(evt);
+            }
+        });
 
         jLabel76.setText("Afiliado");
 
@@ -882,7 +925,7 @@ public class Main extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(142, 142, 142)
-                .addComponent(jButton32)
+                .addComponent(Afiliado_ModifyButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap(73, Short.MAX_VALUE)
@@ -893,12 +936,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel76))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField13)
-                    .addComponent(jTextField14)
-                    .addComponent(jComboBox11, 0, 96, Short.MAX_VALUE))
+                    .addComponent(Afiliado_Modify_SelectAfiliado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Afiliado_Modify_IDNumber)
+                    .addComponent(Afiliado_Modify_Nombre)
+                    .addComponent(Afiliado_Modify_Licencia, 0, 96, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton31)
+                .addComponent(Afiliado_Modify_AgregarLicencia)
                 .addGap(65, 65, 65))
         );
         jPanel13Layout.setVerticalGroup(
@@ -906,23 +949,23 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Afiliado_Modify_SelectAfiliado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel76))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Afiliado_Modify_IDNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Afiliado_Modify_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Afiliado_Modify_Licencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(jButton31))
+                    .addComponent(Afiliado_Modify_AgregarLicencia))
                 .addGap(36, 36, 36)
-                .addComponent(jButton32)
+                .addComponent(Afiliado_ModifyButton)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
@@ -974,13 +1017,24 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane3)
         );
 
-        jButton28.setText("Crear");
+        Licencia_CrearButton.setText("Crear");
+        Licencia_CrearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_CrearButtonActionPerformed(evt);
+            }
+        });
 
         jLabel31.setText("Precio");
 
-        jLabel32.setText("ID Lugar");
+        jLabel32.setText("Lugar");
 
-        jLabel33.setText("ID Comunidad");
+        jLabel33.setText("Comunidad");
+
+        jLabel4.setText("Nombre");
+
+        Licencia_Crear_SelectComunidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_Crear_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -990,41 +1044,43 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel33))
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel32))
-                                .addGap(60, 60, 60)
-                                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField17, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addComponent(jTextField16)))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(jLabel33)
-                                .addGap(34, 34, 34)
-                                .addComponent(jTextField18))))
+                            .addComponent(Licencia_Crear_SelectComunidad, 0, 128, Short.MAX_VALUE)
+                            .addComponent(Licencia_Crear_Precio)
+                            .addComponent(Licencia_Crear_Nombre)
+                            .addComponent(Licencia_Crear_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jButton28)))
-                .addContainerGap(104, Short.MAX_VALUE))
+                        .addComponent(Licencia_CrearButton)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(Licencia_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Licencia_Crear_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Licencia_Crear_SelectLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jButton28)
+                    .addComponent(Licencia_Crear_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addComponent(Licencia_CrearButton)
                 .addGap(35, 35, 35))
         );
 
@@ -1058,9 +1114,14 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane4.addTab("Listar", jPanel16);
 
-        jButton33.setText("jButton33");
+        Licencia_ModificarButton.setText("Modificar");
+        Licencia_ModificarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_ModificarButtonActionPerformed(evt);
+            }
+        });
 
-        jTextField19.setEnabled(false);
+        Licencia_Modificar_ID.setEnabled(false);
 
         jLabel34.setText("ID");
 
@@ -1070,9 +1131,18 @@ public class Main extends javax.swing.JFrame {
 
         jLabel37.setText("ID Comunidad");
 
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Licencia_Modificar_SelectLicencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Licencia_Modificar_SelectLicencia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Licencia_Modificar_SelectLicenciaItemStateChanged(evt);
+            }
+        });
 
         jLabel38.setText("Licencia");
+
+        Licencia_Modificar_SelectComunidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_Modificar_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -1083,51 +1153,48 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jButton33))
-                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel17Layout.createSequentialGroup()
-                            .addComponent(jLabel37)
-                            .addGap(34, 34, 34)
-                            .addComponent(jTextField22))
-                        .addGroup(jPanel17Layout.createSequentialGroup()
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel35)
-                                .addComponent(jLabel34)
-                                .addComponent(jLabel36)
-                                .addComponent(jLabel38))
-                            .addGap(60, 60, 60)
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComboBox13, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField21)
-                                .addComponent(jTextField19)
-                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                        .addComponent(Licencia_ModificarButton))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel37))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Licencia_Modificar_SelectLicencia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Licencia_Modificar_ID)
+                            .addComponent(Licencia_Modificar_Precio, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                            .addComponent(Licencia_Modificar_SelectComunidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Licencia_Modificar_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Licencia_Modificar_SelectLicencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Licencia_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Licencia_Modificar_Precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Licencia_Modificar_SelectLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addComponent(jButton33)
+                    .addComponent(Licencia_Modificar_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(Licencia_ModificarButton)
                 .addGap(33, 33, 33))
         );
 
@@ -1179,7 +1246,12 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane4)
         );
 
-        jButton26.setText("Crear");
+        Pez_CrearButton.setText("Crear");
+        Pez_CrearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pez_CrearButtonActionPerformed(evt);
+            }
+        });
 
         jLabel39.setText("Nombre");
 
@@ -1195,7 +1267,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(jButton26))
+                        .addComponent(Pez_CrearButton))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1204,9 +1276,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel42))
                         .addGap(33, 33, 33)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField24)
-                            .addComponent(jTextField25)
-                            .addComponent(jTextField26, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))
+                            .addComponent(Pez_Crear_Nombre)
+                            .addComponent(Pez_Crear_Captura)
+                            .addComponent(Pez_Crear_Cebo, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))
                 .addGap(86, 86, 86))
         );
         jPanel19Layout.setVerticalGroup(
@@ -1215,17 +1287,17 @@ public class Main extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Pez_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Pez_Crear_Captura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Pez_Crear_Cebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jButton26)
+                .addComponent(Pez_CrearButton)
                 .addGap(46, 46, 46))
         );
 
@@ -1262,7 +1334,12 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Listar", jPanel20);
 
-        jButton27.setText("Modificar");
+        Pez_ModificarButton.setText("Modificar");
+        Pez_ModificarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pez_ModificarButtonActionPerformed(evt);
+            }
+        });
 
         jLabel43.setText("ID");
 
@@ -1272,7 +1349,12 @@ public class Main extends javax.swing.JFrame {
 
         jLabel46.setText("Cebo");
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pez_Modificar_SelectPez.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pez_Modificar_SelectPez.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Pez_Modificar_SelectPezItemStateChanged(evt);
+            }
+        });
 
         jLabel47.setText("Pez");
 
@@ -1282,13 +1364,13 @@ public class Main extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
-                .addComponent(jButton27)
+                .addComponent(Pez_ModificarButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
                 .addComponent(jLabel47)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Pez_Modificar_SelectPez, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel21Layout.createSequentialGroup()
@@ -1300,10 +1382,10 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jLabel43))
                     .addGap(33, 33, 33)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField28)
-                        .addComponent(jTextField27)
-                        .addComponent(jTextField29)
-                        .addComponent(jTextField30, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+                        .addComponent(Pez_Modificar_Nombre)
+                        .addComponent(Pez_Modificar_ID)
+                        .addComponent(Pez_Modificar_Captura)
+                        .addComponent(Pez_Modificar_Cebo, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
                     .addGap(85, 85, 85)))
         );
         jPanel21Layout.setVerticalGroup(
@@ -1311,29 +1393,29 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Pez_Modificar_SelectPez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
-                .addComponent(jButton27)
+                .addComponent(Pez_ModificarButton)
                 .addGap(27, 27, 27))
             .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel21Layout.createSequentialGroup()
                     .addGap(76, 76, 76)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel43)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Pez_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel44)
-                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Pez_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(10, 10, 10)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel45)
-                        .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Pez_Modificar_Captura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel46)
-                        .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Pez_Modificar_Cebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(80, Short.MAX_VALUE)))
         );
 
@@ -1385,29 +1467,36 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane5)
         );
 
-        jButton25.setText("Crear");
+        Lugar_CrearButton.setText("Crear");
+        Lugar_CrearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Lugar_CrearButtonActionPerformed(evt);
+            }
+        });
 
         jLabel49.setText("Nombre");
 
-        jLabel50.setText("ID Comunidad");
+        jLabel50.setText("Comunidad");
+
+        Lugar_Create_SelectCommunity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel49)
                     .addComponent(jLabel50))
                 .addGap(70, 70, 70)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField33, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                    .addComponent(jTextField32))
+                    .addComponent(Lugar_Crear_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                    .addComponent(Lugar_Create_SelectCommunity, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(99, 99, 99))
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
-                .addComponent(jButton25)
+                .addComponent(Lugar_CrearButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
@@ -1417,13 +1506,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lugar_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel49))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel50))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jButton25)
+                        .addGap(46, 46, 46))
+                    .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel50)
+                        .addComponent(Lugar_Create_SelectCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(Lugar_CrearButton)
                 .addGap(41, 41, 41))
         );
 
@@ -1457,19 +1547,31 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane6.addTab("Listar", jPanel24);
 
-        jButton24.setText("jButton24");
+        Lugar_ModificarButton.setText("Modificar");
+        Lugar_ModificarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Lugar_ModificarButtonActionPerformed(evt);
+            }
+        });
 
         jLabel51.setText("ID");
 
-        jTextField34.setEnabled(false);
+        Lugar_Modificar_ID.setEnabled(false);
 
         jLabel52.setText("Nombre");
 
-        jLabel53.setText("ID Comunidad");
+        jLabel53.setText("Comunidad");
 
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Lugar_Modificar_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Lugar_Modificar_SelectLugar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Lugar_Modificar_SelectLugarItemStateChanged(evt);
+            }
+        });
 
         jLabel54.setText("Lugar");
+
+        Lugar_Modificar_Comunidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -1479,7 +1581,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
-                        .addComponent(jButton24))
+                        .addComponent(Lugar_ModificarButton))
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1489,18 +1591,18 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel54))
                         .addGap(70, 70, 70)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox15, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField36)
-                            .addComponent(jTextField35)
-                            .addComponent(jTextField34, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                            .addComponent(Lugar_Modificar_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Lugar_Modificar_Nombre)
+                            .addComponent(Lugar_Modificar_ID, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(Lugar_Modificar_Comunidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lugar_Modificar_SelectLugar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel54, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1508,16 +1610,17 @@ public class Main extends javax.swing.JFrame {
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel25Layout.createSequentialGroup()
                                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Lugar_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel51))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Lugar_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel52))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel53))
-                .addGap(53, 53, 53)
-                .addComponent(jButton24)
+                        .addGap(46, 46, 46))
+                    .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel53)
+                        .addComponent(Lugar_Modificar_Comunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48)
+                .addComponent(Lugar_ModificarButton)
                 .addGap(47, 47, 47))
         );
 
@@ -2117,11 +2220,23 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ButtonAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAfiliadosActionPerformed
         Afiliado.setVisible(true);
         Afiliado.pack();
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
+        modelo.removeAllElements();;
+        for (Affiliate afiliado : afiliados) {
+            modelo.addElement(afiliado);
+        }
+        Afiliado_Modify_SelectAfiliado.setModel(modelo);
+        DefaultComboBoxModel model_Licencia = (DefaultComboBoxModel) Afiliado_Create_License.getModel();
+        model_Licencia.removeAllElements();
+        for (License lic : licencias) {
+            model_Licencia.addElement(lic);
+        }
+        Afiliado_Create_License.setModel(modelo);
         Afiliado.setLocationRelativeTo(this); 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ButtonAfiliadosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        if(login_id.getText().equals("Admin") && login_pass.getText().equals("1234")){
@@ -2172,23 +2287,55 @@ public class Main extends javax.swing.JFrame {
         cb_comMod.setModel(modelo2);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ButtonLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLugaresActionPerformed
         Lugar.setVisible(true);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
+        modelo.removeAllElements();
+        for (Place lugar : lugares) {
+            modelo.addElement(lugar);
+        }
+        Lugar_Modificar_SelectLugar.setModel(modelo);
         Lugar.pack();
         Lugar.setLocationRelativeTo(this);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ButtonLugaresActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void ButtonPezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPezActionPerformed
         Pez.setVisible(true);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Pez_Modificar_SelectPez.getModel();
+        modelo.removeAllElements();
+        for (Fish sushi : peces) {
+            modelo.addElement(sushi);
+        }
+        Pez_Modificar_SelectPez.setModel(modelo);
         Pez.pack();
         Pez.setLocationRelativeTo(this);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_ButtonPezActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void ButtonLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLicenciaActionPerformed
         Licencia.setVisible(true);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
+        modelo.removeAllElements();
+        for (License licencia : licencias) {
+            modelo.addElement(licencia);
+        }
+        DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
+        modelo_SelectLugar.removeAllElements();
+        for (Place plc : lugares) {
+            modelo_SelectLugar.addElement(plc);
+        }
+        Licencia_Crear_SelectLugar.setModel(modelo_SelectLugar);
+        Licencia_Modificar_SelectLugar.setModel(modelo_SelectLugar);
+        DefaultComboBoxModel modelo_Selectcomunidad = (DefaultComboBoxModel) Licencia_Crear_SelectComunidad.getModel();
+        modelo_Selectcomunidad.removeAllElements();
+        for (Community comu : comunidades) {
+            modelo_Selectcomunidad.addElement(comu);
+        }
+        Licencia_Crear_SelectComunidad.setModel(modelo_Selectcomunidad);
+        Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
+        Licencia_Modificar_SelectLicencia.setModel(modelo);
         Licencia.pack();
         Licencia.setLocationRelativeTo(this);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_ButtonLicenciaActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         Comunidad.setVisible(true);
@@ -2263,6 +2410,245 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cebo_cbModItemStateChanged
 
+    private void Afiliado_CreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_CreateButtonActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        nombre = Afiliado_Create_Nombre.getText();
+        Affiliate fili = new Affiliate();
+        fili.setName(nombre);
+        fili.setLicenses(licencias_escogidas);
+        afiliados.add(fili);
+        licencias_escogidas.clear();
+        JOptionPane.showMessageDialog(null, "Afiliado agregado correctamente.");
+    }//GEN-LAST:event_Afiliado_CreateButtonActionPerformed
+
+    private void Afiliado_Create_AgregarLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_Create_AgregarLicenciaActionPerformed
+        // TODO add your handling code here:
+        boolean band = false;
+        if (!licencias_escogidas.isEmpty()) {
+            for (License licencia : licencias_escogidas) {
+                if (Afiliado_Create_License.getSelectedItem().equals(licencia)) {
+                    JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
+                            band = true;
+                }
+            }
+        }
+        if (!band) {
+            licencias_escogidas.add((License) Afiliado_Create_License.getSelectedItem());
+        }
+        
+    }//GEN-LAST:event_Afiliado_Create_AgregarLicenciaActionPerformed
+
+    private void Afiliado_Modify_SelectAfiliadoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Afiliado_Modify_SelectAfiliadoItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == 0) {
+            Affiliate temp = (Affiliate) Afiliado_Modify_SelectAfiliado.getSelectedItem();
+            Afiliado_Modify_IDNumber.setText(temp.getId());
+            Afiliado_Modify_Nombre.setText(temp.getName());
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_Licencia.getModel();
+            modelo.removeAllElements();
+            for (License licencia : temp.getLicenses()) {
+                modelo.addElement(licencia);
+            }
+            Afiliado_Modify_Licencia.setModel(modelo);
+            String pantalla_Licencias = "";
+            for (License licencias : temp.getLicenses()) {
+                pantalla_Licencias += licencias.toString() + "/s";
+            }
+            JOptionPane.showMessageDialog(null, pantalla_Licencias);
+        }
+    }//GEN-LAST:event_Afiliado_Modify_SelectAfiliadoItemStateChanged
+
+    private void Afiliado_Modify_AgregarLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_Modify_AgregarLicenciaActionPerformed
+        // TODO add your handling code here:
+        boolean ban = false;
+        if (!licencias_escogidas.isEmpty()) {
+            for (License lic : licencias_escogidas) {
+                if (Afiliado_Modify_Licencia.getSelectedItem().equals(lic)) {
+                    JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
+                            ban = true;
+                }
+            }
+        }
+        if (!ban) {
+            licencias_escogidas.add((License) Afiliado_Create_License.getSelectedItem());
+        }
+    }//GEN-LAST:event_Afiliado_Modify_AgregarLicenciaActionPerformed
+
+    private void Afiliado_ModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_ModifyButtonActionPerformed
+        // TODO add your handling code here:
+        String nombre = Afiliado_Modify_Nombre.getText();
+        Affiliate temp = (Affiliate) Afiliado_Modify_SelectAfiliado.getSelectedItem();
+        for (Affiliate afiliado : afiliados) {
+            if (afiliado.equals(temp)) {
+                afiliado.setName(nombre);
+                afiliado.setLicenses(licencias_escogidas);
+            }
+        }
+        licencias_escogidas.clear();
+        JOptionPane.showMessageDialog(null, "Afiliado Modificado");
+    }//GEN-LAST:event_Afiliado_ModifyButtonActionPerformed
+
+    private void Comercio_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_CrearButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Comercio_CrearButtonActionPerformed
+
+    private void Comercio_Modificar_SelectComercioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Comercio_Modificar_SelectComercioItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == 0) {
+            Shops temp = (Shops) Comercio_Modificar_SelectComercio.getSelectedItem();
+            Comercio_Modificar_ID.setText(temp.getId());
+            Comercio_Modificar_Nombre.setText(temp.getName());
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Comercio_Modificar_SelectCebo.getModel();
+            modelo.removeAllElements();
+            for (Bait cebo : temp.getSellingBait()) {
+                modelo.addElement(cebo);
+            }
+            Comercio_Modificar_SelectCebo.setModel(modelo);
+        }
+    }//GEN-LAST:event_Comercio_Modificar_SelectComercioItemStateChanged
+
+    private void Comercio_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_ModificarButtonActionPerformed
+        // TODO add your handling code here:
+        if (Comercio_Modificar_Nombre.getText().equals("")) {
+            String nombre = Comercio_Modificar_Nombre.getText();
+            Shops temp = (Shops) Comercio_Modificar_SelectComercio.getSelectedItem();
+            for (Shops comercio : comercios) {
+                if (comercio.equals(temp)) {
+                    comercio.setName(nombre);
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Comercio modificado correctamente.");
+    }//GEN-LAST:event_Comercio_ModificarButtonActionPerformed
+
+    private void Licencia_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_CrearButtonActionPerformed
+        // TODO add your handling code here:
+        String nombreLicencia;
+        double precio;
+        String idLugar;
+        nombreLicencia = Licencia_Crear_Nombre.getText();
+        Place lugar = (Place) Licencia_Crear_SelectLugar.getSelectedItem();
+        Community comunidad = (Community) Licencia_Crear_SelectComunidad.getSelectedItem();
+        precio = Double.parseDouble(Licencia_Crear_Precio.getText());
+        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces);
+        //License licencia = new License(nombreLicencia,precio, idLugar, idComunidad);
+        licencias.add(lic);
+        JOptionPane.showMessageDialog(null, "Licencia creada.");
+    }//GEN-LAST:event_Licencia_CrearButtonActionPerformed
+
+    private void Licencia_Modificar_SelectLicenciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == 0) {
+            License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
+            Licencia_Modificar_ID.setText(temp.getId());
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectComunidad.getModel();
+            modelo.removeAllElements();
+            for (Community comuni : comunidades) {
+                modelo.addElement(comuni);
+            }
+            Licencia_Modificar_SelectComunidad.setModel(modelo);
+            DefaultComboBoxModel modelo_lugares = (DefaultComboBoxModel) Licencia_Modificar_SelectLugar.getModel();
+            modelo_lugares.removeAllElements();
+            for (Place plc : lugares) {
+                modelo_lugares.addElement(plc);
+            }
+            Licencia_Modificar_SelectLugar.setModel(modelo_lugares);
+            Licencia_Modificar_Precio.setText(Double.toString(temp.getPrice()));
+        }
+    }//GEN-LAST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
+
+    private void Licencia_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ModificarButtonActionPerformed
+        // TODO add your handling code here:       
+        double precio;
+        Community comunidad = (Community) Licencia_Modificar_SelectComunidad.getSelectedItem();
+        Place lugar = (Place) Licencia_Modificar_SelectComunidad.getSelectedItem();
+        precio = Double.parseDouble(Licencia_Modificar_Precio.getText());
+        License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
+        for (License lizy : licencias) {
+            if (lizy.equals(temp)) {
+                lizy.setCommunity(comunidad);
+                lizy.setPlace(lugar);
+                lizy.setPrice(precio);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Licencia Modificada.");
+    }//GEN-LAST:event_Licencia_ModificarButtonActionPerformed
+
+    private void Pez_Modificar_SelectPezItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Pez_Modificar_SelectPezItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange()==0) {
+            Fish sushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
+            Pez_Modificar_ID.setText(Integer.toString(sushi.getId()));
+            Pez_Modificar_Nombre.setText(sushi.getName());
+        }
+    }//GEN-LAST:event_Pez_Modificar_SelectPezItemStateChanged
+
+    private void Pez_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_CrearButtonActionPerformed
+        // TODO add your handling code here:\
+        String nombre, Licencia, Cebo;
+        nombre = Pez_Crear_Nombre.getText();
+        Licencia = Pez_Crear_Captura.getText();
+        Cebo = Pez_Crear_Cebo.getText();
+        Fish sushi = new Fish();
+        sushi.setName(nombre);
+    }//GEN-LAST:event_Pez_CrearButtonActionPerformed
+
+    private void Pez_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_ModificarButtonActionPerformed
+        // TODO add your handling code here:
+        Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
+        String nombre, captura, cebo;
+        nombre = Pez_Modificar_Nombre.getText();
+        captura = Pez_Modificar_Captura.getText();
+        cebo = Pez_Modificar_Cebo.getText();
+        for (Fish tilapia : peces) {
+            if (tilapia.equals(tempSushi)) {
+                tilapia.setName(nombre);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Pez Modificado.");
+    }//GEN-LAST:event_Pez_ModificarButtonActionPerformed
+
+    private void Lugar_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_CrearButtonActionPerformed
+        // TODO add your handling code here:
+        String nombre;
+        Community comunidad = (Community) Lugar_Create_SelectCommunity.getSelectedItem();
+        nombre = Lugar_Crear_Nombre.getText();
+        
+        Place lugar = new Place(nombre, comunidad);
+        lugares.add(lugar);
+        JOptionPane.showMessageDialog(null, "Lugar creado.");
+    }//GEN-LAST:event_Lugar_CrearButtonActionPerformed
+
+    private void Lugar_Modificar_SelectLugarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Lugar_Modificar_SelectLugarItemStateChanged
+        if (evt.getStateChange()==0) {
+            Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
+            DefaultComboBoxModel modelo_comunidad = (DefaultComboBoxModel) Lugar_Modificar_Comunidad.getModel();
+            modelo_comunidad.removeAllElements();
+            for (Community comunidad : comunidades) {
+                modelo_comunidad.addElement(comunidad);
+            }
+            Lugar_Modificar_Comunidad.setModel(modelo_comunidad);
+            Lugar_Modificar_Nombre.setText(temp.getName());
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Lugar_Modificar_SelectLugarItemStateChanged
+
+    private void Lugar_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_ModificarButtonActionPerformed
+        // TODO add your handling code here:
+        String Nombre;
+        Community Comm = (Community) Lugar_Modificar_Comunidad.getSelectedItem();
+        Nombre = Lugar_Modificar_Nombre.getText();
+        Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
+        for (Place lugar : lugares) {
+            if (lugar.equals(temp)) {
+                lugar.setIdCommunity(Comm);
+                lugar.setName(Nombre);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Lugar Modificado.");
+    }//GEN-LAST:event_Lugar_ModificarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2292,6 +2678,18 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -2303,14 +2701,65 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Afiliado;
+    private javax.swing.JButton Afiliado_CreateButton;
+    private javax.swing.JButton Afiliado_Create_AgregarLicencia;
+    private javax.swing.JComboBox<String> Afiliado_Create_License;
+    private javax.swing.JTextField Afiliado_Create_Nombre;
+    private javax.swing.JButton Afiliado_ModifyButton;
+    private javax.swing.JButton Afiliado_Modify_AgregarLicencia;
+    private javax.swing.JTextField Afiliado_Modify_IDNumber;
+    private javax.swing.JComboBox<String> Afiliado_Modify_Licencia;
+    private javax.swing.JTextField Afiliado_Modify_Nombre;
+    private javax.swing.JComboBox<String> Afiliado_Modify_SelectAfiliado;
+    private javax.swing.JButton ButtonAfiliados;
+    private javax.swing.JButton ButtonLicencia;
+    private javax.swing.JButton ButtonLugares;
+    private javax.swing.JButton ButtonPez;
     private javax.swing.JDialog Cebo;
     private javax.swing.JTextField Com_crearNombre;
     private javax.swing.JDialog Comercio;
+    private javax.swing.JButton Comercio_CrearButton;
+    private javax.swing.JTextField Comercio_Crear_Nombre;
+    private javax.swing.JComboBox<String> Comercio_Crear_SelectCebo;
+    private javax.swing.JButton Comercio_ModificarButton;
+    private javax.swing.JTextField Comercio_Modificar_ID;
+    private javax.swing.JTextField Comercio_Modificar_Nombre;
+    private javax.swing.JComboBox<String> Comercio_Modificar_SelectCebo;
+    private javax.swing.JComboBox<String> Comercio_Modificar_SelectComercio;
     private javax.swing.JDialog Comunidad;
     private javax.swing.JTable Jt_crearCebo;
     private javax.swing.JDialog Licencia;
+    private javax.swing.JButton Licencia_CrearButton;
+    private javax.swing.JTextField Licencia_Crear_Nombre;
+    private javax.swing.JTextField Licencia_Crear_Precio;
+    private javax.swing.JComboBox<String> Licencia_Crear_SelectComunidad;
+    private javax.swing.JComboBox<String> Licencia_Crear_SelectLugar;
+    private javax.swing.JButton Licencia_ModificarButton;
+    private javax.swing.JTextField Licencia_Modificar_ID;
+    private javax.swing.JTextField Licencia_Modificar_Precio;
+    private javax.swing.JComboBox<String> Licencia_Modificar_SelectComunidad;
+    private javax.swing.JComboBox<String> Licencia_Modificar_SelectLicencia;
+    private javax.swing.JComboBox<String> Licencia_Modificar_SelectLugar;
     private javax.swing.JDialog Lugar;
+    private javax.swing.JButton Lugar_CrearButton;
+    private javax.swing.JTextField Lugar_Crear_Nombre;
+    private javax.swing.JComboBox<String> Lugar_Create_SelectCommunity;
+    private javax.swing.JButton Lugar_ModificarButton;
+    private javax.swing.JComboBox<String> Lugar_Modificar_Comunidad;
+    private javax.swing.JTextField Lugar_Modificar_ID;
+    private javax.swing.JTextField Lugar_Modificar_Nombre;
+    private javax.swing.JComboBox<String> Lugar_Modificar_SelectLugar;
     private javax.swing.JDialog Pez;
+    private javax.swing.JButton Pez_CrearButton;
+    private javax.swing.JTextField Pez_Crear_Captura;
+    private javax.swing.JTextField Pez_Crear_Cebo;
+    private javax.swing.JTextField Pez_Crear_Nombre;
+    private javax.swing.JButton Pez_ModificarButton;
+    private javax.swing.JTextField Pez_Modificar_Captura;
+    private javax.swing.JTextField Pez_Modificar_Cebo;
+    private javax.swing.JTextField Pez_Modificar_ID;
+    private javax.swing.JTextField Pez_Modificar_Nombre;
+    private javax.swing.JComboBox<String> Pez_Modificar_SelectPez;
     private javax.swing.ButtonGroup bg_clasMod;
     private javax.swing.ButtonGroup bg_clasificacion;
     private javax.swing.ButtonGroup bg_tipo;
@@ -2331,11 +2780,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField com_idMod;
     private javax.swing.JTextField com_nombreMod;
     private javax.swing.JComboBox<String> comercioDelete;
-    private javax.swing.JComboBox<String> comercioModify;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
@@ -2348,31 +2794,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox13;
-    private javax.swing.JComboBox<String> jComboBox14;
-    private javax.swing.JComboBox<String> jComboBox15;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
@@ -2407,6 +2831,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -2503,35 +2928,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable9;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField40;
     private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTable jt_modCebo;
     private javax.swing.JTextField login_id;
     private javax.swing.JTextField login_pass;
@@ -2552,4 +2952,5 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Place> lugares;
     ArrayList<License> licencias;
     ArrayList<Community> comunidades;
+    ArrayList<License> licencias_escogidas;
 }

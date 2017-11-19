@@ -28,10 +28,10 @@
                           <Component id="jButton9" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
                           <Component id="jButton4" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
-                          <Component id="jButton7" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
-                          <Component id="jButton8" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="ButtonAfiliados" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="ButtonLugares" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="ButtonPez" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="ButtonLicencia" alignment="1" min="-2" pref="121" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
@@ -60,13 +60,13 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonAfiliados" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonLugares" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonPez" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonLicencia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -93,36 +93,36 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="ButtonAfiliados">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Afiliado"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAfiliadosActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="ButtonLugares">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lugares"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLugaresActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="ButtonPez">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pez"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonPezActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="ButtonLicencia">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Licencias"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLicenciaActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton9">
@@ -191,8 +191,8 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField4" max="32767" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="0" pref="84" max="32767" attributes="0"/>
+                                      <Component id="Comercio_Crear_Nombre" max="32767" attributes="0"/>
+                                      <Component id="Comercio_Crear_SelectCebo" alignment="0" pref="84" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -201,7 +201,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Comercio_CrearButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="117" max="32767" attributes="0"/>
@@ -216,39 +216,42 @@
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Crear_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Crear_SelectCebo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                          <Component id="Comercio_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton11">
+                <Component class="javax.swing.JButton" name="Comercio_CrearButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Comercio_CrearButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="Comercio_Crear_Nombre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear Comercio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="Comercio_Crear_SelectCebo">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -336,7 +339,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                          <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                          <Component id="Comercio_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -349,10 +352,10 @@
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="comercioModify" min="-2" pref="82" max="-2" attributes="0"/>
-                              <Component id="jTextField5" pref="92" max="32767" attributes="0"/>
-                              <Component id="jTextField6" pref="92" max="32767" attributes="0"/>
-                              <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Comercio_Modificar_SelectComercio" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="Comercio_Modificar_ID" pref="92" max="32767" attributes="0"/>
+                              <Component id="Comercio_Modificar_Nombre" pref="92" max="32767" attributes="0"/>
+                              <Component id="Comercio_Modificar_SelectCebo" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                       </Group>
@@ -364,32 +367,32 @@
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="comercioModify" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Modificar_SelectComercio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Modificar_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Comercio_Modificar_SelectCebo" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="48" max="32767" attributes="0"/>
-                          <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                          <Component id="Comercio_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JComboBox" name="comercioModify">
+                <Component class="javax.swing.JComboBox" name="Comercio_Modificar_SelectComercio">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -400,21 +403,27 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Comercio_Modificar_SelectComercioItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="Comercio_Modificar_ID">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField6">
+                <Component class="javax.swing.JTextField" name="Comercio_Modificar_Nombre">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton12">
+                <Component class="javax.swing.JButton" name="Comercio_ModificarButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Comercio_ModificarButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
@@ -431,7 +440,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="Comercio_Modificar_SelectCebo">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -874,24 +883,26 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel24" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="jLabel26" min="-2" pref="58" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField12" max="32767" attributes="0"/>
-                                      <Component id="jComboBox10" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="Afiliado_Create_License" min="-2" pref="74" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Component id="Afiliado_Create_AgregarLicencia" min="-2" pref="81" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="Afiliado_Create_Nombre" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton30" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="jButton29" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Afiliado_CreateButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -904,17 +915,17 @@
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Create_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Create_License" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton30" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Create_AgregarLicencia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="jButton29" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="58" max="32767" attributes="0"/>
+                          <Component id="Afiliado_CreateButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="72" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -925,12 +936,15 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton29">
+                <Component class="javax.swing.JButton" name="Afiliado_CreateButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Afiliado_CreateButtonActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox10">
+                <Component class="javax.swing.JComboBox" name="Afiliado_Create_License">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -945,17 +959,20 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
+                <Component class="javax.swing.JTextField" name="Afiliado_Create_Nombre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel26">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Licencia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton30">
+                <Component class="javax.swing.JButton" name="Afiliado_Create_AgregarLicencia">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Afiliado_Create_AgregarLicenciaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1024,7 +1041,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                          <Component id="jButton32" min="-2" max="-2" attributes="0"/>
+                          <Component id="Afiliado_ModifyButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -1037,13 +1054,13 @@
                           </Group>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jComboBox12" max="32767" attributes="0"/>
-                              <Component id="jTextField13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox11" alignment="0" pref="96" max="32767" attributes="0"/>
+                              <Component id="Afiliado_Modify_SelectAfiliado" max="32767" attributes="0"/>
+                              <Component id="Afiliado_Modify_IDNumber" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Afiliado_Modify_Nombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Afiliado_Modify_Licencia" alignment="0" pref="96" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton31" min="-2" max="-2" attributes="0"/>
+                          <Component id="Afiliado_Modify_AgregarLicencia" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1053,34 +1070,34 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Modify_SelectAfiliado" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Modify_IDNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Modify_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Modify_Licencia" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton31" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Afiliado_Modify_AgregarLicencia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="jButton32" min="-2" max="-2" attributes="0"/>
+                          <Component id="Afiliado_ModifyButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="52" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField13">
+                <Component class="javax.swing.JTextField" name="Afiliado_Modify_IDNumber">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -1090,7 +1107,7 @@
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField14">
+                <Component class="javax.swing.JTextField" name="Afiliado_Modify_Nombre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
@@ -1102,7 +1119,7 @@
                     <Property name="text" type="java.lang.String" value="Licencia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox11">
+                <Component class="javax.swing.JComboBox" name="Afiliado_Modify_Licencia">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1117,17 +1134,23 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton31">
+                <Component class="javax.swing.JButton" name="Afiliado_Modify_AgregarLicencia">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Afiliado_Modify_AgregarLicenciaActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton32">
+                <Component class="javax.swing.JButton" name="Afiliado_ModifyButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Afiliado_ModifyButtonActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox12">
+                <Component class="javax.swing.JComboBox" name="Afiliado_Modify_SelectAfiliado">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1138,6 +1161,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Afiliado_Modify_SelectAfiliadoItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -1257,64 +1283,67 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jTextField17" pref="99" max="32767" attributes="0"/>
-                                              <Component id="jTextField16" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="jTextField18" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="Licencia_Crear_SelectComunidad" pref="128" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Crear_Precio" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Crear_Nombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Crear_SelectLugar" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                                  <Component id="jButton28" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Licencia_CrearButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                          <EmptySpace pref="93" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Crear_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Crear_Precio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField17" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Crear_SelectLugar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField18" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Crear_SelectComunidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
-                          <Component id="jButton28" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <Component id="Licencia_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton28">
+                <Component class="javax.swing.JButton" name="Licencia_CrearButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Licencia_CrearButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel31">
                   <Properties>
@@ -1323,19 +1352,52 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel32">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID Lugar"/>
+                    <Property name="text" type="java.lang.String" value="Lugar"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel33">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID Comunidad"/>
+                    <Property name="text" type="java.lang.String" value="Comunidad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField16">
+                <Component class="javax.swing.JTextField" name="Licencia_Crear_Precio">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField17">
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nombre"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField18">
+                <Component class="javax.swing.JTextField" name="Licencia_Crear_Nombre">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Licencia_Crear_SelectComunidad">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Licencia_Crear_SelectLugar">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -1408,77 +1470,75 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                  <Component id="jButton33" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Licencia_ModificarButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      <Component id="jTextField22" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jComboBox13" max="32767" attributes="0"/>
-                                          <Component id="jTextField21" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField19" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField20" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
-                                      </Group>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="Licencia_Modificar_SelectLicencia" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Modificar_ID" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Modificar_Precio" alignment="0" pref="99" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Modificar_SelectComunidad" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Modificar_SelectLugar" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="110" max="32767" attributes="0"/>
+                          <EmptySpace pref="113" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace pref="26" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Modificar_SelectLicencia" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField19" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField20" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Modificar_Precio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField21" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Modificar_SelectLugar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField22" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Licencia_Modificar_SelectComunidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="jButton33" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="Licencia_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton33">
+                <Component class="javax.swing.JButton" name="Licencia_ModificarButton">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jButton33"/>
+                    <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Licencia_ModificarButtonActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField19">
+                <Component class="javax.swing.JTextField" name="Licencia_Modificar_ID">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -1493,23 +1553,42 @@
                     <Property name="text" type="java.lang.String" value="Precio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField20">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField21">
+                <Component class="javax.swing.JTextField" name="Licencia_Modificar_Precio">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ID Lugar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField22">
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel37">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ID Comunidad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox13">
+                <Component class="javax.swing.JComboBox" name="Licencia_Modificar_SelectLicencia">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Licencia_Modificar_SelectLicenciaItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel38">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Licencia"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Licencia_Modificar_SelectComunidad">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1524,10 +1603,20 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel38">
+                <Component class="javax.swing.JComboBox" name="Licencia_Modificar_SelectLugar">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Licencia"/>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -1639,7 +1728,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jButton26" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pez_CrearButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
@@ -1650,9 +1739,9 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField24" max="32767" attributes="0"/>
-                                      <Component id="jTextField25" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField26" alignment="0" pref="99" max="32767" attributes="0"/>
+                                      <Component id="Pez_Crear_Nombre" max="32767" attributes="0"/>
+                                      <Component id="Pez_Crear_Captura" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Pez_Crear_Cebo" alignment="0" pref="99" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1666,30 +1755,33 @@
                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField24" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pez_Crear_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField25" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pez_Crear_Captura" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField26" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pez_Crear_Cebo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="52" max="32767" attributes="0"/>
-                          <Component id="jButton26" min="-2" max="-2" attributes="0"/>
+                          <Component id="Pez_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton26">
+                <Component class="javax.swing.JButton" name="Pez_CrearButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Pez_CrearButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel39">
                   <Properties>
@@ -1706,11 +1798,11 @@
                     <Property name="text" type="java.lang.String" value="Cebo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField24">
+                <Component class="javax.swing.JTextField" name="Pez_Crear_Nombre">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField25">
+                <Component class="javax.swing.JTextField" name="Pez_Crear_Captura">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField26">
+                <Component class="javax.swing.JTextField" name="Pez_Crear_Cebo">
                 </Component>
               </SubComponents>
             </Container>
@@ -1780,14 +1872,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                          <Component id="jButton27" min="-2" max="-2" attributes="0"/>
+                          <Component id="Pez_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                           <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="112" max="32767" attributes="0"/>
-                          <Component id="jComboBox14" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="Pez_Modificar_SelectPez" min="-2" pref="97" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1801,10 +1893,10 @@
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField28" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField27" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField29" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField30" alignment="0" pref="99" max="32767" attributes="0"/>
+                                  <Component id="Pez_Modificar_Nombre" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Pez_Modificar_ID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Pez_Modificar_Captura" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Pez_Modificar_Cebo" alignment="0" pref="99" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
@@ -1816,11 +1908,11 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Pez_Modificar_SelectPez" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="164" max="32767" attributes="0"/>
-                          <Component id="jButton27" min="-2" max="-2" attributes="0"/>
+                          <Component id="Pez_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -1828,22 +1920,22 @@
                               <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pez_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pez_Modificar_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pez_Modificar_Captura" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Pez_Modificar_Cebo" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="80" max="32767" attributes="0"/>
                           </Group>
@@ -1852,12 +1944,15 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton27">
+                <Component class="javax.swing.JButton" name="Pez_ModificarButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Pez_ModificarButtonActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField27">
+                <Component class="javax.swing.JTextField" name="Pez_Modificar_ID">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel43">
                   <Properties>
@@ -1869,9 +1964,9 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField28">
+                <Component class="javax.swing.JTextField" name="Pez_Modificar_Nombre">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField29">
+                <Component class="javax.swing.JTextField" name="Pez_Modificar_Captura">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel45">
                   <Properties>
@@ -1883,9 +1978,9 @@
                     <Property name="text" type="java.lang.String" value="Cebo"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField30">
+                <Component class="javax.swing.JTextField" name="Pez_Modificar_Cebo">
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox14">
+                <Component class="javax.swing.JComboBox" name="Pez_Modificar_SelectPez">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1896,6 +1991,9 @@
                       </StringArray>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Pez_Modificar_SelectPezItemStateChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -2012,21 +2110,21 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="58" max="32767" attributes="0"/>
+                          <EmptySpace pref="73" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextField33" alignment="0" pref="101" max="32767" attributes="0"/>
-                              <Component id="jTextField32" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lugar_Crear_Nombre" pref="101" max="32767" attributes="0"/>
+                              <Component id="Lugar_Create_SelectCommunity" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                          <Component id="jButton25" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lugar_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2038,30 +2136,33 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jTextField32" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Lugar_Crear_Nombre" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField33" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lugar_Create_SelectCommunity" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="69" max="32767" attributes="0"/>
-                          <Component id="jButton25" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="85" max="32767" attributes="0"/>
+                          <Component id="Lugar_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton25">
+                <Component class="javax.swing.JButton" name="Lugar_CrearButton">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Crear"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Lugar_CrearButtonActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField32">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField33">
+                <Component class="javax.swing.JTextField" name="Lugar_Crear_Nombre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel49">
                   <Properties>
@@ -2070,8 +2171,23 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel50">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID Comunidad"/>
+                    <Property name="text" type="java.lang.String" value="Comunidad"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Lugar_Create_SelectCommunity">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -2142,7 +2258,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="jButton24" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lugar_ModificarButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
@@ -2154,23 +2270,23 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jComboBox15" max="32767" attributes="0"/>
-                                      <Component id="jTextField36" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField35" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField34" alignment="0" pref="101" max="32767" attributes="0"/>
+                                      <Component id="Lugar_Modificar_SelectLugar" max="32767" attributes="0"/>
+                                      <Component id="Lugar_Modificar_Nombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Lugar_Modificar_ID" alignment="0" pref="101" max="32767" attributes="0"/>
+                                      <Component id="Lugar_Modificar_Comunidad" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <EmptySpace pref="97" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="32" max="32767" attributes="0"/>
+                          <EmptySpace pref="37" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox15" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="Lugar_Modificar_SelectLugar" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel54" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2179,38 +2295,43 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jTextField34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Lugar_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextField35" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Lugar_Modificar_Nombre" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel52" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField36" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel53" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lugar_Modificar_Comunidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="jButton24" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="Lugar_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton24">
+                <Component class="javax.swing.JButton" name="Lugar_ModificarButton">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jButton24"/>
+                    <Property name="text" type="java.lang.String" value="Modificar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Lugar_ModificarButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel51">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="ID"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField34">
+                <Component class="javax.swing.JTextField" name="Lugar_Modificar_ID">
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -2220,16 +2341,37 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField35">
+                <Component class="javax.swing.JTextField" name="Lugar_Modificar_Nombre">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel53">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="ID Comunidad"/>
+                    <Property name="text" type="java.lang.String" value="Comunidad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField36">
+                <Component class="javax.swing.JComboBox" name="Lugar_Modificar_SelectLugar">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="Lugar_Modificar_SelectLugarItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox15">
+                <Component class="javax.swing.JLabel" name="jLabel54">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Lugar"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Lugar_Modificar_Comunidad">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -2243,11 +2385,6 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel54">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Lugar"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
