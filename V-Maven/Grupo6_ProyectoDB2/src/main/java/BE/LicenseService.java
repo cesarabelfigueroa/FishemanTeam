@@ -1,6 +1,5 @@
 package BE;
-
-import CORE.Place;
+import CORE.License;
 import com.mongodb.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -17,17 +16,17 @@ import java.util.ArrayList;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
-public class PlaceService {
-
+public class LicenseService {
+    
     MongoClient client;
     MongoDatabase database;
     MongoCollection<Document> collection;
-    ArrayList<Place> results = new ArrayList();
+    ArrayList<License> results = new ArrayList();
 
-    public PlaceService(MongoClient client, MongoDatabase database) {
+    public LicenseService(MongoClient client, MongoDatabase database) {
         this.client = client;
         this.database = database;
-        this.collection = database.getCollection("place");
+        this.collection = database.getCollection("licdnse");
     }
 
     Block<Document> printBlock = new Block<Document>() {
@@ -36,13 +35,15 @@ public class PlaceService {
             results = new ArrayList();
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
-            String idComunity = document.get("name").toString();
-            Place temporal = new Place(_id, name, idComunity);
+            double price = Double.parseDouble(document.get("price").toString());
+            String idCommunity = document.get("idCommunity").toString();
+            String idPlace =  document.get("idPlace").toString();
+            License temporal = new License(_id, name, price, idPlace, idCommunity);
             results.add(temporal);
         }
     };
 
-    public ArrayList<Place> find(Place parameters) {
+    public ArrayList<License> find(License parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
@@ -51,25 +52,33 @@ public class PlaceService {
         return results;
     }
 
-    public void create(Place parameters) {
+    public void create(License parameters) {
         Document data = new Document();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
         }
         
-         if ((parameters.getIdcommunity() != null)) {
-            data.append("idComunity", parameters.getIdcommunity());
+        if ((parameters.getPrice() != 0)) {
+            data.append("price", parameters.getPrice());
         }
-
+        
+        if ((parameters.getIdCommunity() != null)) {
+            data.append("idComunnity", parameters.getIdCommunity());
+        }
+        
+        if ((parameters.getIdPlace()!= null)) {
+            data.append("idPlace", parameters.getIdPlace());
+        }
+        
         collection.insertOne(data);
     }
 
-    public void update(Place parameters) {
+    public void update(License parameters) {
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName()), set("idComunity", parameters.getIdcommunity())));
+                combine(set("name", parameters.getName()), set("price", parameters.getPrice())));
     }
 
-    public void delete(Place parameters) {
+    public void delete(License parameters) {
         collection.deleteOne(eq("_id", new ObjectId(parameters.getId())));
     }
 }

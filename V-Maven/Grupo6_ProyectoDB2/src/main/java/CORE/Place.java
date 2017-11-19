@@ -1,35 +1,42 @@
 package CORE;
 
 public class Place {
-
-    private String _id;
+    private String id;
     private String name;
-    private String idComunity;
+    private String idcommunity;
 
-    public Place(String _id, String name, String idComunity) {
-        this._id = _id;
+    public Place() {
+    }
+
+    public Place(String id, String name, String idcommunity) {
+        this.id = id;
         this.name = name;
-        this.idComunity = idComunity;
+        this.idcommunity = idcommunity;
     }
-
-    public String getIdComunity() {
-        return idComunity;
-    }
-
-    public void setIdComunity(String _idComunity) {
-        this.idComunity = _idComunity;
+    
+    public Place(String name, String idcommunity) {
+        this.name = name;
+        this.idcommunity = idcommunity;
     }
 
     public String getId() {
-        return _id;
+        return id;
     }
 
-    public void setId(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getIdcommunity() {
+        return idcommunity;
+    }
+
+    public void setIdcommunity(String idcommunity) {
+        this.idcommunity = idcommunity;
     }
 
     public void setName(String name) {
