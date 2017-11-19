@@ -226,6 +226,7 @@ public class Main extends javax.swing.JFrame {
         rb_artificial = new javax.swing.JRadioButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         Jt_crearCebo = new javax.swing.JTable();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
@@ -1745,6 +1746,9 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(Jt_crearCebo);
 
+        bg_tipo.add(jRadioButton1);
+        jRadioButton1.setText("Mixto");
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
@@ -1770,12 +1774,16 @@ public class Main extends javax.swing.JFrame {
                                     .addGroup(jPanel27Layout.createSequentialGroup()
                                         .addGap(46, 46, 46)
                                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rb_animal)
-                                            .addComponent(rb_natural))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rb_artificial)
-                                            .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                                .addComponent(rb_animal)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                                .addComponent(rb_natural)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(rb_artificial)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jRadioButton1))))
                                     .addGroup(jPanel27Layout.createSequentialGroup()
                                         .addGap(60, 60, 60)
                                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1794,7 +1802,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGap(194, 194, 194)
                         .addComponent(jButton22)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1819,7 +1827,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_natural)
                     .addComponent(rb_artificial)
-                    .addComponent(jLabel60))
+                    .addComponent(jLabel60)
+                    .addComponent(jRadioButton1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_animal)
@@ -2142,7 +2151,7 @@ public class Main extends javax.swing.JFrame {
         );
         CeboLayout.setVerticalGroup(
             CeboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 562, Short.MAX_VALUE)
         );
 
         jLabel77.setText("jLabel77");
@@ -2259,15 +2268,15 @@ public class Main extends javax.swing.JFrame {
         Comercio.setLocationRelativeTo(this); 
         
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (Community temp : comunidades) {
+        for (Shop temp : comercios) {
             modelo.addElement(temp);
         }
-        cb_comBorrar.setModel(modelo);
+        comercioDelete.setModel(modelo);
         DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        for (Community temp : comunidades) {
+        for (Shop temp : comercios) {
             modelo2.addElement(temp);
         }
-        cb_comMod.setModel(modelo2);
+        Comercio_Modificar_SelectComercio.setModel(modelo2);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -2341,6 +2350,17 @@ public class Main extends javax.swing.JFrame {
         Comunidad.setVisible(true);
         Comunidad.pack();
         Comunidad.setLocationRelativeTo(this);
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Community temp : comunidades) {
+            modelo.addElement(temp);
+        }
+        cb_comBorrar.setModel(modelo);
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        for (Community temp : comunidades) {
+            modelo2.addElement(temp);
+        }
+        cb_comMod.setModel(modelo2);
+        
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -2903,6 +2923,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
