@@ -3,20 +3,20 @@ package CORE;
 public class Place {
     private int id;
     private String name;
-    private String idcommunity;
+    private Community community;
 
     public Place() {
     }
 
-    public Place(int id, String name, String idcommunity) {
+    public Place(int id, String name, Community community) {
         this.id = id;
         this.name = name;
-        this.idcommunity = idcommunity;
+         this.community = community;
     }
     
-    public Place(String name, String idcommunity) {
+    public Place(String name, Community community) {
         this.name = name;
-        this.idcommunity = idcommunity;
+         this.community = community;
     }
 
     public int getId() {
@@ -35,12 +35,12 @@ public class Place {
         this.name = name;
     }
 
-    public String getIdCommunity() {
-        return idcommunity;
+    public Community getIdCommunity() {
+        return community;
     }
 
-    public void setIdCommunity(String idcommunity) {
-        this.idcommunity = idcommunity;
+    public void setIdCommunity(Community community) {
+         this.community = community;
     }
 
     @Override

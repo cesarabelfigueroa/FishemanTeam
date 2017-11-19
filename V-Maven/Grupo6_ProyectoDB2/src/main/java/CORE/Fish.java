@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Fish {
     private int id;
     private String name;
-    private ArrayList<String>  baitID;
+    private ArrayList<Bait>  baits;
 
     public Fish() {
     }
@@ -16,10 +16,10 @@ public class Fish {
     }
 
     
-    public Fish(int id, String name, ArrayList<String> baitID) {
+    public Fish(int id, String name, ArrayList<Bait> baits) {
         this.id = id;
         this.name = name;
-        this.baitID = baitID;
+        this.baits = baits;
     }
 
     
@@ -39,12 +39,12 @@ public class Fish {
         this.name = name;
     }
 
-    public ArrayList<String> getBaitID() {
-        return baitID;
+    public ArrayList<Bait> getBaits() {
+        return baits;
     }
 
-    public void setBaitID(ArrayList<String> baitID) {
-        this.baitID = baitID;
+    public void setBaitID(ArrayList<Bait> baits) {
+        this.baits = baits;
     }
 
     @Override

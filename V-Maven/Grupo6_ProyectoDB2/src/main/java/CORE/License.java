@@ -7,38 +7,25 @@ public class License {
     private String id;
     private String name;
     private double price;
-    private String idPlace;
-    private String idCommunity;
-    private ArrayList<String> fishes;
+    private Place place;
+    private Community community;
+    private ArrayList<Fish> fishes;
 
-    public License(String name, double price, String idPlace, String idCommunity) {
-        this.name = name;
-        this.price = price;
-        this.idPlace = idPlace;
-        this.idCommunity = idCommunity;
-    }
-
-    public License(String id, String name, double price, String idPlace, String idCommunity, ArrayList<String> fishes) {
+    public License(String id, String name, double price, Place place, Community community, ArrayList<Fish> fishes) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.idPlace = idPlace;
-        this.idCommunity = idCommunity;
+        this.place = place;
+        this.community = community;
         this.fishes = fishes;
     }
 
-    public License(String id, String name, double price, String idPlace, String idCommunity) {
-        this.id = id;
+    public License(String name, double price, Place place, Community community, ArrayList<Fish> fishes) {
         this.name = name;
         this.price = price;
-        this.idPlace = idPlace;
-        this.idCommunity = idCommunity;
-    }
-
-    public License(int price, String idPlace, String idCommunity) {
-        this.price = price;
-        this.idPlace = idPlace;
-        this.idCommunity = idCommunity;
+        this.place = place;
+        this.community = community;
+        this.fishes = fishes;
     }
 
     public String getId() {
@@ -57,23 +44,27 @@ public class License {
         this.price = price;
     }
 
-    public String getIdPlace() {
-        return idPlace;
+    public Place getPlace() {
+        return place;
     }
 
-    public void setIdPlace(String idPlace) {
-        this.idPlace = idPlace;
+    public void setPlace(Place place) {
+        this.place = place;
     }
 
-    public String getIdCommunity() {
-        return idCommunity;
+    public Community getCommunity() {
+        return community;
     }
 
-    public ArrayList<String> getFishes() {
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+
+    public ArrayList<Fish> getFishes() {
         return fishes;
     }
 
-    public void setFishes(ArrayList<String> fishes) {
+    public void setFishes(ArrayList<Fish> fishes) {
         this.fishes = fishes;
     }
 
@@ -85,9 +76,6 @@ public class License {
         this.name = name;
     }
 
-    public void setIdCommunity(String idCommunity) {
-        this.idCommunity = idCommunity;
-    }
 
     @Override
     public String toString() {
