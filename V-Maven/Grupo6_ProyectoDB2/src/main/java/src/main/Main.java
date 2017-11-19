@@ -2548,7 +2548,7 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Affiliate> afiliados;
     ArrayList<Bait> cebos;
     ArrayList<Fish> peces;
-    ArrayList<Comercio> comercios;
+    ArrayList<Shops> comercios;
     ArrayList<Place> lugares;
     ArrayList<License> licencias;
     ArrayList<Community> comunidades;
