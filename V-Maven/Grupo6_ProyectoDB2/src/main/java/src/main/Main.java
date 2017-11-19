@@ -2513,7 +2513,7 @@ public class Main extends javax.swing.JFrame {
         if (Comercio_Modificar_Nombre.getText().equals("")) {
             String nombre = Comercio_Modificar_Nombre.getText();
             Shops temp = (Shops) Comercio_Modificar_SelectComercio.getSelectedItem();
-            for (Shops comercio : comercios) {
+            for (Shop comercio : comercios) {
                 if (comercio.equals(temp)) {
                     comercio.setName(nombre);
                 }
