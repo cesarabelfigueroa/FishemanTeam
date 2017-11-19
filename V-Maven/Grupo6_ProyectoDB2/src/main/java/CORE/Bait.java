@@ -10,7 +10,7 @@ public class Bait {
     private String classification;
     private String color;
     private int size;
-    private int price;
+    private double price;
     private ArrayList<Material> materials;
     private String group;
     private Company company;
@@ -18,7 +18,7 @@ public class Bait {
     public Bait() {
     }
 
-    public Bait(int id, String name, String type, String classification, String color, int size, int price) {
+    public Bait(int id, String name, String type, String classification, String color, int size, double price) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -29,7 +29,7 @@ public class Bait {
         this.materials = new ArrayList();
     }
     
-    public Bait(String name, String type, String color, int size, int price,String group, Company company) {
+    public Bait(String name, String type, String color, int size, double price,String group, Company company) {
         this.name = name;
         this.type = type;
         this.color = color;
@@ -87,11 +87,11 @@ public class Bait {
         this.size = size;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
