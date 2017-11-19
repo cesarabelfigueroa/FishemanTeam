@@ -1,7 +1,7 @@
 package src.main;
 
-import BE.AffiliateService;
-import CORE.AffiliateTest;
+import BE.MaterialService;
+import CORE.Material;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
@@ -20,11 +20,11 @@ public class Application extends javax.swing.JFrame {
         
         initComponents();
         
-        AffiliateTest example  = new AffiliateTest("Mayra");   
-        AffiliateService affiliateService = new AffiliateService(client, database);
-        //affiliateService.create(example);
-        ArrayList<AffiliateTest> results =  affiliateService.find(example);
-        for (AffiliateTest a : results) {
+        Material example  = new Material("lechuga",'V');   
+        MaterialService materialService = new MaterialService(client, database);
+        //materialService.create(example);
+        ArrayList<Material> results =  materialService.find(example);
+        for (Material a : results) {
             System.out.println(a.toString());
         }
     }

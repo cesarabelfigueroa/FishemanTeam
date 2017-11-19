@@ -5,7 +5,9 @@
  */
 package BE;
 
-import CORE.Material;
+import CORE.Company;
+import CORE.Company;
+import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -17,31 +19,39 @@ import org.bson.Document;
  *
  * @author Agile
  */
-public class MaterialService {
+public class CompanyService {
     MongoClient client;
     MongoDatabase database;
     MongoCollection<Document> collection;
-    ArrayList<Material> results;
+    ArrayList<Company> results;
 
-    public MaterialService(MongoClient client, MongoDatabase database) {
+    public CompanyService(MongoClient client, MongoDatabase database) {
         this.client = client;
         this.database = database;
-        this.collection = database.getCollection("material");
+        this.collection = database.getCollection("company");
         this.results = new ArrayList();
     }
     
-    Block<Document> printBlock = new Block<Document>() {
+     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
             results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
-            char type = document.get("type").toString().charAt(0);
-            Material temporal = new Material(id,name,type);
+            Company temporal = new Company(id,name);
             results.add(temporal);
         }
     };
-    public ArrayList<Material> find(Material parameters) {
+     
+    public void create(Company parameters){
+        Document data = new Document();
+        if((parameters.getName()!=null)){
+            data.append("name",parameters.getName());
+        }
+        collection.insertOne(data);   
+    }
+    
+    public ArrayList<Company> find(Company parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null)&& (parameters.getId()== null)) {
             filters.append("name", parameters.getName());
