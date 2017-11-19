@@ -1,5 +1,6 @@
 package src.main;
 
+
 import BE.CompanyService;
 import CORE.Company;
 import com.mongodb.MongoClient;
@@ -19,14 +20,14 @@ public class Application extends javax.swing.JFrame {
     public Application() {
         
         initComponents();
-        
         Company example  = new Company("myCompane");   
         CompanyService companyService = new CompanyService(client, database);
-        System.out.println(companyService.create(example));
+        companyService.create(example);
 //        ArrayList<Company> results =  companyService.find(example);
 //        for (Company a : results) {
 //            System.out.println(a.toString());
 //        }
+
     }
 
     @SuppressWarnings("unchecked")

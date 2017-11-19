@@ -14,6 +14,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -49,7 +50,8 @@ public class CompanyService {
             data.append("name",parameters.getName());
         }
         collection.insertOne(data);
-        return ((Document)collection.find().sort(new BasicDBObject("_id",-1)).first()).getString("_id");
+        ObjectId id = collection.find().sort(new BasicDBObject("_id",-1)).first().get("_id", ObjectId.class);
+        return id.toString();
     }
     
     public ArrayList<Company> find(Company parameters) {

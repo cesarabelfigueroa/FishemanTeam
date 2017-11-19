@@ -3,11 +3,18 @@ package CORE;
 import java.util.ArrayList;
 
 public class Affiliate {
+
     private String id;
     private String name;
-    private ArrayList<License> licenses;
+    private ArrayList<License> licenses = new ArrayList();
 
     public Affiliate() {
+
+    }
+
+    public Affiliate(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public Affiliate(String id, String name, ArrayList<License> licenses) {
@@ -15,7 +22,7 @@ public class Affiliate {
         this.name = name;
         this.licenses = licenses;
     }
-    
+
     public Affiliate(String name, ArrayList<License> licenses) {
         this.name = name;
         this.licenses = licenses;
@@ -49,6 +56,4 @@ public class Affiliate {
     public String toString() {
         return name;
     }
-    
-    
 }
