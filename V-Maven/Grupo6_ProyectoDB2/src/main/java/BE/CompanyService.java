@@ -43,12 +43,13 @@ public class CompanyService {
         }
     };
      
-    public void create(Company parameters){
+    public String create(Company parameters){
         Document data = new Document();
         if((parameters.getName()!=null)){
             data.append("name",parameters.getName());
         }
-        collection.insertOne(data);   
+        collection.insertOne(data);
+        return ((Document)collection.find().sort(new BasicDBObject("_id",-1)).first()).getString("_id");
     }
     
     public ArrayList<Company> find(Company parameters) {

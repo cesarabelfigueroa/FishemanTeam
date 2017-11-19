@@ -1,7 +1,7 @@
 package src.main;
 
-import BE.MaterialService;
-import CORE.Material;
+import BE.CompanyService;
+import CORE.Company;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
@@ -20,13 +20,13 @@ public class Application extends javax.swing.JFrame {
         
         initComponents();
         
-        Material example  = new Material("lechuga",'V');   
-        MaterialService materialService = new MaterialService(client, database);
-        //materialService.create(example);
-        ArrayList<Material> results =  materialService.find(example);
-        for (Material a : results) {
-            System.out.println(a.toString());
-        }
+        Company example  = new Company("myCompane");   
+        CompanyService companyService = new CompanyService(client, database);
+        System.out.println(companyService.create(example));
+//        ArrayList<Company> results =  companyService.find(example);
+//        for (Company a : results) {
+//            System.out.println(a.toString());
+//        }
     }
 
     @SuppressWarnings("unchecked")
