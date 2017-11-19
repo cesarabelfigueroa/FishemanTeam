@@ -20,9 +20,9 @@ public class Application extends javax.swing.JFrame {
     public Application() {
         
         initComponents();
-        Company example  = new Company("myCompane");   
+        Company example  = new Company("myCompany");   
         CompanyService companyService = new CompanyService(client, database);
-        companyService.create(example);
+        System.out.println(companyService.find(example).get(0).getId());
 //        ArrayList<Company> results =  companyService.find(example);
 //        for (Company a : results) {
 //            System.out.println(a.toString());

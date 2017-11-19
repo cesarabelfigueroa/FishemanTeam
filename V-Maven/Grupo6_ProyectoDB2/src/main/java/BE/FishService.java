@@ -6,9 +6,7 @@
 package BE;
 
 import CORE.Company;
-import CORE.Company;
-import CORE.Shop;
-import com.mongodb.BasicDBObject;
+import CORE.Fish;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -24,40 +22,37 @@ import org.bson.types.ObjectId;
  *
  * @author Agile
  */
-public class CompanyService {
-
+public class FishService {
     MongoClient client;
     MongoDatabase database;
     MongoCollection<Document> collection;
-    ArrayList<Company> results;
+    ArrayList<Fish> results;
 
-    public CompanyService(MongoClient client, MongoDatabase database) {
+    public FishService(MongoClient client, MongoDatabase database) {
         this.client = client;
         this.database = database;
-        this.collection = database.getCollection("company");
+        this.collection = database.getCollection("fish");
         this.results = new ArrayList();
     }
 
-    Block<Document> printBlock = new Block<Document>() {
-        @Override
-        public void apply(final Document document) {
-            results = new ArrayList();
-            String name = document.get("name").toString();
-            String id = document.get("_id").toString();
-            Company temporal = new Company(id, name);
-            results.add(temporal);
-        }
-    };
-
-    public void create(Company parameters) {
+    public void create(Fish parameters) {
         Document data = new Document();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
         }
         collection.insertOne(data);
     }
-
-    public ArrayList<Company> find(Company parameters) {
+    Block<Document> printBlock = new Block<Document>() {
+        @Override
+        public void apply(final Document document) {
+            results = new ArrayList();
+            String name = document.get("name").toString();
+            String id = document.get("_id").toString();
+            Fish temporal = new Fish(id, name);
+            results.add(temporal);
+        }
+    };
+    public ArrayList<Fish> find(Fish parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
@@ -67,12 +62,12 @@ public class CompanyService {
         collection.find(filters).forEach(printBlock);
         return results;
     }
-    public void update(Company parameters) {
+    public void update(Fish parameters) {
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
                 combine(set("name", parameters.getName())));
     }
 
-    public void delete(Company parameters) {
+    public void delete(Fish parameters) {
         collection.deleteOne(eq("_id", new ObjectId(parameters.getId())));
     }
 }

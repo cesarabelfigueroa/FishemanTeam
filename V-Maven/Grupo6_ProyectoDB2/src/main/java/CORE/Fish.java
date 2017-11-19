@@ -3,31 +3,31 @@ package CORE;
 import java.util.ArrayList;
 
 public class Fish {
-    private int id;
+    private String id;
     private String name;
     private ArrayList<Bait>  baits;
 
     public Fish() {
     }
 
-    public Fish(int id, String name) {
+    public Fish(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
     
-    public Fish(int id, String name, ArrayList<Bait> baits) {
+    public Fish(String id, String name, ArrayList<Bait> baits) {
         this.id = id;
         this.name = name;
         this.baits = baits;
     }
 
     
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
