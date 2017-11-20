@@ -39,10 +39,18 @@ public class Main extends javax.swing.JFrame {
         this.compserv = new CompanyService(client, database);
         this.baitserv = new BaitService(client, database);
         this.fishserv = new FishService(client, database);
+        this.afiliados = new ArrayList();
+        this.comercios = new ArrayList();
+        this.lugares = new ArrayList();
+        this.licencias = new ArrayList();
+        this.comunidades = new ArrayList();
+        this.licencias_escogidas = new ArrayList();
+        this.baitsPez = new ArrayList();
         this.materiales = this.matserv.findAll();
         this.peces = this.fishserv.findAll();
         this.cebos = this.baitserv.findAll();
         this.fabricantes = this.compserv.findAll();
+        System.out.println(peces.get(0).getId());
 
     }
 
@@ -188,7 +196,7 @@ public class Main extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        listFishes = new javax.swing.JTable();
         jPanel21 = new javax.swing.JPanel();
         Pez_ModificarButton = new javax.swing.JButton();
         Pez_Modificar_ID = new javax.swing.JTextField();
@@ -257,10 +265,10 @@ public class Main extends javax.swing.JFrame {
         rb_mixto = new javax.swing.JRadioButton();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        listNatural = new javax.swing.JTable();
         jPanel31 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTable9 = new javax.swing.JTable();
+        listArtifitial = new javax.swing.JTable();
         jPanel29 = new javax.swing.JPanel();
         jButton23 = new javax.swing.JButton();
         cebo_cbMod = new javax.swing.JComboBox<>();
@@ -1416,18 +1424,18 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Crear", jPanel19);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        listFishes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Licencia ", "Cebo"
+                "ID", "Nombre", "Cebos"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(listFishes);
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1542,6 +1550,11 @@ public class Main extends javax.swing.JFrame {
         jLabel21.setText("Pez");
 
         jButton19.setText("Eliminar");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -1995,7 +2008,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane7.addTab("Crear", jPanel27);
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        listNatural.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -2008,7 +2021,7 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Tipo", "Color", "Tamaño", "Precio", "Clasificacion", "Materiales"
             }
         ));
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(listNatural);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -2023,7 +2036,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane7.addTab("Listar Natural", jPanel28);
 
-        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+        listArtifitial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -2036,7 +2049,7 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Tipo", "Color", "Tamaño", "Precio", "Grupo", "Fabricante"
             }
         ));
-        jScrollPane9.setViewportView(jTable9);
+        jScrollPane9.setViewportView(listArtifitial);
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -2275,6 +2288,11 @@ public class Main extends javax.swing.JFrame {
         cebo_cbBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton21.setText("Eliminar");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Cebo");
 
@@ -2290,7 +2308,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(69, 69, 69)
                         .addComponent(cebo_cbBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
+                        .addGap(194, 194, 194)
                         .addComponent(jButton21)))
                 .addContainerGap(167, Short.MAX_VALUE))
         );
@@ -2301,9 +2319,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cebo_cbBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addGap(30, 30, 30)
+                .addGap(34, 34, 34)
                 .addComponent(jButton21)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addContainerGap(374, Short.MAX_VALUE))
         );
 
         jTabbedPane7.addTab("Eliminar", jPanel30);
@@ -2316,7 +2334,7 @@ public class Main extends javax.swing.JFrame {
         );
         CeboLayout.setVerticalGroup(
             CeboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(jTabbedPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
         );
 
         jLabel77.setText("jLabel77");
@@ -2487,6 +2505,8 @@ public class Main extends javax.swing.JFrame {
 
     private void ButtonLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLicenciaActionPerformed
         Licencia.setVisible(true);
+        Licencia.pack();
+        Licencia.setLocationRelativeTo(this);
         DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
         modelo_SelectLugar.removeAllElements();
         for (Place plc : lugares) {
@@ -2507,8 +2527,7 @@ public class Main extends javax.swing.JFrame {
         }
         Licencia_Crear_CB_Peces.setModel(modelo_Martin);
         Licencia_Modificar_CB_Peces.setModel(modelo_Martin);
-        Licencia.pack();
-        Licencia.setLocationRelativeTo(this);
+
     }//GEN-LAST:event_ButtonLicenciaActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -2592,7 +2611,7 @@ public class Main extends javax.swing.JFrame {
         cebo_colorMod.setText(temp.getColor());
         cebo_precioMod.setText(Double.toString(temp.getPrice()));
         cebo_tamanoMod.setText(Integer.toString(temp.getSize()));
-        
+
     }//GEN-LAST:event_cebo_cbModItemStateChanged
 
     private void Afiliado_CreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_CreateButtonActionPerformed
@@ -2763,17 +2782,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Licencia_ModificarButtonActionPerformed
 
     private void Pez_Modificar_SelectPezItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Pez_Modificar_SelectPezItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == 0) {
+        try {
             Fish sushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
             Pez_Modificar_ID.setText((sushi.getId()));
             Pez_Modificar_Nombre.setText(sushi.getName());
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_Pez_Modificar_SelectPezItemStateChanged
 
     private void Pez_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_CrearButtonActionPerformed
         // TODO add your handling code here:\
-        peces.add(new Fish("ID", Pez_Crear_Nombre.getText(), baitsPez));
+        Fish sushi = new Fish(Pez_Crear_Nombre.getText(), baitsPez);
+        fishserv.create(sushi);
+        sushi = fishserv.find(sushi).get(0);
+        peces.add(sushi);
         JOptionPane.showMessageDialog(null, "Pez creado");
         Pez_Crear_Nombre.setText("");
         baitsPez = new ArrayList();
@@ -2781,18 +2803,22 @@ public class Main extends javax.swing.JFrame {
 
     private void Pez_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_ModificarButtonActionPerformed
         // TODO add your handling code here:
-        Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
-        String nombre, captura, cebo;
-        nombre = Pez_Modificar_Nombre.getText();
-        for (Fish tilapia : peces) {
-            if (tilapia.equals(tempSushi)) {
-                tilapia.setName(nombre);
-                tilapia.setBaitID(baitsPez);
-            }
+        try {
+            Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
+            int index = peces.indexOf(tempSushi);
+            peces.remove(tempSushi);
+            String nombre, cebo;
+            nombre = Pez_Modificar_Nombre.getText();
+            tempSushi.setName(nombre);
+            tempSushi.setBaitID(baitsPez);
+            fishserv.update(tempSushi);
+            peces.add(index, tempSushi);
+            baitsPez = new ArrayList();
+            Pez_Modificar_Nombre.setText("");
+            JOptionPane.showMessageDialog(null, "Pez Modificado.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
         }
-        baitsPez = new ArrayList();
-        Pez_Modificar_Nombre.setText("");
-        JOptionPane.showMessageDialog(null, "Pez Modificado.");
     }//GEN-LAST:event_Pez_ModificarButtonActionPerformed
 
     private void Lugar_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_CrearButtonActionPerformed
@@ -2916,9 +2942,19 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane5StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane5.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listFishes.getModel();
+            dtm.setRowCount(0);
+            for (Fish fish : peces) {
+                Object[] row = {fish.getId(), fish.getName(), fish.getBaits()};
+                dtm.addRow(row);
+            }
+            listFishes.setModel(dtm);
+        }
         if (jTabbedPane5.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Pez_Modificar_SelectPez.getModel();
             modelo.removeAllElements();
+            modelo.addElement("");
             for (Fish sushi : peces) {
                 modelo.addElement(sushi);
             }
@@ -2926,6 +2962,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (jTabbedPane5.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Fish pez : peces) {
                 modelo.addElement(pez);
             }
@@ -2954,8 +2991,31 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane7StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane7.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listNatural.getModel();
+            dtm.setRowCount(0);
+            for (Bait cebo : cebos) {
+                if (cebo.getType().equals("Natural")) {
+                    Object[] row = {cebo.getId(), cebo.getName(), cebo.getType(), cebo.getColor(), cebo.getSize(), cebo.getPrice(), cebo.getClassification(), cebo.getMaterials()};
+                    dtm.addRow(row);
+                }
+            }
+            listNatural.setModel(dtm);
+        }
+        if (jTabbedPane7.getSelectedIndex() == 2) {
+            DefaultTableModel dtm = (DefaultTableModel) listArtifitial.getModel();
+            dtm.setRowCount(0);
+            for (Bait cebo : cebos) {
+                if (cebo.getType().equals("Artificial")) {
+                    Object[] row = {cebo.getId(), cebo.getName(), cebo.getType(), cebo.getColor(), cebo.getSize(), cebo.getPrice(), cebo.getGroup(), cebo.getCompany()};
+                    dtm.addRow(row);
+                }
+            }
+            listArtifitial.setModel(dtm);
+        }
         if (jTabbedPane7.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Bait ceb : cebos) {
                 modelo.addElement(ceb);
             }
@@ -2963,6 +3023,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (jTabbedPane7.getSelectedIndex() == 4) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Bait ceb : cebos) {
                 modelo.addElement(ceb);
             }
@@ -3007,7 +3068,11 @@ public class Main extends javax.swing.JFrame {
             cebos.add(baitserv.find(bait).get(0));
             JOptionPane.showMessageDialog(null, "Cebo Creado");
         } else if (rb_artificial.isSelected()) {
-            Bait bait = new Bait(cebo_crearNombre.getText(), "Artificial", cebo_crearColor.getText(), Integer.parseInt(cebo_crearTamaño.getText()), Double.parseDouble(cebo_crearPrecio.getText()), cebo_crearGrupo.getText(), new Company(cebo_crearFabricante.getText()));
+            Company company = new Company(cebo_crearFabricante.getText());
+            compserv.create(company);
+            company = compserv.find(company).get(0);
+            fabricantes.add(company);
+            Bait bait = new Bait(cebo_crearNombre.getText(), "Artificial", cebo_crearColor.getText(), Integer.parseInt(cebo_crearTamaño.getText()), Double.parseDouble(cebo_crearPrecio.getText()), cebo_crearGrupo.getText(), company);
             baitserv.create(bait);
             cebos.add(baitserv.find(bait).get(0));
             JOptionPane.showMessageDialog(null, "Cebo Creado");
@@ -3016,37 +3081,48 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        Bait ceboTemp = (Bait) cebo_cbMod.getSelectedItem();
-        ceboTemp.setName(cebo_nombreMod.getText());
-        ceboTemp.setColor(cebo_colorMod.getText());
-        ceboTemp.setPrice(Double.parseDouble(cebo_precioMod.getText()));
-        ceboTemp.setSize(Integer.parseInt(cebo_tamanoMod.getText()));
-        if (rb_natural2.isSelected()) {
-            ceboTemp.setType("Natural");
-            String clasificacion;
-            if (rb_animal2.isSelected()) {
-                clasificacion = "Animal";
-            } else if(rb_vegetal2.isSelected()){
-                clasificacion = "Vegetal";
-            }else{
-                clasificacion = "Mixto";
-            }
-            ceboTemp.setClassification(clasificacion);
-            ArrayList<Material> materialSelect = new ArrayList();
-            for (int i = 0; i < jt_modCebo.getRowCount(); i++) {
-                Boolean isChecked = Boolean.valueOf(jt_modCebo.getValueAt(i, 1).toString());
-                if (isChecked) {
-                    materialSelect.add((Material) jt_modCebo.getModel().getValueAt(i, 0));
+        try {
+            Bait ceboTemp = (Bait) cebo_cbMod.getSelectedItem();
+            int index = cebos.indexOf(ceboTemp);
+            cebos.remove(ceboTemp);
+            ceboTemp.setName(cebo_nombreMod.getText());
+            ceboTemp.setColor(cebo_colorMod.getText());
+            ceboTemp.setPrice(Double.parseDouble(cebo_precioMod.getText()));
+            ceboTemp.setSize(Integer.parseInt(cebo_tamanoMod.getText()));
+            if (rb_natural2.isSelected()) {
+                ceboTemp.setType("Natural");
+                String clasificacion;
+                if (rb_animal2.isSelected()) {
+                    clasificacion = "Animal";
+                } else if (rb_vegetal2.isSelected()) {
+                    clasificacion = "Vegetal";
+                } else {
+                    clasificacion = "Mixto";
                 }
+                ceboTemp.setClassification(clasificacion);
+                ArrayList<Material> materialSelect = new ArrayList();
+                for (int i = 0; i < jt_modCebo.getRowCount(); i++) {
+                    Boolean isChecked = Boolean.valueOf(jt_modCebo.getValueAt(i, 1).toString());
+                    if (isChecked) {
+                        materialSelect.add((Material) jt_modCebo.getModel().getValueAt(i, 0));
+                    }
+                }
+                ceboTemp.setMaterials(materialSelect);
+            } else if (rb_artificial2.isSelected()) {
+                ceboTemp.setType("Artificial");
+                ceboTemp.setGroup(cebo_cmodGrupo.getText());
+                Company company = new Company(cebo_modFabricante.getText());
+                compserv.create(company);
+                company = compserv.find(company).get(0);
+                fabricantes.add(company);
+                ceboTemp.setCompany(company);
             }
-            ceboTemp.setMaterials(materialSelect);
-        } else if (rb_artificial2.isSelected()) {
-            ceboTemp.setType("Artificial");
-            ceboTemp.setGroup(cebo_cmodGrupo.getText());
-            ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
+            baitserv.update(ceboTemp);
+            cebos.add(index, ceboTemp);
+            JOptionPane.showMessageDialog(null, "Cebo modificado.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
         }
-        baitserv.update(ceboTemp);
-        JOptionPane.showMessageDialog(null, "Cebo modificado.");
 
     }//GEN-LAST:event_jButton23ActionPerformed
 
@@ -3155,6 +3231,37 @@ public class Main extends javax.swing.JFrame {
             jt_modCebo.setModel(dtm);
         }
     }//GEN-LAST:event_rb_vegetal2MouseClicked
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        try {
+            Bait ceboTemp = (Bait) cebo_cbBorrar.getSelectedItem();
+            baitserv.delete(cebos.remove(cebos.indexOf(ceboTemp)));
+            JOptionPane.showMessageDialog(null, "Se eliminó " + ceboTemp + ".");
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Bait ceb : cebos) {
+                modelo.addElement(ceb);
+            }
+            cebo_cbBorrar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        try {
+            Fish tempSushi = (Fish) Pez_CB_Eliminar.getSelectedItem();
+            fishserv.delete(tempSushi);
+            peces.remove(tempSushi);
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (Fish pez : peces) {
+                modelo.addElement(pez);
+            }
+            Pez_CB_Eliminar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3454,11 +3561,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable9;
     private javax.swing.JTable jt_modCebo;
+    private javax.swing.JTable listArtifitial;
+    private javax.swing.JTable listFishes;
+    private javax.swing.JTable listNatural;
     private javax.swing.JTextField login_id;
     private javax.swing.JTextField login_pass;
     private javax.swing.JDialog menuPrincipal;

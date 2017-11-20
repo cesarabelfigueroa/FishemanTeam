@@ -23,6 +23,10 @@ public class Fish {
         this.baits = baits;
     }
 
+    public Fish(String name, ArrayList<Bait> baits) {
+        this.name = name;
+        this.baits = baits;
+    }
     
     public String getId() {
         return id;

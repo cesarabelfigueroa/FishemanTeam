@@ -96,8 +96,8 @@ public class BaitService {
             String companyID = "";
             Company company = null;
             if (document.get("companyID") != null) {
-                companyID = document.get("group").toString();
-                company = comService.find(id).get(0);
+                companyID = document.get("companyID").toString();
+                company = comService.find(companyID).get(0);
             } else {
                 companyID = null;
             }

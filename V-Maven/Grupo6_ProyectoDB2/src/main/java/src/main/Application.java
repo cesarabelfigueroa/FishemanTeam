@@ -29,10 +29,8 @@ public class Application extends javax.swing.JFrame {
         CompanyService compserv = new CompanyService(client,database);
         BaitService baitserv = new BaitService(client,database);
         FishService fishserv = new FishService(client,database);
-        System.out.println("Mats: "+matserv.findAll());
-        System.out.println("Comps: "+compserv.findAll());
-        System.out.println("Baits: "+baitserv.findAll());
-        System.out.println("Fish: "+fishserv.findAll());
+        Company company = new Company("Company2.0");
+        System.out.println(compserv.find(company).get(0).getId());
 
     }
 
