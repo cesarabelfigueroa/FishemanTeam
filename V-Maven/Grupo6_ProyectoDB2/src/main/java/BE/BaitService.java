@@ -12,7 +12,9 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -93,9 +95,9 @@ public class BaitService {
             }
             String companyID = "";
             Company company = null;
-            if (document.get("group") != null) {
-                companyID = document.get("group").toString();
-                company = comService.find(id).get(0);
+            if (document.get("companyID") != null) {
+                companyID = document.get("companyID").toString();
+                company = comService.find(companyID).get(0);
             } else {
                 companyID = null;
             }
@@ -103,7 +105,9 @@ public class BaitService {
             if (mats.size() > 0) {
                 for (Document mat : mats) {
                     if (mat.get("materialID") != null) {
-                        materials.add(materialServ.find(mat.getString("materialID")).get(0));
+                        if (materialServ.find(mat.getString("materialID")).size() > 0) {
+                            materials.add(materialServ.find(mat.getString("materialID")).get(0));
+                        }
                     }
                 }
             }
@@ -119,12 +123,29 @@ public class BaitService {
         return results;
     }
 
+    public ArrayList<Bait> find(ObjectId id) {
+        Document filters = new Document();
+        filters.append("_id", id);
+        baitCollection.find(filters).forEach(printBlock);
+        return results;
+    }
+    public ArrayList<Bait> findAll() {
+        ArrayList<Bait> baits = new ArrayList();
+        FindIterable<Document> docs = baitCollection.find();
+        MongoCursor<Document> cursor = docs.iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            baits.add(find((ObjectId) doc.get("_id")).get(0));
+        }
+        return baits;
+    }
+
     public ArrayList<Bait> find(Bait parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         baitCollection.find(filters).forEach(printBlock);
         return results;
@@ -135,11 +156,19 @@ public class BaitService {
         for (Material material : parameters.getMaterials()) {
             listdb.add(new BasicDBObject("materialID", material.getId()));
         }
-        baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName()),set("materials",listdb),
-                        set("type",parameters.getType()),set("size",parameters.getSize()),
-                        set("classification",parameters.getClassification()), set("color",parameters.getColor()),
-                        set("price",parameters.getPrice()),set("group",parameters.getGroup()),set("companyID",parameters.getCompany().getId())));
+        if(parameters.getCompany()!= null){
+            baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+                combine(set("name", parameters.getName()), set("materials", listdb),
+                        set("type", parameters.getType()), set("size", parameters.getSize()),
+                        set("classification", parameters.getClassification()), set("color", parameters.getColor()),
+                        set("price", parameters.getPrice()), set("group", parameters.getGroup()), set("companyID", parameters.getCompany().getId())));
+        }else{
+            baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+                combine(set("name", parameters.getName()), set("materials", listdb),
+                        set("type", parameters.getType()), set("size", parameters.getSize()),
+                        set("classification", parameters.getClassification()), set("color", parameters.getColor()),
+                        set("price", parameters.getPrice()), set("group", parameters.getGroup()), set("companyID", null)));
+        }
     }
 
     public void delete(Bait parameters) {

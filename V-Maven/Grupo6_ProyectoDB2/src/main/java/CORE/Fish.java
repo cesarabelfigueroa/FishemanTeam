@@ -13,6 +13,7 @@ public class Fish {
     public Fish(String id, String name) {
         this.id = id;
         this.name = name;
+        this.baits = new ArrayList();
     }
 
     
@@ -22,6 +23,10 @@ public class Fish {
         this.baits = baits;
     }
 
+    public Fish(String name, ArrayList<Bait> baits) {
+        this.name = name;
+        this.baits = baits;
+    }
     
     public String getId() {
         return id;

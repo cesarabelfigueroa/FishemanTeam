@@ -6,12 +6,11 @@
 package BE;
 
 import CORE.Company;
-import CORE.Company;
-import CORE.Shop;
-import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -62,18 +61,37 @@ public class CompanyService {
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         collection.find(filters).forEach(printBlock);
         return results;
     }
+
     public ArrayList<Company> find(String id) {
         Document filters = new Document();
         filters.append("_id", new ObjectId(id));
         collection.find(filters).forEach(printBlock);
         return results;
     }
-    
+
+    public ArrayList<Company> find(ObjectId id) {
+        Document filters = new Document();
+        filters.append("_id",id);
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+
+    public ArrayList<Company> findAll() {
+        ArrayList<Company> company = new ArrayList();
+        FindIterable<Document> docs = collection.find();
+        MongoCursor<Document> cursor = docs.iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            company.add(find((ObjectId) doc.get("_id")).get(0));
+        }
+        return company;
+    }
+
     public void update(Company parameters) {
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
                 combine(set("name", parameters.getName())));

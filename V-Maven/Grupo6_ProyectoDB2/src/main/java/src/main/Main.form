@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="menuPrincipal">
 
@@ -1300,6 +1300,7 @@
                                       <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1307,14 +1308,17 @@
                                       <Component id="Licencia_Crear_Precio" alignment="0" max="32767" attributes="0"/>
                                       <Component id="Licencia_Crear_Nombre" alignment="0" max="32767" attributes="0"/>
                                       <Component id="Licencia_Crear_SelectLugar" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Licencia_Crear_CB_Peces" alignment="0" max="32767" attributes="0"/>
                                   </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="Licencia_ADD_Dori" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
                                   <Component id="Licencia_CrearButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="93" max="32767" attributes="0"/>
+                          <EmptySpace pref="10" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1341,7 +1345,15 @@
                               <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Licencia_Crear_SelectComunidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Licencia_Crear_CB_Peces" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Licencia_ADD_Dori" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="42" max="32767" attributes="0"/>
                           <Component id="Licencia_CrearButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
@@ -1411,6 +1423,34 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel12">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Peces"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Licencia_Crear_CB_Peces">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="Licencia_ADD_Dori">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Licencia_ADD_DoriActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel16">
@@ -1452,12 +1492,45 @@
                     <Component class="javax.swing.JTable" name="jTable4">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="0">
+                          <Table columnCount="5" rowCount="0">
                             <Column editable="true" title="ID" type="java.lang.Object"/>
                             <Column editable="true" title="Precio" type="java.lang.Object"/>
                             <Column editable="true" title="ID Lugar" type="java.lang.Object"/>
                             <Column editable="true" title="ID Comunidad" type="java.lang.Object"/>
+                            <Column editable="true" title="Peces" type="java.lang.Object"/>
                           </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1480,6 +1553,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                  <Component id="Licencia_Modificar_CB_Peces" min="-2" pref="99" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                   <Component id="Licencia_ModificarButton" min="-2" max="-2" attributes="0"/>
@@ -1502,7 +1580,9 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Licencia_MODADD_Dori" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="30" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1534,7 +1614,15 @@
                               <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Licencia_Modificar_SelectComunidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Licencia_Modificar_CB_Peces" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Licencia_MODADD_Dori" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel25" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Licencia_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
@@ -1629,6 +1717,34 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel25">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Peces"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="Licencia_Modificar_CB_Peces">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="Licencia_MODADD_Dori">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Licencia_MODADD_DoriActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1867,14 +1983,13 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable5">
+                    <Component class="javax.swing.JTable" name="listFishes">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
+                          <Table columnCount="3" rowCount="4">
                             <Column editable="true" title="ID" type="java.lang.Object"/>
                             <Column editable="true" title="Nombre" type="java.lang.Object"/>
-                            <Column editable="true" title="Licencia " type="java.lang.Object"/>
-                            <Column editable="true" title="Cebo" type="java.lang.Object"/>
+                            <Column editable="true" title="Cebos" type="java.lang.Object"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -2100,6 +2215,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton19ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -2547,20 +2665,9 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="rb_animal" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rb_vegetal" min="-2" pref="84" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="rb_natural" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="rb_artificial" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="rb_mixto" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
+                                          <Component id="rb_natural" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="rb_artificial" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -2570,6 +2677,14 @@
                                               <Component id="cebo_crearPrecio" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                               <Component id="cebo_crearTamaño" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                           </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="rb_animal" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rb_vegetal" min="-2" pref="84" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rb_mixto" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -2618,13 +2733,13 @@
                               <Component id="rb_natural" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_artificial" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb_mixto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="rb_animal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_vegetal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_mixto" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2707,6 +2822,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Animales"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rb_animalMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="rb_vegetal">
                   <Properties>
@@ -2715,6 +2833,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Vegetales"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rb_vegetalMouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel63">
                   <Properties>
@@ -2772,25 +2893,42 @@
                             </Column>
                           </Table>
                         </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
                       </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JTextField" name="cebo_crearFabricante">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
                 <Component class="javax.swing.JRadioButton" name="rb_mixto">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="bg_tipo"/>
+                      <ComponentRef name="bg_clasificacion"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mixto"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rb_mixtoMouseClicked"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="cebo_crearFabricante">
-                  <Properties>
-                    <Property name="enabled" type="boolean" value="false"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -2823,7 +2961,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable7">
+                    <Component class="javax.swing.JTable" name="listNatural">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="8" rowCount="6">
@@ -2876,7 +3014,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable9">
+                    <Component class="javax.swing.JTable" name="listArtifitial">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="8" rowCount="6">
@@ -2909,9 +3047,9 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel81" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel82" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -2923,13 +3061,10 @@
                                       <Component id="jLabel79" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel75" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="70" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                          <Component id="rb_animal2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                       <Component id="cebo_precioMod" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                           <Component id="cebo_modFabricante" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
@@ -2939,7 +3074,7 @@
                                           <Component id="cebo_colorMod" alignment="0" max="32767" attributes="0"/>
                                           <Component id="cebo_cbMod" alignment="0" max="32767" attributes="0"/>
                                           <Component id="cebo_nombreMod" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="cebo_idMod" alignment="0" pref="120" max="32767" attributes="0"/>
+                                          <Component id="cebo_idMod" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="cebo_tamanoMod" min="-2" pref="120" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -2947,30 +3082,24 @@
                                           <Component id="rb_natural2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="rb_artificial2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane10" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="rb_animal2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="rb_vegetal2" min="-2" pref="84" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="rb_mixto2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="rb_vegetal2" min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane10" min="-2" pref="216" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                                  <Component id="jButton23" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="91" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jButton23" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3015,13 +3144,13 @@
                               <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_natural2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_artificial2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="rb_mixto2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_animal2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rb_vegetal2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_mixto2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -3038,7 +3167,7 @@
                               <Component id="jLabel79" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cebo_modFabricante" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                           <Component id="jButton23" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -3089,6 +3218,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Animales"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rb_animal2MouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cebo_nombreMod">
                 </Component>
@@ -3099,6 +3231,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Vegetales"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rb_vegetal2MouseClicked"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cebo_colorMod">
                 </Component>
@@ -3153,6 +3288,23 @@
                               <Data value="false"/>
                             </Column>
                           </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -3214,7 +3366,7 @@
                 <Component class="javax.swing.JRadioButton" name="rb_mixto2">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="bg_tipoMod"/>
+                      <ComponentRef name="bg_clasMod"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mixto"/>
                   </Properties>
@@ -3245,7 +3397,7 @@
                                   <Component id="cebo_cbBorrar" min="-2" pref="96" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                                   <Component id="jButton21" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -3261,9 +3413,9 @@
                               <Component id="cebo_cbBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jButton21" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="378" max="32767" attributes="0"/>
+                          <EmptySpace pref="374" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3288,6 +3440,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eliminar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel23">
                   <Properties>

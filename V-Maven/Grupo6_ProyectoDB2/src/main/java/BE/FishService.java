@@ -12,7 +12,9 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -43,7 +45,7 @@ public class FishService {
         this.results = new ArrayList();
         this.listdb = new BasicDBList();
         this.baits = new ArrayList();
-        this.baitserv = new BaitService(client,database);
+        this.baitserv = new BaitService(client, database);
     }
 
     public void create(Fish parameters) {
@@ -54,28 +56,26 @@ public class FishService {
         }
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName())
-                .append("baits", listdb);
+                    .append("baits", listdb);
         }
         collection.insertOne(data);
     }
-    
+
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
             results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
-            List<Document> baitsd = (List<Document>)document.get("baits");
-            if(baits.size()>0){
-                for(Document bait: baitsd){
-                    if(bait.get("baitID")!= null){
-                        if(baitserv.find(bait.getString("baitID")).size()>0){
-                            baits.add(baitserv.find(bait.getString("baitID")).get(0));
-                        }
+            List<Document> baitsd = (List<Document>) document.get("baits");
+            for (Document bait : baitsd) {
+                if (bait.get("baitID") != null) {
+                    if (baitserv.find(bait.getString("baitID")).size() > 0) {
+                        baits.add(baitserv.find(bait.getString("baitID")).get(0));
                     }
                 }
             }
-            Fish temporal = new Fish(id, name);
+            Fish temporal = new Fish(id, name, baits);
             results.add(temporal);
         }
     };
@@ -85,15 +85,44 @@ public class FishService {
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         collection.find(filters).forEach(printBlock);
         return results;
     }
 
+    public ArrayList<Fish> find(ObjectId id) {
+        Document filters = new Document();
+        filters.append("_id", id);
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+
+    public ArrayList<Fish> find(String id) {
+        Document filters = new Document();
+        filters.append("_id", new ObjectId(id));
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+
+    public ArrayList<Fish> findAll() {
+        ArrayList<Fish> fshes = new ArrayList();
+        FindIterable<Document> docs = collection.find();
+        MongoCursor<Document> cursor = docs.iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            fshes.add(find((ObjectId) doc.get("_id")).get(0));
+        }
+        return fshes;
+    }
+
     public void update(Fish parameters) {
+        this.listdb = new BasicDBList();
+        for (Bait bait : parameters.getBaits()) {
+            listdb.add(new BasicDBObject("baitID", bait.getId()));
+        }
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName())));
+                combine(set("name", parameters.getName()), set("baits", listdb)));
     }
 
     public void delete(Fish parameters) {

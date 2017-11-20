@@ -4,10 +4,19 @@
  * and open the template in the editor.
  */
 package src.main;
+
+import BE.BaitService;
+import BE.CompanyService;
+import BE.FishService;
+import BE.MaterialService;
 import CORE.*;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,11 +24,34 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main1
-     */
+    private MongoClient client;
+    private MongoDatabase database;
+    private MaterialService matserv;
+    private CompanyService compserv;
+    private BaitService baitserv;
+    private FishService fishserv;
+
     public Main() {
         initComponents();
+        this.client = new MongoClient(new MongoClientURI("mongodb://cfigue:Sheldoncooper@ds259305.mlab.com:59305/fisheman"));
+        this.database = client.getDatabase("fisheman");
+        this.matserv = new MaterialService(client, database);
+        this.compserv = new CompanyService(client, database);
+        this.baitserv = new BaitService(client, database);
+        this.fishserv = new FishService(client, database);
+        this.afiliados = new ArrayList();
+        this.comercios = new ArrayList();
+        this.lugares = new ArrayList();
+        this.licencias = new ArrayList();
+        this.comunidades = new ArrayList();
+        this.licencias_escogidas = new ArrayList();
+        this.baitsPez = new ArrayList();
+        this.materiales = this.matserv.findAll();
+        this.peces = this.fishserv.findAll();
+        this.cebos = this.baitserv.findAll();
+        this.fabricantes = this.compserv.findAll();
+        System.out.println(peces.get(0).getId());
+
     }
 
     /**
@@ -128,6 +160,9 @@ public class Main extends javax.swing.JFrame {
         Licencia_Crear_Nombre = new javax.swing.JTextField();
         Licencia_Crear_SelectComunidad = new javax.swing.JComboBox<>();
         Licencia_Crear_SelectLugar = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        Licencia_Crear_CB_Peces = new javax.swing.JComboBox<>();
+        Licencia_ADD_Dori = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -143,6 +178,9 @@ public class Main extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         Licencia_Modificar_SelectComunidad = new javax.swing.JComboBox<>();
         Licencia_Modificar_SelectLugar = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        Licencia_Modificar_CB_Peces = new javax.swing.JComboBox<>();
+        Licencia_MODADD_Dori = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         Licencia_CB_Licencia = new javax.swing.JComboBox<>();
@@ -158,7 +196,7 @@ public class Main extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        listFishes = new javax.swing.JTable();
         jPanel21 = new javax.swing.JPanel();
         Pez_ModificarButton = new javax.swing.JButton();
         Pez_Modificar_ID = new javax.swing.JTextField();
@@ -223,14 +261,14 @@ public class Main extends javax.swing.JFrame {
         rb_artificial = new javax.swing.JRadioButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         Jt_crearCebo = new javax.swing.JTable();
-        rb_mixto = new javax.swing.JRadioButton();
         cebo_crearFabricante = new javax.swing.JTextField();
+        rb_mixto = new javax.swing.JRadioButton();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        listNatural = new javax.swing.JTable();
         jPanel31 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTable9 = new javax.swing.JTable();
+        listArtifitial = new javax.swing.JTable();
         jPanel29 = new javax.swing.JPanel();
         jButton23 = new javax.swing.JButton();
         cebo_cbMod = new javax.swing.JComboBox<>();
@@ -1061,6 +1099,17 @@ public class Main extends javax.swing.JFrame {
 
         Licencia_Crear_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel12.setText("Peces");
+
+        Licencia_Crear_CB_Peces.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_ADD_Dori.setText("Agregar");
+        Licencia_ADD_Dori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_ADD_DoriActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -1073,17 +1122,21 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel31)
                             .addComponent(jLabel32)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel33))
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel12))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Licencia_Crear_SelectComunidad, 0, 128, Short.MAX_VALUE)
                             .addComponent(Licencia_Crear_Precio)
                             .addComponent(Licencia_Crear_Nombre)
-                            .addComponent(Licencia_Crear_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(Licencia_Crear_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Licencia_Crear_CB_Peces, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Licencia_ADD_Dori))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(Licencia_CrearButton)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1104,7 +1157,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
                     .addComponent(Licencia_Crear_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Licencia_Crear_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Licencia_ADD_Dori)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(Licencia_CrearButton)
                 .addGap(35, 35, 35))
         );
@@ -1116,7 +1175,7 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Precio", "ID Lugar", "ID Comunidad"
+                "ID", "Precio", "ID Lugar", "ID Comunidad", "Peces"
             }
         ));
         jScrollPane4.setViewportView(jTable4);
@@ -1169,6 +1228,17 @@ public class Main extends javax.swing.JFrame {
 
         Licencia_Modificar_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel25.setText("Peces");
+
+        Licencia_Modificar_CB_Peces.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_MODADD_Dori.setText("Agregar");
+        Licencia_MODADD_Dori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_MODADD_DoriActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -1176,6 +1246,10 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addGap(72, 72, 72)
+                        .addComponent(Licencia_Modificar_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(Licencia_ModificarButton))
@@ -1193,7 +1267,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Licencia_Modificar_Precio, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                             .addComponent(Licencia_Modificar_SelectComunidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Licencia_Modificar_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Licencia_MODADD_Dori)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1218,7 +1294,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(Licencia_Modificar_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Licencia_Modificar_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Licencia_MODADD_Dori))
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Licencia_ModificarButton)
                 .addGap(33, 33, 33))
         );
@@ -1342,18 +1424,18 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Crear", jPanel19);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        listFishes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Licencia ", "Cebo"
+                "ID", "Nombre", "Cebos"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(listFishes);
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1468,6 +1550,11 @@ public class Main extends javax.swing.JFrame {
         jLabel21.setText("Pez");
 
         jButton19.setText("Eliminar");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -1749,9 +1836,19 @@ public class Main extends javax.swing.JFrame {
 
         bg_clasificacion.add(rb_animal);
         rb_animal.setText("Animales");
+        rb_animal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_animalMouseClicked(evt);
+            }
+        });
 
         bg_clasificacion.add(rb_vegetal);
         rb_vegetal.setText("Vegetales");
+        rb_vegetal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_vegetalMouseClicked(evt);
+            }
+        });
 
         jLabel63.setText("Grupo");
 
@@ -1802,15 +1899,15 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(Jt_crearCebo);
 
-        bg_tipo.add(rb_mixto);
+        cebo_crearFabricante.setEnabled(false);
+
+        bg_clasificacion.add(rb_mixto);
         rb_mixto.setText("Mixto");
         rb_mixto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rb_mixtoMouseClicked(evt);
             }
         });
-
-        cebo_crearFabricante.setEnabled(false);
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -1834,24 +1931,23 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel27Layout.createSequentialGroup()
                                 .addGap(46, 46, 46)
-                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel27Layout.createSequentialGroup()
-                                        .addComponent(rb_animal)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel27Layout.createSequentialGroup()
-                                        .addComponent(rb_natural)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rb_artificial)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rb_mixto))))
+                                .addComponent(rb_natural)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rb_artificial))
                             .addGroup(jPanel27Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cebo_crearColor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cebo_crearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cebo_crearPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cebo_crearTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(cebo_crearTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(rb_animal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rb_mixto))))
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel63)
@@ -1886,13 +1982,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_natural)
                     .addComponent(rb_artificial)
-                    .addComponent(jLabel60)
-                    .addComponent(rb_mixto))
+                    .addComponent(jLabel60))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_animal)
                     .addComponent(rb_vegetal)
-                    .addComponent(jLabel57))
+                    .addComponent(jLabel57)
+                    .addComponent(rb_mixto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel62)
@@ -1912,7 +2008,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane7.addTab("Crear", jPanel27);
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        listNatural.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -1925,7 +2021,7 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Tipo", "Color", "Tamaño", "Precio", "Clasificacion", "Materiales"
             }
         ));
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(listNatural);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -1940,7 +2036,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane7.addTab("Listar Natural", jPanel28);
 
-        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+        listArtifitial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -1953,7 +2049,7 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Tipo", "Color", "Tamaño", "Precio", "Grupo", "Fabricante"
             }
         ));
-        jScrollPane9.setViewportView(jTable9);
+        jScrollPane9.setViewportView(listArtifitial);
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -1991,9 +2087,19 @@ public class Main extends javax.swing.JFrame {
 
         bg_clasMod.add(rb_animal2);
         rb_animal2.setText("Animales");
+        rb_animal2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_animal2MouseClicked(evt);
+            }
+        });
 
         bg_clasMod.add(rb_vegetal2);
         rb_vegetal2.setText("Vegetales");
+        rb_vegetal2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_vegetal2MouseClicked(evt);
+            }
+        });
 
         jLabel78.setText("Grupo");
 
@@ -2062,7 +2168,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel87.setText("Tipo");
 
-        bg_tipoMod.add(rb_mixto2);
+        bg_clasMod.add(rb_mixto2);
         rb_mixto2.setText("Mixto");
         rb_mixto2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2075,7 +2181,7 @@ public class Main extends javax.swing.JFrame {
         jPanel29Layout.setHorizontalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(99, 99, 99)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2088,12 +2194,10 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel78)
                             .addComponent(jLabel79)
                             .addComponent(jLabel87)
-                            .addComponent(jLabel75))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                            .addComponent(jLabel75)
+                            .addComponent(jLabel83))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(rb_animal2))
                             .addComponent(cebo_precioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(cebo_modFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2102,29 +2206,25 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(cebo_colorMod, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(cebo_cbMod, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cebo_nombreMod, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cebo_idMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                                .addComponent(cebo_idMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cebo_tamanoMod, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel29Layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(rb_natural2)
                                 .addGap(18, 18, 18)
-                                .addComponent(rb_artificial2)
-                                .addGap(18, 18, 18)
-                                .addComponent(rb_mixto2)))
-                        .addGap(28, 28, 28))
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(rb_vegetal2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rb_artificial2))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addComponent(jLabel83)
-                                .addGap(40, 40, 40)
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(50, 50, 50))
-            .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(jButton23)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(rb_animal2)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_vegetal2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_mixto2))))
+                    .addGroup(jPanel29Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jButton23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(123, 123, 123))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2159,13 +2259,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel87)
                     .addComponent(rb_natural2)
-                    .addComponent(rb_artificial2)
-                    .addComponent(rb_mixto2))
+                    .addComponent(rb_artificial2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
                     .addComponent(rb_animal2)
-                    .addComponent(rb_vegetal2))
+                    .addComponent(rb_vegetal2)
+                    .addComponent(rb_mixto2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel83)
@@ -2178,7 +2278,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel79)
                     .addComponent(cebo_modFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jButton23)
                 .addContainerGap())
         );
@@ -2188,6 +2288,11 @@ public class Main extends javax.swing.JFrame {
         cebo_cbBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton21.setText("Eliminar");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("Cebo");
 
@@ -2203,7 +2308,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(69, 69, 69)
                         .addComponent(cebo_cbBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel30Layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
+                        .addGap(194, 194, 194)
                         .addComponent(jButton21)))
                 .addContainerGap(167, Short.MAX_VALUE))
         );
@@ -2214,9 +2319,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cebo_cbBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23))
-                .addGap(30, 30, 30)
+                .addGap(34, 34, 34)
                 .addComponent(jButton21)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addContainerGap(374, Short.MAX_VALUE))
         );
 
         jTabbedPane7.addTab("Eliminar", jPanel30);
@@ -2312,37 +2417,36 @@ public class Main extends javax.swing.JFrame {
     private void ButtonAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAfiliadosActionPerformed
         Afiliado.setVisible(true);
         Afiliado.pack();
-        
-        
+
         DefaultComboBoxModel model_Licencia = (DefaultComboBoxModel) Afiliado_Create_License.getModel();
         model_Licencia.removeAllElements();
         for (License lic : licencias) {
             model_Licencia.addElement(lic);
         }
         Afiliado_Create_License.setModel(model_Licencia);
-        Afiliado.setLocationRelativeTo(this); 
+        Afiliado.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonAfiliadosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       if(login_id.getText().equals("Admin") && login_pass.getText().equals("1234")){
-           menuPrincipal.setVisible(true);
-           menuPrincipal.pack();
-           menuPrincipal.setLocationRelativeTo(this);
-           login_id.setText("");
-           login_pass.setText("");
-           this.dispose();
-       }else{
-           JOptionPane.showMessageDialog(null, "Usuario no valido.");
-           login_id.setText("");
-           login_pass.setText("");
-       }
+        if (login_id.getText().equals("Admin") && login_pass.getText().equals("1234")) {
+            menuPrincipal.setVisible(true);
+            menuPrincipal.pack();
+            menuPrincipal.setLocationRelativeTo(this);
+            login_id.setText("");
+            login_pass.setText("");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario no valido.");
+            login_id.setText("");
+            login_pass.setText("");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Comercio.setVisible(true);
         Comercio.pack();
-        Comercio.setLocationRelativeTo(this); 
-        
+        Comercio.setLocationRelativeTo(this);
+
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Shop temp : comercios) {
             modelo.addElement(temp);
@@ -2353,14 +2457,14 @@ public class Main extends javax.swing.JFrame {
             modelo2.addElement(temp);
         }
         Comercio_Modificar_SelectComercio.setModel(modelo2);
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Cebo.setVisible(true);
         Cebo.pack();
-        Cebo.setLocationRelativeTo(this); 
-        
+        Cebo.setLocationRelativeTo(this);
+
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
         for (Bait temp : cebos) {
             modelo.addElement(temp);
@@ -2375,14 +2479,14 @@ public class Main extends javax.swing.JFrame {
 
     private void ButtonLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLugaresActionPerformed
         Lugar.setVisible(true);
-        
+
         Lugar.pack();
         Lugar.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonLugaresActionPerformed
 
     private void ButtonPezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPezActionPerformed
         Pez.setVisible(true);
-        
+
         Pez.pack();
         Pez.setLocationRelativeTo(this);
         baitsPez = new ArrayList();
@@ -2396,11 +2500,17 @@ public class Main extends javax.swing.JFrame {
             modelo2.addElement(temp);
         }
         pez_ceboCrear.setModel(modelo2);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> e0d642861eb93fce16ade8aaf48c50865200b791
     }//GEN-LAST:event_ButtonPezActionPerformed
 
     private void ButtonLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLicenciaActionPerformed
         Licencia.setVisible(true);
+        Licencia.pack();
+        Licencia.setLocationRelativeTo(this);
         DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
         modelo_SelectLugar.removeAllElements();
         for (Place plc : lugares) {
@@ -2415,16 +2525,21 @@ public class Main extends javax.swing.JFrame {
         }
         Licencia_Crear_SelectComunidad.setModel(modelo_Selectcomunidad);
         Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
-        Licencia.pack();
-        Licencia.setLocationRelativeTo(this);
+        DefaultComboBoxModel modelo_Martin = new DefaultComboBoxModel();
+        for (Fish Dori : peces) {
+            modelo_Martin.addElement(Dori);
+        }
+        Licencia_Crear_CB_Peces.setModel(modelo_Martin);
+        Licencia_Modificar_CB_Peces.setModel(modelo_Martin);
+
     }//GEN-LAST:event_ButtonLicenciaActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         Comunidad.setVisible(true);
         Comunidad.pack();
         Comunidad.setLocationRelativeTo(this);
-        
-        
+
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -2436,6 +2551,7 @@ public class Main extends javax.swing.JFrame {
         //falta if
         rb_animal.setEnabled(true);
         rb_vegetal.setEnabled(true);
+        rb_mixto.setEnabled(true);
         cebo_crearGrupo.setEnabled(false);
         cebo_crearFabricante.setEnabled(false);
         Jt_crearCebo.setEnabled(true);
@@ -2445,6 +2561,7 @@ public class Main extends javax.swing.JFrame {
         //falta if
         rb_animal.setEnabled(false);
         rb_vegetal.setEnabled(false);
+        rb_mixto.setEnabled(false);
         cebo_crearGrupo.setEnabled(true);
         cebo_crearFabricante.setEnabled(true);
         Jt_crearCebo.setEnabled(false);
@@ -2458,6 +2575,7 @@ public class Main extends javax.swing.JFrame {
         //falta if
         rb_animal2.setEnabled(true);
         rb_vegetal2.setEnabled(true);
+        rb_mixto2.setEnabled(true);
         cebo_cmodGrupo.setEnabled(false);
         cebo_modFabricante.setEnabled(false);
         jt_modCebo.setEnabled(true);
@@ -2466,6 +2584,7 @@ public class Main extends javax.swing.JFrame {
     private void rb_artificial2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_artificial2MouseClicked
         rb_animal2.setEnabled(false);
         rb_vegetal2.setEnabled(false);
+        rb_mixto2.setEnabled(false);
         cebo_cmodGrupo.setEnabled(true);
         cebo_modFabricante.setEnabled(true);
         jt_modCebo.setEnabled(false);
@@ -2473,12 +2592,12 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         comunidades.add(new Community(Com_crearNombre.getText()));
-        JOptionPane.showMessageDialog(null,"Comunidad creada");
-        Com_crearNombre.setText("");       
+        JOptionPane.showMessageDialog(null, "Comunidad creada");
+        Com_crearNombre.setText("");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void cb_comModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_comModItemStateChanged
-        Community temporal = (Community)cb_comMod.getSelectedItem();
+        Community temporal = (Community) cb_comMod.getSelectedItem();
         com_idMod.setText(temporal.getId());
         com_nombreMod.setText(temporal.getName());
     }//GEN-LAST:event_cb_comModItemStateChanged
@@ -2486,12 +2605,17 @@ public class Main extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         int indexComMod = cb_comMod.getSelectedIndex();
         comunidades.get(indexComMod).setName(com_nombreMod.getText());
-        JOptionPane.showMessageDialog(null,"Comunidad modificada.");
+        JOptionPane.showMessageDialog(null, "Comunidad modificada.");
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void cebo_cbModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cebo_cbModItemStateChanged
-        Bait temp = (Bait)cebo_cbMod.getSelectedItem();
-        
+        Bait temp = (Bait) cebo_cbMod.getSelectedItem();
+        cebo_idMod.setText(temp.getId());
+        cebo_nombreMod.setText(temp.getName());
+        cebo_colorMod.setText(temp.getColor());
+        cebo_precioMod.setText(Double.toString(temp.getPrice()));
+        cebo_tamanoMod.setText(Integer.toString(temp.getSize()));
+
     }//GEN-LAST:event_cebo_cbModItemStateChanged
 
     private void Afiliado_CreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_CreateButtonActionPerformed
@@ -2513,14 +2637,14 @@ public class Main extends javax.swing.JFrame {
             for (License licencia : licencias_escogidas) {
                 if (Afiliado_Create_License.getSelectedItem().equals(licencia)) {
                     JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
-                            band = true;
+                    band = true;
                 }
             }
         }
         if (!band) {
             licencias_escogidas.add((License) Afiliado_Create_License.getSelectedItem());
         }
-        
+
     }//GEN-LAST:event_Afiliado_Create_AgregarLicenciaActionPerformed
 
     private void Afiliado_Modify_SelectAfiliadoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Afiliado_Modify_SelectAfiliadoItemStateChanged
@@ -2550,7 +2674,7 @@ public class Main extends javax.swing.JFrame {
             for (License lic : licencias_escogidas) {
                 if (Afiliado_Modify_Licencia.getSelectedItem().equals(lic)) {
                     JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
-                            ban = true;
+                    ban = true;
                 }
             }
         }
@@ -2615,9 +2739,9 @@ public class Main extends javax.swing.JFrame {
         Place lugar = (Place) Licencia_Crear_SelectLugar.getSelectedItem();
         Community comunidad = (Community) Licencia_Crear_SelectComunidad.getSelectedItem();
         precio = Double.parseDouble(Licencia_Crear_Precio.getText());
-        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces);
-        //License licencia = new License(nombreLicencia,precio, idLugar, idComunidad);
+        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces_Lic);
         licencias.add(lic);
+        peces_Lic = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Licencia creada.");
     }//GEN-LAST:event_Licencia_CrearButtonActionPerformed
 
@@ -2654,30 +2778,41 @@ public class Main extends javax.swing.JFrame {
                 lizy.setCommunity(comunidad);
                 lizy.setPlace(lugar);
                 lizy.setPrice(precio);
+                lizy.setFishes(peces_Lic);
             }
         }
+        peces_Lic = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Licencia Modificada.");
     }//GEN-LAST:event_Licencia_ModificarButtonActionPerformed
 
     private void Pez_Modificar_SelectPezItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Pez_Modificar_SelectPezItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange()==0) {
+        try {
             Fish sushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
             Pez_Modificar_ID.setText((sushi.getId()));
             Pez_Modificar_Nombre.setText(sushi.getName());
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_Pez_Modificar_SelectPezItemStateChanged
 
     private void Pez_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_CrearButtonActionPerformed
         // TODO add your handling code here:\
+<<<<<<< HEAD
         peces.add(new Fish("ID",Pez_Crear_Nombre.getText(), baitsPez));
         JOptionPane.showMessageDialog(null,"Pez creado");
+=======
+        Fish sushi = new Fish(Pez_Crear_Nombre.getText(), baitsPez);
+        fishserv.create(sushi);
+        sushi = fishserv.find(sushi).get(0);
+        peces.add(sushi);
+        JOptionPane.showMessageDialog(null, "Pez creado");
+>>>>>>> e0d642861eb93fce16ade8aaf48c50865200b791
         Pez_Crear_Nombre.setText("");
         baitsPez = new ArrayList();
     }//GEN-LAST:event_Pez_CrearButtonActionPerformed
 
     private void Pez_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_ModificarButtonActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
         String nombre, captura, cebo;
         nombre = Pez_Modificar_Nombre.getText();
@@ -2690,6 +2825,24 @@ public class Main extends javax.swing.JFrame {
         baitsPez = new ArrayList();
         Pez_Modificar_Nombre.setText("");
         JOptionPane.showMessageDialog(null, "Pez Modificado.");
+=======
+        try {
+            Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
+            int index = peces.indexOf(tempSushi);
+            peces.remove(tempSushi);
+            String nombre, cebo;
+            nombre = Pez_Modificar_Nombre.getText();
+            tempSushi.setName(nombre);
+            tempSushi.setBaitID(baitsPez);
+            fishserv.update(tempSushi);
+            peces.add(index, tempSushi);
+            baitsPez = new ArrayList();
+            Pez_Modificar_Nombre.setText("");
+            JOptionPane.showMessageDialog(null, "Pez Modificado.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
+        }
+>>>>>>> e0d642861eb93fce16ade8aaf48c50865200b791
     }//GEN-LAST:event_Pez_ModificarButtonActionPerformed
 
     private void Lugar_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_CrearButtonActionPerformed
@@ -2697,14 +2850,14 @@ public class Main extends javax.swing.JFrame {
         String nombre;
         Community comunidad = (Community) Lugar_Create_SelectCommunity.getSelectedItem();
         nombre = Lugar_Crear_Nombre.getText();
-        
+
         Place lugar = new Place(nombre, comunidad);
         lugares.add(lugar);
         JOptionPane.showMessageDialog(null, "Lugar creado.");
     }//GEN-LAST:event_Lugar_CrearButtonActionPerformed
 
     private void Lugar_Modificar_SelectLugarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Lugar_Modificar_SelectLugarItemStateChanged
-        if (evt.getStateChange()==0) {
+        if (evt.getStateChange() == 0) {
             Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
             DefaultComboBoxModel modelo_comunidad = (DefaultComboBoxModel) Lugar_Modificar_Comunidad.getModel();
             modelo_comunidad.removeAllElements();
@@ -2734,25 +2887,25 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane1.getSelectedIndex()==2) {
+        if (jTabbedPane1.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
             for (Shop temp : comercios) {
                 modelo3.addElement(temp);
             }
             comercioDelete.setModel(modelo3);
-            }
+        }
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane2.getSelectedIndex()==2) {
+        if (jTabbedPane2.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
             for (Community temp : comunidades) {
                 modelo2.addElement(temp);
             }
             cb_comMod.setModel(modelo2);
         }
-        if (jTabbedPane2.getSelectedIndex()==3) {
+        if (jTabbedPane2.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Community temp : comunidades) {
                 modelo.addElement(temp);
@@ -2763,7 +2916,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane3.getSelectedIndex()==2) {
+        if (jTabbedPane3.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
             modelo.removeAllElements();
             for (Affiliate afiliado : afiliados) {
@@ -2772,7 +2925,7 @@ public class Main extends javax.swing.JFrame {
             Afiliado_Modify_SelectAfiliado.setModel(modelo);
             Licencia_Modificar_SelectLicencia.setModel(modelo);
         }
-        if (jTabbedPane3.getSelectedIndex()==3) {
+        if (jTabbedPane3.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Affiliate afiliado : afiliados) {
                 modelo.addElement(afiliado);
@@ -2783,7 +2936,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane4StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane4.getSelectedIndex()==2) {
+        if (jTabbedPane4.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
             modelo.removeAllElements();
             for (License licencia : licencias) {
@@ -2802,7 +2955,7 @@ public class Main extends javax.swing.JFrame {
             }
             Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
         }
-        if (jTabbedPane4.getSelectedIndex()==3) {
+        if (jTabbedPane4.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (License lic : licencias) {
                 modelo.addElement(lic);
@@ -2813,16 +2966,27 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane5StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane5.getSelectedIndex()==2) {
+        if (jTabbedPane5.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listFishes.getModel();
+            dtm.setRowCount(0);
+            for (Fish fish : peces) {
+                Object[] row = {fish.getId(), fish.getName(), fish.getBaits()};
+                dtm.addRow(row);
+            }
+            listFishes.setModel(dtm);
+        }
+        if (jTabbedPane5.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Pez_Modificar_SelectPez.getModel();
             modelo.removeAllElements();
+            modelo.addElement("");
             for (Fish sushi : peces) {
                 modelo.addElement(sushi);
             }
             Pez_Modificar_SelectPez.setModel(modelo);
         }
-        if (jTabbedPane5.getSelectedIndex()==3) {
+        if (jTabbedPane5.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Fish pez : peces) {
                 modelo.addElement(pez);
             }
@@ -2832,7 +2996,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane6StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane6.getSelectedIndex()==2) {
+        if (jTabbedPane6.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
             modelo.removeAllElements();
             for (Place lugar : lugares) {
@@ -2840,7 +3004,7 @@ public class Main extends javax.swing.JFrame {
             }
             Lugar_Modificar_SelectLugar.setModel(modelo);
         }
-        if (jTabbedPane6.getSelectedIndex()==3) {
+        if (jTabbedPane6.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
             for (Place lugar : lugares) {
                 modelo.addElement(lugar);
@@ -2851,15 +3015,39 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane7StateChanged
         // TODO add your handling code here:
-        if (jTabbedPane7.getSelectedIndex()==3) {
+        if (jTabbedPane7.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listNatural.getModel();
+            dtm.setRowCount(0);
+            for (Bait cebo : cebos) {
+                if (cebo.getType().equals("Natural")) {
+                    Object[] row = {cebo.getId(), cebo.getName(), cebo.getType(), cebo.getColor(), cebo.getSize(), cebo.getPrice(), cebo.getClassification(), cebo.getMaterials()};
+                    dtm.addRow(row);
+                }
+            }
+            listNatural.setModel(dtm);
+        }
+        if (jTabbedPane7.getSelectedIndex() == 2) {
+            DefaultTableModel dtm = (DefaultTableModel) listArtifitial.getModel();
+            dtm.setRowCount(0);
+            for (Bait cebo : cebos) {
+                if (cebo.getType().equals("Artificial")) {
+                    Object[] row = {cebo.getId(), cebo.getName(), cebo.getType(), cebo.getColor(), cebo.getSize(), cebo.getPrice(), cebo.getGroup(), cebo.getCompany()};
+                    dtm.addRow(row);
+                }
+            }
+            listArtifitial.setModel(dtm);
+        }
+        if (jTabbedPane7.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Bait ceb : cebos) {
                 modelo.addElement(ceb);
             }
             cebo_cbMod.setModel(modelo);
         }
-        if (jTabbedPane7.getSelectedIndex()==4) {
+        if (jTabbedPane7.getSelectedIndex() == 4) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Bait ceb : cebos) {
                 modelo.addElement(ceb);
             }
@@ -2867,125 +3055,237 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTabbedPane7StateChanged
 
-    private void rb_mixtoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_mixtoMouseClicked
-        rb_animal.setEnabled(true);
-        rb_vegetal.setEnabled(true);
-        cebo_crearGrupo.setEnabled(true);
-        cebo_crearFabricante.setEnabled(true);
-        Jt_crearCebo.setEnabled(true);
-    }//GEN-LAST:event_rb_mixtoMouseClicked
-
     private void rb_mixto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_mixto2MouseClicked
-        rb_animal.setEnabled(true);
-        rb_vegetal.setEnabled(true);
-        cebo_crearGrupo.setEnabled(true);
-        cebo_crearFabricante.setEnabled(true);
-        Jt_crearCebo.setEnabled(true);
+        if (rb_mixto2.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) jt_modCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                Object[] row = {mat, false};
+                dtm.addRow(row);
+            }
+            jt_modCebo.setModel(dtm);
+        }
     }//GEN-LAST:event_rb_mixto2MouseClicked
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        if(cebo_crearNombre.getText().equals("") || cebo_crearTamaño.getText().equals("") || cebo_crearColor.getText().equals("") || cebo_crearPrecio.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"No puede dejar campos en blanco.");
-        }else{
-            if(rb_natural.isSelected()){
-                String clasificacion;
-                if(rb_animal.isSelected()){
-                    clasificacion = "Animal";
-                }else{
-                    clasificacion = "Vegetal";
-                }
-                int[] filas = Jt_crearCebo.getSelectedRows();
-                ArrayList<Material> materialesTemp = new ArrayList();
-                for (int i = 0; i < filas.length; i++) {
-                    for (int j = 0; materiales.size() < 10; j++) {
-                        if(filas[i] == j){
-                            materialesTemp.add(materiales.get(j));
-                        }
-                    }
-                }
-                //Agregas materiales temp al constructor cuando lo hagas
-                //cebos.add(new Bait(cebo_crearNombre.getText(),"Natural",cebo_crearColor.getText(),clasificacion,Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText())));
-                JOptionPane.showMessageDialog(null,"Cebo Creado");
-            }else if(rb_artificial.isSelected()){
-                JOptionPane.showMessageDialog(null,"Cebo Creado");
-                cebos.add(new Bait(cebo_crearNombre.getText(),"Artificial",cebo_crearColor.getText(),Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText()),cebo_crearGrupo.getText(),new Company(cebo_crearFabricante.getText())));
-            }else if(rb_mixto.isSelected()){
-                String clasificacion;
-                if(rb_animal.isSelected()){
-                    clasificacion = "Animal";
-                }else{
-                    clasificacion = "Vegetal";
-                }
-                int[] filas = Jt_crearCebo.getSelectedRows();
-                ArrayList<Material> materialesTemp = new ArrayList();
-                for (int i = 0; i < filas.length; i++) {
-                    for (int j = 0; materiales.size() < 10; j++) {
-                        if(filas[i] == j){
-                            materialesTemp.add(materiales.get(j));
-                        }
-                    }
-                }
-                //Agregas materiales temp al constructor cuando lo hagas
-                //cebos.add(new Bait(cebo_crearNombre.getText(),"Mixto",clasificacion,cebo_crearColor.getText(),Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText()),cebo_crearGrupo.getText(),new Company(cebo_crearFabricante.getText())));
-                //Falta materiales
-                JOptionPane.showMessageDialog(null,"Cebo Creado");
+        if (cebo_crearNombre.getText().equals("") || cebo_crearTamaño.getText().equals("") || cebo_crearColor.getText().equals("") || cebo_crearPrecio.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "No puede dejar campos en blanco.");
+        } else if (rb_natural.isSelected()) {
+            String clasificacion;
+            if (rb_animal.isSelected()) {
+                clasificacion = "Animal";
+            } else if (rb_vegetal.isSelected()) {
+                clasificacion = "Vegetal";
+            } else {
+                clasificacion = "Mixto";
             }
+            ArrayList<Material> materialSelect = new ArrayList();
+            for (int i = 0; i < Jt_crearCebo.getRowCount(); i++) {
+                Boolean isChecked = Boolean.valueOf(Jt_crearCebo.getValueAt(i, 1).toString());
+                if (isChecked) {
+                    materialSelect.add((Material) Jt_crearCebo.getModel().getValueAt(i, 0));
+                }
+            }
+            //Agregas materiales temp al constructor cuando lo hagas
+            Bait bait = new Bait(cebo_crearNombre.getText(), "Natural", cebo_crearColor.getText(), clasificacion, Integer.parseInt(cebo_crearTamaño.getText()), Double.parseDouble(cebo_crearPrecio.getText()), materialSelect);
+            baitserv.create(bait);
+            cebos.add(baitserv.find(bait).get(0));
+            JOptionPane.showMessageDialog(null, "Cebo Creado");
+        } else if (rb_artificial.isSelected()) {
+            Company company = new Company(cebo_crearFabricante.getText());
+            compserv.create(company);
+            company = compserv.find(company).get(0);
+            fabricantes.add(company);
+            Bait bait = new Bait(cebo_crearNombre.getText(), "Artificial", cebo_crearColor.getText(), Integer.parseInt(cebo_crearTamaño.getText()), Double.parseDouble(cebo_crearPrecio.getText()), cebo_crearGrupo.getText(), company);
+            baitserv.create(bait);
+            cebos.add(baitserv.find(bait).get(0));
+            JOptionPane.showMessageDialog(null, "Cebo Creado");
         }
-        
+
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        Bait ceboTemp = (Bait)cebo_cbMod.getSelectedItem();
-        ceboTemp.setName(cebo_nombreMod.getText());
-        ceboTemp.setColor(cebo_colorMod.getText());
-        ceboTemp.setPrice(Double.parseDouble(cebo_precioMod.getText()));
-        ceboTemp.setSize(Integer.parseInt(cebo_tamanoMod.getText()));
-        if(rb_natural2.isSelected()){
-            String clasificacion;
-            if(rb_animal2.isSelected()){
-                clasificacion = "Animal";
-            }else{
-                clasificacion = "Vegetal";
-            }
-            ceboTemp.setClassification(clasificacion);
-            int[] filas = jt_modCebo.getSelectedRows();
-            ArrayList<Material> materialesTemp = new ArrayList();
-            for (int i = 0; i < filas.length; i++) {
-                for (int j = 0; materiales.size() < 10; j++) {
-                    if(filas[i] == j){
-                        materialesTemp.add(materiales.get(j));
+        try {
+            Bait ceboTemp = (Bait) cebo_cbMod.getSelectedItem();
+            int index = cebos.indexOf(ceboTemp);
+            cebos.remove(ceboTemp);
+            ceboTemp.setName(cebo_nombreMod.getText());
+            ceboTemp.setColor(cebo_colorMod.getText());
+            ceboTemp.setPrice(Double.parseDouble(cebo_precioMod.getText()));
+            ceboTemp.setSize(Integer.parseInt(cebo_tamanoMod.getText()));
+            if (rb_natural2.isSelected()) {
+                ceboTemp.setType("Natural");
+                String clasificacion;
+                if (rb_animal2.isSelected()) {
+                    clasificacion = "Animal";
+                } else if (rb_vegetal2.isSelected()) {
+                    clasificacion = "Vegetal";
+                } else {
+                    clasificacion = "Mixto";
+                }
+                ceboTemp.setClassification(clasificacion);
+                ArrayList<Material> materialSelect = new ArrayList();
+                for (int i = 0; i < jt_modCebo.getRowCount(); i++) {
+                    Boolean isChecked = Boolean.valueOf(jt_modCebo.getValueAt(i, 1).toString());
+                    if (isChecked) {
+                        materialSelect.add((Material) jt_modCebo.getModel().getValueAt(i, 0));
                     }
                 }
+                ceboTemp.setMaterials(materialSelect);
+            } else if (rb_artificial2.isSelected()) {
+                ceboTemp.setType("Artificial");
+                ceboTemp.setGroup(cebo_cmodGrupo.getText());
+                Company company = new Company(cebo_modFabricante.getText());
+                compserv.create(company);
+                company = compserv.find(company).get(0);
+                fabricantes.add(company);
+                ceboTemp.setCompany(company);
             }
-            ceboTemp.setMaterials(materiales);
-            
-        }else if(rb_artificial2.isSelected()){
-            ceboTemp.setGroup(cebo_cmodGrupo.getText());
-            ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
-        }else if(rb_mixto2.isSelected()){
-            String clasificacion;
-            if(rb_animal2.isSelected()){
-                clasificacion = "Animal";
-            }else{
-                clasificacion = "Vegetal";
-            }
-            ceboTemp.setClassification(clasificacion);
-            int[] filas = jt_modCebo.getSelectedRows();
-            ArrayList<Material> materialesTemp = new ArrayList();
-            for (int i = 0; i < filas.length; i++) {
-                for (int j = 0; materiales.size() < 10; j++) {
-                    if(filas[i] == j){
-                        materialesTemp.add(materiales.get(j));
-                    }
-                }
-            }
-            ceboTemp.setMaterials(materiales);
-            ceboTemp.setGroup(cebo_cmodGrupo.getText());
-            ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
+            baitserv.update(ceboTemp);
+            cebos.add(index, ceboTemp);
+            JOptionPane.showMessageDialog(null, "Cebo modificado.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
         }
-        JOptionPane.showMessageDialog(null, "Cebo modificado.");
-        
+
     }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void pez_ceboCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pez_ceboCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pez_ceboCrearActionPerformed
+
+    private void pez_ceboModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pez_ceboModActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pez_ceboModActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        baitsPez.add((Bait) pez_ceboCrear.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "Agregado");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        baitsPez.add((Bait) pez_ceboMod.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "Agregado");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void Licencia_ADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ADD_DoriActionPerformed
+        // TODO add your handling code here:
+        if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
+            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+        } else {
+            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        }
+    }//GEN-LAST:event_Licencia_ADD_DoriActionPerformed
+
+    private void Licencia_MODADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_MODADD_DoriActionPerformed
+        // TODO add your handling code here:
+        if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
+            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+        } else {
+            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        }
+    }//GEN-LAST:event_Licencia_MODADD_DoriActionPerformed
+
+    private void rb_animalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_animalMouseClicked
+        if (rb_animal.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) Jt_crearCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                if (mat.getType() == 'A') {
+                    Object[] row = {mat, false};
+                    dtm.addRow(row);
+                }
+            }
+            Jt_crearCebo.setModel(dtm);
+        }
+    }//GEN-LAST:event_rb_animalMouseClicked
+
+    private void rb_vegetalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_vegetalMouseClicked
+        if (rb_vegetal.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) Jt_crearCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                if (mat.getType() == 'V') {
+                    Object[] row = {mat, false};
+                    dtm.addRow(row);
+                }
+            }
+            Jt_crearCebo.setModel(dtm);
+        }
+    }//GEN-LAST:event_rb_vegetalMouseClicked
+
+    private void rb_mixtoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_mixtoMouseClicked
+        if (rb_mixto.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) Jt_crearCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                Object[] row = {mat, false};
+                dtm.addRow(row);
+            }
+            Jt_crearCebo.setModel(dtm);
+        }
+    }//GEN-LAST:event_rb_mixtoMouseClicked
+
+    private void rb_animal2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_animal2MouseClicked
+        if (rb_animal2.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) jt_modCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                if (mat.getType() == 'A') {
+                    Object[] row = {mat, false};
+                    dtm.addRow(row);
+                }
+            }
+            jt_modCebo.setModel(dtm);
+        }
+    }//GEN-LAST:event_rb_animal2MouseClicked
+
+    private void rb_vegetal2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_vegetal2MouseClicked
+        if (rb_vegetal2.isSelected()) {
+            DefaultTableModel dtm = (DefaultTableModel) jt_modCebo.getModel();
+            dtm.setRowCount(0);
+            for (Material mat : materiales) {
+                if (mat.getType() == 'V') {
+                    Object[] row = {mat, false};
+                    dtm.addRow(row);
+                }
+            }
+            jt_modCebo.setModel(dtm);
+        }
+    }//GEN-LAST:event_rb_vegetal2MouseClicked
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        try {
+            Bait ceboTemp = (Bait) cebo_cbBorrar.getSelectedItem();
+            baitserv.delete(cebos.remove(cebos.indexOf(ceboTemp)));
+            JOptionPane.showMessageDialog(null, "Se eliminó " + ceboTemp + ".");
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Bait ceb : cebos) {
+                modelo.addElement(ceb);
+            }
+            cebo_cbBorrar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        try {
+            Fish tempSushi = (Fish) Pez_CB_Eliminar.getSelectedItem();
+            fishserv.delete(tempSushi);
+            peces.remove(tempSushi);
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (Fish pez : peces) {
+                modelo.addElement(pez);
+            }
+            Pez_CB_Eliminar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     private void pez_ceboCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pez_ceboCrearActionPerformed
         // TODO add your handling code here:
@@ -3046,6 +3346,22 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -3086,13 +3402,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Comunidad;
     private javax.swing.JTable Jt_crearCebo;
     private javax.swing.JDialog Licencia;
+    private javax.swing.JButton Licencia_ADD_Dori;
     private javax.swing.JComboBox<String> Licencia_CB_Licencia;
     private javax.swing.JButton Licencia_CrearButton;
+    private javax.swing.JComboBox<String> Licencia_Crear_CB_Peces;
     private javax.swing.JTextField Licencia_Crear_Nombre;
     private javax.swing.JTextField Licencia_Crear_Precio;
     private javax.swing.JComboBox<String> Licencia_Crear_SelectComunidad;
     private javax.swing.JComboBox<String> Licencia_Crear_SelectLugar;
+    private javax.swing.JButton Licencia_MODADD_Dori;
     private javax.swing.JButton Licencia_ModificarButton;
+    private javax.swing.JComboBox<String> Licencia_Modificar_CB_Peces;
     private javax.swing.JTextField Licencia_Modificar_ID;
     private javax.swing.JTextField Licencia_Modificar_Precio;
     private javax.swing.JComboBox<String> Licencia_Modificar_SelectComunidad;
@@ -3163,6 +3483,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -3176,6 +3497,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -3281,11 +3603,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable9;
     private javax.swing.JTable jt_modCebo;
+    private javax.swing.JTable listArtifitial;
+    private javax.swing.JTable listFishes;
+    private javax.swing.JTable listNatural;
     private javax.swing.JTextField login_id;
     private javax.swing.JTextField login_pass;
     private javax.swing.JDialog menuPrincipal;
@@ -3311,5 +3633,11 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Community> comunidades;
     ArrayList<License> licencias_escogidas;
     ArrayList<Material> materiales;
+<<<<<<< HEAD
     ArrayList<Bait> baitsPez;
+=======
+    ArrayList<Company> fabricantes;
+    ArrayList<Bait> baitsPez;
+    ArrayList<Fish> peces_Lic = new ArrayList<>();
+>>>>>>> e0d642861eb93fce16ade8aaf48c50865200b791
 }
