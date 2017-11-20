@@ -19,8 +19,10 @@ public class License {
         this.community = new Community();
     }
     
+    public License(){
+        
+    }
     
-
     public License(String id, String name, double price, Place place, Community community, ArrayList<Fish> fishes) {
         this.id = id;
         this.name = name;

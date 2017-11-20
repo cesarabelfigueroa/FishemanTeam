@@ -5,10 +5,7 @@
  */
 package src.main;
 
-import BE.BaitService;
-import BE.CompanyService;
-import BE.FishService;
-import BE.MaterialService;
+import BE.*;
 import CORE.*;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -30,6 +27,11 @@ public class Main extends javax.swing.JFrame {
     private CompanyService compserv;
     private BaitService baitserv;
     private FishService fishserv;
+    private CommunityService comserv;
+    private ShopService shopserv;
+    private LicenseService licenserv;
+    private AffiliateService affserv;
+    private PlaceService placeserv;
 
     public Main() {
         initComponents();
@@ -39,18 +41,22 @@ public class Main extends javax.swing.JFrame {
         this.compserv = new CompanyService(client, database);
         this.baitserv = new BaitService(client, database);
         this.fishserv = new FishService(client, database);
-        this.afiliados = new ArrayList();
-        this.comercios = new ArrayList();
-        this.lugares = new ArrayList();
-        this.licencias = new ArrayList();
-        this.comunidades = new ArrayList();
+        this.comserv = new CommunityService(client,database);
+        this.shopserv = new ShopService(client,database);
+        this.licenserv = new LicenseService(client,database);
+        this.affserv = new AffiliateService(client,database);
+        this.placeserv = new PlaceService(client,database);
+        this.afiliados = this.affserv.find(new Affiliate());
+        this.comercios = this.shopserv.find(new Shop());
+        this.lugares = this.placeserv.find(new Place());
+        this.licencias = this.licenserv.find(new License());
+        this.comunidades = this.comserv.find(new Community());
         this.licencias_escogidas = new ArrayList();
         this.baitsPez = new ArrayList();
         this.materiales = this.matserv.findAll();
         this.peces = this.fishserv.findAll();
         this.cebos = this.baitserv.findAll();
         this.fabricantes = this.compserv.findAll();
-        System.out.println(peces.get(0).getId());
 
     }
 
@@ -2999,12 +3005,12 @@ public class Main extends javax.swing.JFrame {
     private void Comercio_Modificar_SelectComercioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Comercio_Modificar_SelectComercioItemStateChanged
         // TODO add your handling code here:
         if (evt.getStateChange() == 0) {
-            Shops temp = (Shops) Comercio_Modificar_SelectComercio.getSelectedItem();
+            Shop temp = (Shop) Comercio_Modificar_SelectComercio.getSelectedItem();
             Comercio_Modificar_ID.setText(temp.getId());
             Comercio_Modificar_Nombre.setText(temp.getName());
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Comercio_Modificar_SelectCebo.getModel();
             modelo.removeAllElements();
-            for (Bait cebo : temp.getSellingBait()) {
+            for (Bait cebo : temp.getSales()) {
                 modelo.addElement(cebo);
             }
             Comercio_Modificar_SelectCebo.setModel(modelo);
@@ -3015,7 +3021,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (Comercio_Modificar_Nombre.getText().equals("")) {
             String nombre = Comercio_Modificar_Nombre.getText();
-            Shops temp = (Shops) Comercio_Modificar_SelectComercio.getSelectedItem();
+            Shop temp = (Shop) Comercio_Modificar_SelectComercio.getSelectedItem();
             for (Shop comercio : comercios) {
                 if (comercio.equals(temp)) {
                     comercio.setName(nombre);

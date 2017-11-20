@@ -6,20 +6,33 @@ import java.util.ArrayList;
 public class Shop {
     private String id;
     private String name;
-    private ArrayList<Bait> sales = new ArrayList();
+    private ArrayList<Bait> sales;
 
     public Shop() {
     }
 
     public Shop(String name) {
         this.name = name;
+        this.sales = new ArrayList();
     }
     
     public Shop(String id, String name) {
         this.id = id;
         this.name = name;
+        this.sales = new ArrayList();
     }
 
+    public Shop(String id, String name, ArrayList<Bait> sales) {
+        this.id = id;
+        this.name = name;
+        this.sales = sales;
+    }
+
+    public Shop(String name, ArrayList<Bait> sales) {
+        this.name = name;
+        this.sales = sales;
+    }
+    
     public String getId() {
         return id;
     }
