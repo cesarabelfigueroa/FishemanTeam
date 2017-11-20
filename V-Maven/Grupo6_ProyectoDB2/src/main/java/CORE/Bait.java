@@ -74,6 +74,26 @@ public class Bait {
         this.group = group;
         this.company = company;
     }
+
+    public Bait(String name, String type, String classification, String color, int size, double price) {
+        this.name = name;
+        this.type = type;
+        this.classification = classification;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+    }
+
+    public Bait(String id, String name, String type, String classification, String color, int size, double price, ArrayList<Material> materials) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.classification = classification;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+        this.materials = materials;
+    }
     
     public String getId() {
         return id;
