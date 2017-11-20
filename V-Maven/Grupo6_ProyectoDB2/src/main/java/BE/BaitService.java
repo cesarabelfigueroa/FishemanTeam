@@ -44,7 +44,6 @@ public class BaitService {
         this.client = client;
         this.database = database;
         this.baitCollection = database.getCollection("bait");
-        this.baitNatural = database.getCollection("baitNaturalMaterials");
         this.results = new ArrayList();
         this.listdb = new BasicDBList();
         this.comService = new CompanyService(client, database);
