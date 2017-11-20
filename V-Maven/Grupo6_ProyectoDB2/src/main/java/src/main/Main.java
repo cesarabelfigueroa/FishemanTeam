@@ -152,11 +152,10 @@ public class Main extends javax.swing.JFrame {
         jPanel19 = new javax.swing.JPanel();
         Pez_CrearButton = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         Pez_Crear_Nombre = new javax.swing.JTextField();
-        Pez_Crear_Captura = new javax.swing.JTextField();
-        Pez_Crear_Cebo = new javax.swing.JTextField();
+        pez_ceboCrear = new javax.swing.JComboBox<>();
+        jButton7 = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
@@ -166,12 +165,11 @@ public class Main extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         Pez_Modificar_Nombre = new javax.swing.JTextField();
-        Pez_Modificar_Captura = new javax.swing.JTextField();
-        jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        Pez_Modificar_Cebo = new javax.swing.JTextField();
         Pez_Modificar_SelectPez = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
+        pez_ceboMod = new javax.swing.JComboBox<>();
+        jButton6 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         Pez_CB_Eliminar = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
@@ -270,6 +268,7 @@ public class Main extends javax.swing.JFrame {
         bg_tipoMod = new javax.swing.ButtonGroup();
         bg_clasMod = new javax.swing.ButtonGroup();
         jLabel77 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -1287,31 +1286,42 @@ public class Main extends javax.swing.JFrame {
 
         jLabel39.setText("Nombre");
 
-        jLabel41.setText("Licencia de Captura");
-
         jLabel42.setText("Cebo");
+
+        pez_ceboCrear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pez_ceboCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pez_ceboCrearActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Agregar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(Pez_CrearButton))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel42))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pez_Crear_Nombre)
-                            .addComponent(Pez_Crear_Captura)
-                            .addComponent(Pez_Crear_Cebo, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))
-                .addGap(86, 86, 86))
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pez_ceboCrear, 0, 116, Short.MAX_VALUE)
+                    .addComponent(Pez_Crear_Nombre))
+                .addGap(18, 18, 18)
+                .addComponent(jButton7)
+                .addGap(22, 22, 22))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(Pez_CrearButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1320,17 +1330,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
                     .addComponent(Pez_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(Pez_Crear_Captura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(Pez_Crear_Cebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                    .addComponent(pez_ceboCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton7))
+                .addGap(33, 33, 33)
                 .addComponent(Pez_CrearButton)
-                .addGap(46, 46, 46))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Crear", jPanel19);
@@ -1373,11 +1380,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        Pez_Modificar_ID.setEnabled(false);
+
         jLabel43.setText("ID");
 
         jLabel44.setText("Nombre");
-
-        jLabel45.setText("Licencia de Captura");
 
         jLabel46.setText("Cebo");
 
@@ -1390,6 +1397,20 @@ public class Main extends javax.swing.JFrame {
 
         jLabel47.setText("Pez");
 
+        pez_ceboMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pez_ceboMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pez_ceboModActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Agregar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
@@ -1398,27 +1419,22 @@ public class Main extends javax.swing.JFrame {
                 .addGap(160, 160, 160)
                 .addComponent(Pez_ModificarButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+            .addGroup(jPanel21Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addComponent(jLabel47)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addComponent(Pez_Modificar_SelectPez, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
-            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel21Layout.createSequentialGroup()
-                    .addGap(84, 84, 84)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel44)
-                        .addComponent(jLabel45)
-                        .addComponent(jLabel46)
-                        .addComponent(jLabel43))
-                    .addGap(33, 33, 33)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Pez_Modificar_Nombre)
-                        .addComponent(Pez_Modificar_ID)
-                        .addComponent(Pez_Modificar_Captura)
-                        .addComponent(Pez_Modificar_Cebo, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
-                    .addGap(85, 85, 85)))
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel43))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pez_Modificar_Nombre)
+                    .addComponent(Pez_Modificar_ID)
+                    .addComponent(pez_ceboMod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Pez_Modificar_SelectPez, 0, 99, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton6)
+                .addGap(25, 25, 25))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1427,28 +1443,22 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Pez_Modificar_SelectPez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel47))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Pez_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Pez_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel44))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(pez_ceboMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6))
+                .addGap(55, 55, 55)
                 .addComponent(Pez_ModificarButton)
                 .addGap(27, 27, 27))
-            .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel21Layout.createSequentialGroup()
-                    .addGap(76, 76, 76)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel43)
-                        .addComponent(Pez_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel44)
-                        .addComponent(Pez_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel45)
-                        .addComponent(Pez_Modificar_Captura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel46)
-                        .addComponent(Pez_Modificar_Cebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(80, Short.MAX_VALUE)))
         );
 
         jTabbedPane5.addTab("Modificar", jPanel21);
@@ -2219,10 +2229,12 @@ public class Main extends javax.swing.JFrame {
         );
         CeboLayout.setVerticalGroup(
             CeboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(jTabbedPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
         );
 
         jLabel77.setText("jLabel77");
+
+        jButton5.setText("jButton5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2373,6 +2385,18 @@ public class Main extends javax.swing.JFrame {
         
         Pez.pack();
         Pez.setLocationRelativeTo(this);
+        baitsPez = new ArrayList();
+        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        for (Bait temp : cebos) {
+            modelo.addElement(temp);
+        }
+        pez_ceboMod.setModel(modelo);
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        for (Bait temp : cebos) {
+            modelo2.addElement(temp);
+        }
+        pez_ceboCrear.setModel(modelo2);
+        
     }//GEN-LAST:event_ButtonPezActionPerformed
 
     private void ButtonLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLicenciaActionPerformed
@@ -2646,12 +2670,10 @@ public class Main extends javax.swing.JFrame {
 
     private void Pez_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_CrearButtonActionPerformed
         // TODO add your handling code here:\
-        String nombre, Licencia, Cebo;
-        nombre = Pez_Crear_Nombre.getText();
-        Licencia = Pez_Crear_Captura.getText();
-        Cebo = Pez_Crear_Cebo.getText();
-        Fish sushi = new Fish();
-        sushi.setName(nombre);
+        peces.add(new Fish("ID",Pez_Crear_Nombre.getText(), baitsPez));
+        JOptionPane.showMessageDialog(null,"Pez creado");
+        Pez_Crear_Nombre.setText("");
+        baitsPez = new ArrayList();
     }//GEN-LAST:event_Pez_CrearButtonActionPerformed
 
     private void Pez_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pez_ModificarButtonActionPerformed
@@ -2659,13 +2681,14 @@ public class Main extends javax.swing.JFrame {
         Fish tempSushi = (Fish) Pez_Modificar_SelectPez.getSelectedItem();
         String nombre, captura, cebo;
         nombre = Pez_Modificar_Nombre.getText();
-        captura = Pez_Modificar_Captura.getText();
-        cebo = Pez_Modificar_Cebo.getText();
         for (Fish tilapia : peces) {
             if (tilapia.equals(tempSushi)) {
                 tilapia.setName(nombre);
+                tilapia.setBaitID(baitsPez);
             }
         }
+        baitsPez = new ArrayList();
+        Pez_Modificar_Nombre.setText("");
         JOptionPane.showMessageDialog(null, "Pez Modificado.");
     }//GEN-LAST:event_Pez_ModificarButtonActionPerformed
 
@@ -2964,6 +2987,24 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    private void pez_ceboCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pez_ceboCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pez_ceboCrearActionPerformed
+
+    private void pez_ceboModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pez_ceboModActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pez_ceboModActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        baitsPez.add((Bait)pez_ceboCrear.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "Agregado");
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        baitsPez.add((Bait)pez_ceboMod.getSelectedItem());
+        JOptionPane.showMessageDialog(null, "Agregado");
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3070,12 +3111,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Pez;
     private javax.swing.JComboBox<String> Pez_CB_Eliminar;
     private javax.swing.JButton Pez_CrearButton;
-    private javax.swing.JTextField Pez_Crear_Captura;
-    private javax.swing.JTextField Pez_Crear_Cebo;
     private javax.swing.JTextField Pez_Crear_Nombre;
     private javax.swing.JButton Pez_ModificarButton;
-    private javax.swing.JTextField Pez_Modificar_Captura;
-    private javax.swing.JTextField Pez_Modificar_Cebo;
     private javax.swing.JTextField Pez_Modificar_ID;
     private javax.swing.JTextField Pez_Modificar_Nombre;
     private javax.swing.JComboBox<String> Pez_Modificar_SelectPez;
@@ -3119,6 +3156,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3151,11 +3191,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel49;
@@ -3251,6 +3289,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField login_id;
     private javax.swing.JTextField login_pass;
     private javax.swing.JDialog menuPrincipal;
+    private javax.swing.JComboBox<String> pez_ceboCrear;
+    private javax.swing.JComboBox<String> pez_ceboMod;
     private javax.swing.JRadioButton rb_animal;
     private javax.swing.JRadioButton rb_animal2;
     private javax.swing.JRadioButton rb_artificial;
@@ -3271,4 +3311,5 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Community> comunidades;
     ArrayList<License> licencias_escogidas;
     ArrayList<Material> materiales;
+    ArrayList<Bait> baitsPez;
 }
