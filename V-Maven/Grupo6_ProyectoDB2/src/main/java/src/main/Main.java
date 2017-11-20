@@ -4,7 +4,14 @@
  * and open the template in the editor.
  */
 package src.main;
+import BE.BaitService;
+import BE.CompanyService;
+import BE.FishService;
+import BE.MaterialService;
 import CORE.*;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -15,11 +22,26 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main1
-     */
+    private MongoClient client;
+    private MongoDatabase database;
+    private MaterialService matserv;
+    private CompanyService compserv;
+    private BaitService baitserv;
+    private FishService fishserv;
+    
     public Main() {
         initComponents();
+        this.client = new MongoClient(new MongoClientURI("mongodb://cfigue:Sheldoncooper@ds259305.mlab.com:59305/fisheman"));
+        this.database = client.getDatabase("fisheman");
+        this.matserv = new MaterialService(client,database);
+        this.compserv = new CompanyService(client,database);
+        this.baitserv = new BaitService(client,database);
+        this.fishserv = new FishService(client,database);
+        this.materiales = this.matserv.findAll();
+        this.peces = this.fishserv.findAll();
+        this.cebos = this.baitserv.findAll();
+        this.fabricantes = this.compserv.findAll();
+        
     }
 
     /**
@@ -3327,5 +3349,6 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Community> comunidades;
     ArrayList<License> licencias_escogidas;
     ArrayList<Material> materiales;
+    ArrayList<Company> fabricantes;
     ArrayList<Bait> baitsPez;
 }
