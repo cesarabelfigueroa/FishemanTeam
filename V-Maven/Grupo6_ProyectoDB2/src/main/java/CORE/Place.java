@@ -7,6 +7,10 @@ public class Place {
 
     public Place() {
     }
+    
+    public Place(String id) {
+        this.id = id;
+    }
 
     public Place(String id, String name) {
         this.id = id;

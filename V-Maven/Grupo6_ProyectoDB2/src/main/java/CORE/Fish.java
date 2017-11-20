@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Fish {
     private String id;
     private String name;
+
+   
     private ArrayList<Bait>  baits;
 
     public Fish() {
@@ -51,11 +53,11 @@ public class Fish {
     public void setBaitID(ArrayList<Bait> baits) {
         this.baits = baits;
     }
+    
 
     @Override
     public String toString() {
         return name;
     }
-    
     
 }

@@ -10,8 +10,8 @@ public class Community {
         this.name = name;
     }
 
-    public Community(String name) {
-        this.name = name;
+    public Community(String id) {
+        this.id = id;
     }
 
     public Community() {

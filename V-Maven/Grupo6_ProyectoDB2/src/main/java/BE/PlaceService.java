@@ -1,5 +1,6 @@
 package BE;
 
+import CORE.Community;
 import CORE.Place;
 import com.mongodb.*;
 import com.mongodb.MongoClient;
@@ -23,6 +24,7 @@ public class PlaceService {
     MongoDatabase database;
     MongoCollection<Document> collection;
     ArrayList<Place> results = new ArrayList();
+    
 
     public PlaceService(MongoClient client, MongoDatabase database) {
         this.client = client;
@@ -36,7 +38,10 @@ public class PlaceService {
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
             String idComunity = document.get("name").toString();
+            CommunityService communityService  = new CommunityService(client, database);
+            Community community = communityService.find(new Community(idComunity)).get(0);
             Place temporal = new Place(_id, name);
+            temporal.setCommunity(community);
             results.add(temporal);
         }
     };
