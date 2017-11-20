@@ -128,6 +128,9 @@ public class Main extends javax.swing.JFrame {
         Licencia_Crear_Nombre = new javax.swing.JTextField();
         Licencia_Crear_SelectComunidad = new javax.swing.JComboBox<>();
         Licencia_Crear_SelectLugar = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        Licencia_Crear_CB_Peces = new javax.swing.JComboBox<>();
+        Licencia_ADD_Dori = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -143,6 +146,9 @@ public class Main extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         Licencia_Modificar_SelectComunidad = new javax.swing.JComboBox<>();
         Licencia_Modificar_SelectLugar = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        Licencia_Modificar_CB_Peces = new javax.swing.JComboBox<>();
+        Licencia_MODADD_Dori = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         Licencia_CB_Licencia = new javax.swing.JComboBox<>();
@@ -1061,6 +1067,17 @@ public class Main extends javax.swing.JFrame {
 
         Licencia_Crear_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel12.setText("Peces");
+
+        Licencia_Crear_CB_Peces.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_ADD_Dori.setText("Agregar");
+        Licencia_ADD_Dori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_ADD_DoriActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -1073,17 +1090,21 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel31)
                             .addComponent(jLabel32)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel33))
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel12))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Licencia_Crear_SelectComunidad, 0, 128, Short.MAX_VALUE)
                             .addComponent(Licencia_Crear_Precio)
                             .addComponent(Licencia_Crear_Nombre)
-                            .addComponent(Licencia_Crear_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(Licencia_Crear_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Licencia_Crear_CB_Peces, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Licencia_ADD_Dori))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(Licencia_CrearButton)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1104,7 +1125,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33)
                     .addComponent(Licencia_Crear_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Licencia_Crear_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Licencia_ADD_Dori)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(Licencia_CrearButton)
                 .addGap(35, 35, 35))
         );
@@ -1116,7 +1143,7 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Precio", "ID Lugar", "ID Comunidad"
+                "ID", "Precio", "ID Lugar", "ID Comunidad", "Peces"
             }
         ));
         jScrollPane4.setViewportView(jTable4);
@@ -1169,6 +1196,17 @@ public class Main extends javax.swing.JFrame {
 
         Licencia_Modificar_SelectLugar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabel25.setText("Peces");
+
+        Licencia_Modificar_CB_Peces.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        Licencia_MODADD_Dori.setText("Agregar");
+        Licencia_MODADD_Dori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Licencia_MODADD_DoriActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
@@ -1176,6 +1214,10 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addGap(72, 72, 72)
+                        .addComponent(Licencia_Modificar_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(Licencia_ModificarButton))
@@ -1193,7 +1235,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(Licencia_Modificar_Precio, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                             .addComponent(Licencia_Modificar_SelectComunidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Licencia_Modificar_SelectLugar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Licencia_MODADD_Dori)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1218,7 +1262,13 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(Licencia_Modificar_SelectComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Licencia_Modificar_CB_Peces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Licencia_MODADD_Dori))
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Licencia_ModificarButton)
                 .addGap(33, 33, 33))
         );
@@ -1897,7 +1947,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel62)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63)
                     .addComponent(cebo_crearGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2415,6 +2465,12 @@ public class Main extends javax.swing.JFrame {
         }
         Licencia_Crear_SelectComunidad.setModel(modelo_Selectcomunidad);
         Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
+        DefaultComboBoxModel modelo_Martin = new DefaultComboBoxModel();
+        for (Fish Dori : peces) {
+            modelo_Martin.addElement(Dori);
+        }
+        Licencia_Crear_CB_Peces.setModel(modelo_Martin);
+        Licencia_Modificar_CB_Peces.setModel(modelo_Martin);
         Licencia.pack();
         Licencia.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonLicenciaActionPerformed
@@ -2615,9 +2671,9 @@ public class Main extends javax.swing.JFrame {
         Place lugar = (Place) Licencia_Crear_SelectLugar.getSelectedItem();
         Community comunidad = (Community) Licencia_Crear_SelectComunidad.getSelectedItem();
         precio = Double.parseDouble(Licencia_Crear_Precio.getText());
-        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces);
-        //License licencia = new License(nombreLicencia,precio, idLugar, idComunidad);
+        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces_Lic);
         licencias.add(lic);
+        peces_Lic = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Licencia creada.");
     }//GEN-LAST:event_Licencia_CrearButtonActionPerformed
 
@@ -2654,8 +2710,10 @@ public class Main extends javax.swing.JFrame {
                 lizy.setCommunity(comunidad);
                 lizy.setPlace(lugar);
                 lizy.setPrice(precio);
+                lizy.setFishes(peces_Lic);
             }
         }
+        peces_Lic = new ArrayList<>();
         JOptionPane.showMessageDialog(null, "Licencia Modificada.");
     }//GEN-LAST:event_Licencia_ModificarButtonActionPerformed
 
@@ -3005,6 +3063,26 @@ public class Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Agregado");
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void Licencia_ADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ADD_DoriActionPerformed
+        // TODO add your handling code here:
+        if (peces_Lic.contains((Fish)Licencia_Crear_CB_Peces.getSelectedItem())) {
+            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+        }else{
+            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        }
+    }//GEN-LAST:event_Licencia_ADD_DoriActionPerformed
+
+    private void Licencia_MODADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_MODADD_DoriActionPerformed
+        // TODO add your handling code here:
+        if (peces_Lic.contains((Fish)Licencia_Crear_CB_Peces.getSelectedItem())) {
+            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+        }else{
+            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        }
+    }//GEN-LAST:event_Licencia_MODADD_DoriActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3102,13 +3180,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Comunidad;
     private javax.swing.JTable Jt_crearCebo;
     private javax.swing.JDialog Licencia;
+    private javax.swing.JButton Licencia_ADD_Dori;
     private javax.swing.JComboBox<String> Licencia_CB_Licencia;
     private javax.swing.JButton Licencia_CrearButton;
+    private javax.swing.JComboBox<String> Licencia_Crear_CB_Peces;
     private javax.swing.JTextField Licencia_Crear_Nombre;
     private javax.swing.JTextField Licencia_Crear_Precio;
     private javax.swing.JComboBox<String> Licencia_Crear_SelectComunidad;
     private javax.swing.JComboBox<String> Licencia_Crear_SelectLugar;
+    private javax.swing.JButton Licencia_MODADD_Dori;
     private javax.swing.JButton Licencia_ModificarButton;
+    private javax.swing.JComboBox<String> Licencia_Modificar_CB_Peces;
     private javax.swing.JTextField Licencia_Modificar_ID;
     private javax.swing.JTextField Licencia_Modificar_Precio;
     private javax.swing.JComboBox<String> Licencia_Modificar_SelectComunidad;
@@ -3179,6 +3261,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -3192,6 +3275,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -3328,4 +3412,5 @@ public class Main extends javax.swing.JFrame {
     ArrayList<License> licencias_escogidas;
     ArrayList<Material> materiales;
     ArrayList<Bait> baitsPez;
+    ArrayList<Fish> peces_Lic = new ArrayList<>();
 }
