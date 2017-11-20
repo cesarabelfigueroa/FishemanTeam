@@ -75,13 +75,14 @@ public class Bait {
         this.company = company;
     }
 
-    public Bait(String name, String type, String classification, String color, int size, double price) {
+    public Bait(String name, String type, String classification, String color, int size, double price, ArrayList<Material> materials) {
         this.name = name;
         this.type = type;
         this.classification = classification;
         this.color = color;
         this.size = size;
         this.price = price;
+        this.materials = materials;
     }
 
     public Bait(String id, String name, String type, String classification, String color, int size, double price, ArrayList<Material> materials) {

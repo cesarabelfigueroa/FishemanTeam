@@ -95,7 +95,7 @@ public class BaitService {
             }
             String companyID = "";
             Company company = null;
-            if (document.get("group") != null) {
+            if (document.get("companyID") != null) {
                 companyID = document.get("group").toString();
                 company = comService.find(id).get(0);
             } else {
@@ -156,11 +156,19 @@ public class BaitService {
         for (Material material : parameters.getMaterials()) {
             listdb.add(new BasicDBObject("materialID", material.getId()));
         }
-        baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+        if(parameters.getCompany()!= null){
+            baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
                 combine(set("name", parameters.getName()), set("materials", listdb),
                         set("type", parameters.getType()), set("size", parameters.getSize()),
                         set("classification", parameters.getClassification()), set("color", parameters.getColor()),
                         set("price", parameters.getPrice()), set("group", parameters.getGroup()), set("companyID", parameters.getCompany().getId())));
+        }else{
+            baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+                combine(set("name", parameters.getName()), set("materials", listdb),
+                        set("type", parameters.getType()), set("size", parameters.getSize()),
+                        set("classification", parameters.getClassification()), set("color", parameters.getColor()),
+                        set("price", parameters.getPrice()), set("group", parameters.getGroup()), set("companyID", null)));
+        }
     }
 
     public void delete(Bait parameters) {
