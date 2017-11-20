@@ -118,6 +118,7 @@ public class BaitService {
     public ArrayList<Bait> find(String id) {
         Document filters = new Document();
         filters.append("_id", new ObjectId(id));
+        results = new ArrayList();
         baitCollection.find(filters).forEach(printBlock);
         return results;
     }
@@ -125,6 +126,7 @@ public class BaitService {
     public ArrayList<Bait> find(ObjectId id) {
         Document filters = new Document();
         filters.append("_id", id);
+        results = new ArrayList();
         baitCollection.find(filters).forEach(printBlock);
         return results;
     }
@@ -141,12 +143,12 @@ public class BaitService {
 
     public ArrayList<Bait> find(Bait parameters) {
         Document filters = new Document();
-        results = new ArrayList();
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
             filters.append("_id", new ObjectId(parameters.getId()));
         }
+        results = new ArrayList();
         baitCollection.find(filters).forEach(printBlock);
         return results;
     }

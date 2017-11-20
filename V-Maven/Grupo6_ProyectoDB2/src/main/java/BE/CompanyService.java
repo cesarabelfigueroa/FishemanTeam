@@ -69,6 +69,7 @@ public class CompanyService {
     public ArrayList<Company> find(String id) {
         Document filters = new Document();
         filters.append("_id", new ObjectId(id));
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }
@@ -77,6 +78,7 @@ public class CompanyService {
         results = new ArrayList();
         Document filters = new Document();
         filters.append("_id",id);
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }

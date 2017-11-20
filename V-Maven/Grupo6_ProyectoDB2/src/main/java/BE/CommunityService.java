@@ -46,6 +46,7 @@ public class CommunityService {
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
         }
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }

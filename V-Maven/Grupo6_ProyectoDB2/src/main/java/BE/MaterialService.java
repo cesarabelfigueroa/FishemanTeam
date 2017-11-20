@@ -54,6 +54,7 @@ public class MaterialService {
         } else {
             filters.append("_id", new ObjectId(parameters.getId()));
         }
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }
@@ -62,6 +63,7 @@ public class MaterialService {
         results = new ArrayList();
         Document filters = new Document();
         filters.append("_id", new ObjectId(id));
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }
@@ -69,6 +71,7 @@ public class MaterialService {
     public ArrayList<Material> find(ObjectId id) {
         Document filters = new Document();
         filters.append("_id",id);
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }

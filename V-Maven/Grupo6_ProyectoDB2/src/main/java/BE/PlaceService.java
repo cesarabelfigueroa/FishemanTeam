@@ -43,10 +43,10 @@ public class PlaceService {
 
     public ArrayList<Place> find(Place parameters) {
         Document filters = new Document();
-        results = new ArrayList();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
         }
+        results = new ArrayList();
         collection.find(filters).forEach(printBlock);
         return results;
     }
@@ -56,11 +56,6 @@ public class PlaceService {
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
         }
-        
-        /* if ((parameters.getIdcommunity() != null)) {
-            data.append("idComunity", parameters.getIdcommunity());
-        } */
-
         collection.insertOne(data);
     }
 
