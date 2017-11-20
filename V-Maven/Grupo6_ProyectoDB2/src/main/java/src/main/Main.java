@@ -2871,7 +2871,16 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     clasificacion = "Vegetal";
                 }
-                //Falta Materiales
+                int[] filas = Jt_crearCebo.getSelectedRows();
+                ArrayList<Material> materialesTemp = new ArrayList();
+                for (int i = 0; i < filas.length; i++) {
+                    for (int j = 0; materiales.size() < 10; j++) {
+                        if(filas[i] == j){
+                            materialesTemp.add(materiales.get(j));
+                        }
+                    }
+                }
+                //Agregas materiales temp al constructor cuando lo hagas
                 //cebos.add(new Bait(cebo_crearNombre.getText(),"Natural",cebo_crearColor.getText(),clasificacion,Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText())));
                 JOptionPane.showMessageDialog(null,"Cebo Creado");
             }else if(rb_artificial.isSelected()){
@@ -2884,6 +2893,16 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     clasificacion = "Vegetal";
                 }
+                int[] filas = Jt_crearCebo.getSelectedRows();
+                ArrayList<Material> materialesTemp = new ArrayList();
+                for (int i = 0; i < filas.length; i++) {
+                    for (int j = 0; materiales.size() < 10; j++) {
+                        if(filas[i] == j){
+                            materialesTemp.add(materiales.get(j));
+                        }
+                    }
+                }
+                //Agregas materiales temp al constructor cuando lo hagas
                 //cebos.add(new Bait(cebo_crearNombre.getText(),"Mixto",clasificacion,cebo_crearColor.getText(),Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText()),cebo_crearGrupo.getText(),new Company(cebo_crearFabricante.getText())));
                 //Falta materiales
                 JOptionPane.showMessageDialog(null,"Cebo Creado");
@@ -2906,7 +2925,16 @@ public class Main extends javax.swing.JFrame {
                 clasificacion = "Vegetal";
             }
             ceboTemp.setClassification(clasificacion);
-            //Falta Materiales
+            int[] filas = jt_modCebo.getSelectedRows();
+            ArrayList<Material> materialesTemp = new ArrayList();
+            for (int i = 0; i < filas.length; i++) {
+                for (int j = 0; materiales.size() < 10; j++) {
+                    if(filas[i] == j){
+                        materialesTemp.add(materiales.get(j));
+                    }
+                }
+            }
+            ceboTemp.setMaterials(materiales);
             
         }else if(rb_artificial2.isSelected()){
             ceboTemp.setGroup(cebo_cmodGrupo.getText());
@@ -2919,7 +2947,16 @@ public class Main extends javax.swing.JFrame {
                 clasificacion = "Vegetal";
             }
             ceboTemp.setClassification(clasificacion);
-            //Falta Materiales
+            int[] filas = jt_modCebo.getSelectedRows();
+            ArrayList<Material> materialesTemp = new ArrayList();
+            for (int i = 0; i < filas.length; i++) {
+                for (int j = 0; materiales.size() < 10; j++) {
+                    if(filas[i] == j){
+                        materialesTemp.add(materiales.get(j));
+                    }
+                }
+            }
+            ceboTemp.setMaterials(materiales);
             ceboTemp.setGroup(cebo_cmodGrupo.getText());
             ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
         }
@@ -3233,4 +3270,5 @@ public class Main extends javax.swing.JFrame {
     ArrayList<License> licencias;
     ArrayList<Community> comunidades;
     ArrayList<License> licencias_escogidas;
+    ArrayList<Material> materiales;
 }
