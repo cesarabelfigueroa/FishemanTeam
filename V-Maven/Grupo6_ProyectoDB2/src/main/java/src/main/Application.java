@@ -1,8 +1,11 @@
 package src.main;
 
 
+import BE.BaitService;
 import BE.CompanyService;
+import CORE.Bait;
 import CORE.Company;
+import CORE.Material;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
@@ -18,15 +21,17 @@ public class Application extends javax.swing.JFrame {
  
 
     public Application() {
-        
         initComponents();
-        Company example  = new Company("myCompany");   
-        CompanyService companyService = new CompanyService(client, database);
-        System.out.println(companyService.find(example).get(0).getId());
-//        ArrayList<Company> results =  companyService.find(example);
-//        for (Company a : results) {
-//            System.out.println(a.toString());
-//        }
+        ArrayList<Material> materials = new ArrayList();
+        materials.add(new Material("5a0fbd724ef71317004199fd","pollo",'A'));
+        Bait example  = new Bait("bait1","Natural","A","rojo", 32,55.5,materials,null,null);   
+        BaitService baitService = new BaitService(client, database);
+        //baitService.create(example);
+        ArrayList<Bait> results =  baitService.find(example);
+        for (Bait a : results) {
+            System.out.println(a.toString());
+            System.out.println(a.getMaterials());
+        }
 
     }
 

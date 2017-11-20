@@ -67,6 +67,13 @@ public class CompanyService {
         collection.find(filters).forEach(printBlock);
         return results;
     }
+    public ArrayList<Company> find(String id) {
+        Document filters = new Document();
+        filters.append("_id", new ObjectId(id));
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+    
     public void update(Company parameters) {
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
                 combine(set("name", parameters.getName())));

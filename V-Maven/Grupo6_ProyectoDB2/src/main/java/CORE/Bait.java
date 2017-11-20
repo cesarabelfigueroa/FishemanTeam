@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class Bait {
-    private int id;
+    private String id;
     private String name;
     private String type;
     private String classification;
@@ -18,7 +18,20 @@ public class Bait {
     public Bait() {
     }
 
-    public Bait(int id, String name, String type, String classification, String color, int size, double price) {
+    public Bait(String id, String name, String type, String classification, String color, int size, double price, ArrayList<Material> materials, String group, Company company) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.classification = classification;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+        this.materials = materials;
+        this.group = group;
+        this.company = company;
+    }
+    
+    public Bait(String id, String name, String type, String classification, String color, int size, double price) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -37,13 +50,37 @@ public class Bait {
         this.price = price;
         this.group = group;
         this.company = company;
+        this.materials = new ArrayList();
     }
+    public Bait(String name,String type,String classification ,String color, int size, double price,ArrayList<Material> materials,String group, Company company) {
+        this.name = name;
+        this.type = type;
+        this.color = color;
+        this.size = size;
+        this.classification = classification;
+        this.price = price;
+        this.group = group;
+        this.company = company;
+        this.materials = materials;
+    }
+    public Bait(String id, String name, String type, String classification, String color, int size, double price, String group, Company company) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.classification = classification;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+        this.group = group;
+        this.company = company;
+    }
+    
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

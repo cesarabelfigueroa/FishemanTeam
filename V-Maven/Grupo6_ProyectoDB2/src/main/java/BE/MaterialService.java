@@ -12,16 +12,17 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 /**
  *
  * @author Agile
  */
 public class MaterialService {
-    MongoClient client;
-    MongoDatabase database;
-    MongoCollection<Document> collection;
-    ArrayList<Material> results;
+    private MongoClient client;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
+    private ArrayList<Material> results;
 
     public MaterialService(MongoClient client, MongoDatabase database) {
         this.client = client;
@@ -30,7 +31,7 @@ public class MaterialService {
         this.results = new ArrayList();
     }
     
-    Block<Document> printBlock = new Block<Document>() {
+    private Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
             results = new ArrayList();
@@ -48,6 +49,12 @@ public class MaterialService {
         }else{
             filters.append("_id", parameters.getId());
         }
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+    public ArrayList<Material> find(String id){
+        Document filters = new Document();
+        filters.append("_id", new ObjectId(id));
         collection.find(filters).forEach(printBlock);
         return results;
     }
