@@ -40,7 +40,6 @@ public class CompanyService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
             Company temporal = new Company(id, name);
@@ -75,6 +74,7 @@ public class CompanyService {
     }
 
     public ArrayList<Company> find(ObjectId id) {
+        results = new ArrayList();
         Document filters = new Document();
         filters.append("_id",id);
         collection.find(filters).forEach(printBlock);

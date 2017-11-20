@@ -39,7 +39,6 @@ public class MaterialService {
     private Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
             char type = document.get("type").toString().charAt(0);
@@ -60,6 +59,7 @@ public class MaterialService {
     }
 
     public ArrayList<Material> find(String id) {
+        results = new ArrayList();
         Document filters = new Document();
         filters.append("_id", new ObjectId(id));
         collection.find(filters).forEach(printBlock);

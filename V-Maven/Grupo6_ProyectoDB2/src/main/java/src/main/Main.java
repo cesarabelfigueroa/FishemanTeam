@@ -318,7 +318,9 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setForeground(new java.awt.Color(153, 153, 255));
 
+
         jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
+        System.out.println(getClass().getClassLoader().getResource("./pics/stats.png"));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/stats.png"))); // NOI18N
         jButton3.setText("Tabla de Comercio");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));

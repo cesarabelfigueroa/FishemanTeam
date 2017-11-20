@@ -33,7 +33,6 @@ public class CommunityService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
             Community temporal = new Community(_id, name);
@@ -42,6 +41,7 @@ public class CommunityService {
     };
 
     public ArrayList<Community> find(Community parameters) {
+        results = new ArrayList();
         Document filters = new Document();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());

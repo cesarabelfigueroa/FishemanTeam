@@ -30,7 +30,6 @@ public class AffiliateService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
             Affiliate temp = new Affiliate(id, name);
@@ -49,6 +48,7 @@ public class AffiliateService {
 
     public void create(Affiliate parameters) {
         Document data = new Document();
+        results = new ArrayList();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
         }

@@ -64,7 +64,6 @@ public class FishService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
             List<Document> baitsd = (List<Document>) document.get("baits");
@@ -92,6 +91,7 @@ public class FishService {
     }
 
     public ArrayList<Fish> find(ObjectId id) {
+        results = new ArrayList();
         Document filters = new Document();
         filters.append("_id", id);
         collection.find(filters).forEach(printBlock);

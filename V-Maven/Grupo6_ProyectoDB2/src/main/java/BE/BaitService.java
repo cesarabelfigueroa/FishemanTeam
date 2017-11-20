@@ -79,7 +79,6 @@ public class BaitService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.getString("name");
             String id = document.get("_id").toString();
             String type = document.getString("type");
@@ -142,6 +141,7 @@ public class BaitService {
 
     public ArrayList<Bait> find(Bait parameters) {
         Document filters = new Document();
+        results = new ArrayList();
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {

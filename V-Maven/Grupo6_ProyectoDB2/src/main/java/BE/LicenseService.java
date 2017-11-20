@@ -32,7 +32,6 @@ public class LicenseService {
     Block<Document> printBlock = new Block<Document>() {
         @Override
         public void apply(final Document document) {
-            results = new ArrayList();
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
             double price = Double.parseDouble(document.get("price").toString());
@@ -45,6 +44,7 @@ public class LicenseService {
 
     public ArrayList<License> find(License parameters) {
         Document filters = new Document();
+        results = new ArrayList();
         if ((parameters.getName() != null)) {
             filters.append("name", parameters.getName());
         }
