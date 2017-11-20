@@ -3,6 +3,8 @@ package src.main;
 
 import BE.BaitService;
 import BE.CompanyService;
+import BE.FishService;
+import BE.MaterialService;
 import CORE.Bait;
 import CORE.Company;
 import CORE.Material;
@@ -23,15 +25,14 @@ public class Application extends javax.swing.JFrame {
     public Application() {
         initComponents();
         ArrayList<Material> materials = new ArrayList();
-        materials.add(new Material("5a0fbd724ef71317004199fd","pollo",'A'));
-        Bait example  = new Bait("bait1","Natural","A","rojo", 32,55.5,materials,null,null);   
-        BaitService baitService = new BaitService(client, database);
-        //baitService.create(example);
-        ArrayList<Bait> results =  baitService.find(example);
-        for (Bait a : results) {
-            System.out.println(a.toString());
-            System.out.println(a.getMaterials());
-        }
+        MaterialService matserv = new MaterialService(client,database);
+        CompanyService compserv = new CompanyService(client,database);
+        BaitService baitserv = new BaitService(client,database);
+        FishService fishserv = new FishService(client,database);
+        System.out.println("Mats: "+matserv.findAll());
+        System.out.println("Comps: "+compserv.findAll());
+        System.out.println("Baits: "+baitserv.findAll());
+        System.out.println("Fish: "+fishserv.findAll());
 
     }
 

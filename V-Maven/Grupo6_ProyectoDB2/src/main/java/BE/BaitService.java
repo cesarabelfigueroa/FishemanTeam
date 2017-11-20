@@ -12,7 +12,9 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -126,6 +128,16 @@ public class BaitService {
         filters.append("_id", id);
         baitCollection.find(filters).forEach(printBlock);
         return results;
+    }
+    public ArrayList<Bait> findAll() {
+        ArrayList<Bait> baits = new ArrayList();
+        FindIterable<Document> docs = baitCollection.find();
+        MongoCursor<Document> cursor = docs.iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            baits.add(find((ObjectId) doc.get("_id")).get(0));
+        }
+        return baits;
     }
 
     public ArrayList<Bait> find(Bait parameters) {

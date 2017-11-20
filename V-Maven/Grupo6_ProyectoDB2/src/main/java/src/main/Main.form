@@ -1740,27 +1740,24 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="Pez_CrearButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Pez_Crear_Nombre" max="32767" attributes="0"/>
-                                      <Component id="Pez_Crear_Captura" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="Pez_Crear_Cebo" alignment="0" pref="99" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="pez_ceboCrear" pref="116" max="32767" attributes="0"/>
+                              <Component id="Pez_Crear_Nombre" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                          <Component id="Pez_CrearButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1772,19 +1769,15 @@
                               <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Pez_Crear_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Pez_Crear_Captura" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Pez_Crear_Cebo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="pez_ceboCrear" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="52" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="Pez_CrearButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace pref="84" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1803,11 +1796,6 @@
                     <Property name="text" type="java.lang.String" value="Nombre"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel41">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Licencia de Captura"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel42">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cebo"/>
@@ -1815,9 +1803,31 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="Pez_Crear_Nombre">
                 </Component>
-                <Component class="javax.swing.JTextField" name="Pez_Crear_Captura">
+                <Component class="javax.swing.JComboBox" name="pez_ceboCrear">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pez_ceboCrearActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
-                <Component class="javax.swing.JTextField" name="Pez_Crear_Cebo">
+                <Component class="javax.swing.JButton" name="jButton7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1890,31 +1900,24 @@
                           <Component id="Pez_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                          <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="112" max="32767" attributes="0"/>
-                          <Component id="Pez_Modificar_SelectPez" min="-2" pref="97" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Pez_Modificar_Nombre" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Pez_Modificar_ID" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Pez_Modificar_Captura" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Pez_Modificar_Cebo" alignment="0" pref="99" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Pez_Modificar_Nombre" max="32767" attributes="0"/>
+                              <Component id="Pez_Modificar_ID" alignment="0" max="32767" attributes="0"/>
+                              <Component id="pez_ceboMod" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Pez_Modificar_SelectPez" alignment="0" pref="99" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1926,34 +1929,25 @@
                               <Component id="Pez_Modificar_SelectPez" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="164" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Pez_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Pez_Modificar_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="pez_ceboMod" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Component id="Pez_ModificarButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Pez_Modificar_ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Pez_Modificar_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Pez_Modificar_Captura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Pez_Modificar_Cebo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1968,6 +1962,9 @@
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Pez_Modificar_ID">
+                  <Properties>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel43">
                   <Properties>
@@ -1981,19 +1978,10 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="Pez_Modificar_Nombre">
                 </Component>
-                <Component class="javax.swing.JTextField" name="Pez_Modificar_Captura">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel45">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Licencia de Captura"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel46">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Cebo"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="Pez_Modificar_Cebo">
                 </Component>
                 <Component class="javax.swing.JComboBox" name="Pez_Modificar_SelectPez">
                   <Properties>
@@ -2017,6 +2005,32 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Pez"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="pez_ceboMod">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pez_ceboModActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Agregar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -3297,6 +3311,11 @@
     <Component class="javax.swing.JLabel" name="jLabel77">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel77"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton5"/>
       </Properties>
     </Component>
   </NonVisualComponents>

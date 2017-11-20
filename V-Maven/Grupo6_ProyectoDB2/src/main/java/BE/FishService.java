@@ -12,7 +12,9 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.combine;
@@ -104,7 +106,16 @@ public class FishService {
         collection.find(filters).forEach(printBlock);
         return results;
     }
-    
+    public ArrayList<Fish> findAll() {
+        ArrayList<Fish> fshes = new ArrayList();
+        FindIterable<Document> docs = collection.find();
+        MongoCursor<Document> cursor = docs.iterator();
+        while (cursor.hasNext()) {
+            Document doc = cursor.next();
+            fshes.add(find((ObjectId) doc.get("_id")).get(0));
+        }
+        return fshes;
+    }
     public void update(Fish parameters) {
         this.listdb = new BasicDBList();
         for (Bait bait : parameters.getBaits()) {
