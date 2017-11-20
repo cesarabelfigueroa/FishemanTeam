@@ -3374,7 +3374,12 @@ public class Main extends javax.swing.JFrame {
             cebos.add(baitserv.find(bait).get(0));
             JOptionPane.showMessageDialog(null, "Cebo Creado");
         }
-
+        cebo_crearNombre.setText("");
+        cebo_crearColor.setText("");
+        cebo_crearPrecio.setText("");
+        cebo_crearTamaño.setText("");
+        cebo_crearGrupo.setText("");
+        cebo_crearFabricante.setText("");
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -3417,6 +3422,12 @@ public class Main extends javax.swing.JFrame {
             baitserv.update(ceboTemp);
             cebos.add(index, ceboTemp);
             JOptionPane.showMessageDialog(null, "Cebo modificado.");
+            cebo_nombreMod.setText("");
+            cebo_colorMod.setText("");
+            cebo_precioMod.setText("");
+            cebo_tamanoMod.setText("");
+            cebo_modFabricante.setText("");
+            cebo_cmodGrupo.setText("");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
         }
