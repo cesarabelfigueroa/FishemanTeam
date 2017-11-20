@@ -10,15 +10,16 @@ public class License {
     private Place place;
     private Community community;
     private ArrayList<Fish> fishes = new ArrayList();
-    
+
     public License(String id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.place = place;
-        this.community = community;
-        this.fishes = fishes;
+        this.place = new Place();
+        this.community = new Community();
     }
+    
+    
 
     public License(String id, String name, double price, Place place, Community community, ArrayList<Fish> fishes) {
         this.id = id;

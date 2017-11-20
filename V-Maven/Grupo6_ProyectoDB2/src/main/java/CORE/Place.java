@@ -7,11 +7,12 @@ public class Place {
 
     public Place() {
     }
-    
-    public Place(String id, String name){
-    
-    }
 
+    public Place(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    
 
     public Place(String id, String name, Community community) {
         this.id = id;
