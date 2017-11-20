@@ -114,7 +114,7 @@ public class Main extends javax.swing.JFrame {
         jLabel76 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        Afiliado_CBorrar = new javax.swing.JComboBox<>();
         jButton17 = new javax.swing.JButton();
         Licencia = new javax.swing.JDialog();
         jTabbedPane4 = new javax.swing.JTabbedPane();
@@ -145,7 +145,7 @@ public class Main extends javax.swing.JFrame {
         Licencia_Modificar_SelectLugar = new javax.swing.JComboBox<>();
         jPanel18 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        Licencia_CB_Licencia = new javax.swing.JComboBox<>();
         jButton18 = new javax.swing.JButton();
         Pez = new javax.swing.JDialog();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -173,7 +173,7 @@ public class Main extends javax.swing.JFrame {
         Pez_Modificar_SelectPez = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        Pez_CB_Eliminar = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
         jButton19 = new javax.swing.JButton();
         Lugar = new javax.swing.JDialog();
@@ -198,7 +198,7 @@ public class Main extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         Lugar_Modificar_Comunidad = new javax.swing.JComboBox<>();
         jPanel26 = new javax.swing.JPanel();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        Lugar_CB_Borrar = new javax.swing.JComboBox<>();
         jButton20 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         Cebo = new javax.swing.JDialog();
@@ -210,22 +210,23 @@ public class Main extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
+        cebo_crearNombre = new javax.swing.JTextField();
+        cebo_crearColor = new javax.swing.JTextField();
+        cebo_crearPrecio = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
-        jTextField41 = new javax.swing.JTextField();
+        cebo_crearTamaño = new javax.swing.JTextField();
         jLabel62 = new javax.swing.JLabel();
         rb_animal = new javax.swing.JRadioButton();
         rb_vegetal = new javax.swing.JRadioButton();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         cebo_crearGrupo = new javax.swing.JTextField();
-        cebo_crearFabricante = new javax.swing.JTextField();
         rb_natural = new javax.swing.JRadioButton();
         rb_artificial = new javax.swing.JRadioButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         Jt_crearCebo = new javax.swing.JTable();
+        rb_mixto = new javax.swing.JRadioButton();
+        cebo_crearFabricante = new javax.swing.JTextField();
         jPanel28 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
@@ -245,10 +246,10 @@ public class Main extends javax.swing.JFrame {
         cebo_precioMod = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
-        cebo_crearGrupo1 = new javax.swing.JTextField();
+        cebo_cmodGrupo = new javax.swing.JTextField();
         jLabel81 = new javax.swing.JLabel();
         cebo_tamanoMod = new javax.swing.JTextField();
-        cebo_crearFabricante1 = new javax.swing.JTextField();
+        cebo_modFabricante = new javax.swing.JTextField();
         jScrollPane10 = new javax.swing.JScrollPane();
         jt_modCebo = new javax.swing.JTable();
         jLabel82 = new javax.swing.JLabel();
@@ -259,6 +260,7 @@ public class Main extends javax.swing.JFrame {
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
+        rb_mixto2 = new javax.swing.JRadioButton();
         jPanel30 = new javax.swing.JPanel();
         cebo_cbBorrar = new javax.swing.JComboBox<>();
         jButton21 = new javax.swing.JButton();
@@ -393,6 +395,12 @@ public class Main extends javax.swing.JFrame {
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         Comercio_CrearButton.setText("Crear");
         Comercio_CrearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -610,6 +618,12 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane1)
         );
 
+        jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane2StateChanged(evt);
+            }
+        });
+
         jLabel13.setText("Nombre");
 
         jButton14.setText("Crear");
@@ -796,6 +810,12 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane2)
         );
 
+        jTabbedPane3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane3StateChanged(evt);
+            }
+        });
+
         jLabel24.setText("Nombre");
 
         Afiliado_CreateButton.setText("Crear");
@@ -973,7 +993,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel19.setText("Afiliado");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Afiliado_CBorrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton17.setText("Borrar");
 
@@ -985,7 +1005,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(93, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(27, 27, 27)
-                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Afiliado_CBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(147, 147, 147)
@@ -997,7 +1017,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Afiliado_CBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addGap(27, 27, 27)
                 .addComponent(jButton17)
@@ -1016,6 +1036,12 @@ public class Main extends javax.swing.JFrame {
             AfiliadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane3)
         );
+
+        jTabbedPane4.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane4StateChanged(evt);
+            }
+        });
 
         Licencia_CrearButton.setText("Crear");
         Licencia_CrearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1202,7 +1228,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel20.setText("Licencia");
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Licencia_CB_Licencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton18.setText("Borrar");
 
@@ -1214,7 +1240,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(jLabel20)
                 .addGap(27, 27, 27)
-                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Licencia_CB_Licencia, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
@@ -1226,7 +1252,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Licencia_CB_Licencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20))
                 .addGap(38, 38, 38)
                 .addComponent(jButton18)
@@ -1245,6 +1271,12 @@ public class Main extends javax.swing.JFrame {
             LicenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane4)
         );
+
+        jTabbedPane5.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane5StateChanged(evt);
+            }
+        });
 
         Pez_CrearButton.setText("Crear");
         Pez_CrearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1421,7 +1453,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Modificar", jPanel21);
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Pez_CB_Eliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel21.setText("Pez");
 
@@ -1435,7 +1467,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(118, Short.MAX_VALUE)
                 .addComponent(jLabel21)
                 .addGap(27, 27, 27)
-                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Pez_CB_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
@@ -1447,7 +1479,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Pez_CB_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
                 .addGap(38, 38, 38)
                 .addComponent(jButton19)
@@ -1466,6 +1498,12 @@ public class Main extends javax.swing.JFrame {
             PezLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane5)
         );
+
+        jTabbedPane6.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane6StateChanged(evt);
+            }
+        });
 
         Lugar_CrearButton.setText("Crear");
         Lugar_CrearButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1626,7 +1664,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane6.addTab("Modificar", jPanel25);
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Lugar_CB_Borrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton20.setText("Eliminar");
 
@@ -1640,7 +1678,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(108, Short.MAX_VALUE)
                 .addComponent(jLabel22)
                 .addGap(27, 27, 27)
-                .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Lugar_CB_Borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addGap(145, 145, 145)
@@ -1652,7 +1690,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lugar_CB_Borrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
                 .addGap(38, 38, 38)
                 .addComponent(jButton20)
@@ -1672,7 +1710,18 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jTabbedPane6)
         );
 
+        jTabbedPane7.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane7StateChanged(evt);
+            }
+        });
+
         jButton22.setText("Crear");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
         jLabel56.setText("Nombre");
 
@@ -1699,8 +1748,6 @@ public class Main extends javax.swing.JFrame {
         jLabel64.setText("Fabricante");
 
         cebo_crearGrupo.setEnabled(false);
-
-        cebo_crearFabricante.setEnabled(false);
 
         bg_tipo.add(rb_natural);
         rb_natural.setSelected(true);
@@ -1745,55 +1792,65 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(Jt_crearCebo);
 
+        bg_tipo.add(rb_mixto);
+        rb_mixto.setText("Mixto");
+        rb_mixto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_mixtoMouseClicked(evt);
+            }
+        });
+
+        cebo_crearFabricante.setEnabled(false);
+
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
+                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel56)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel61)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel62))
                         .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel27Layout.createSequentialGroup()
-                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel56)
-                                    .addComponent(jLabel58)
-                                    .addComponent(jLabel59)
-                                    .addComponent(jLabel61)
-                                    .addComponent(jLabel57)
-                                    .addComponent(jLabel60)
-                                    .addComponent(jLabel62))
-                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel27Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel27Layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rb_animal)
-                                            .addComponent(rb_natural))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rb_artificial)
-                                            .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel27Layout.createSequentialGroup()
-                                        .addGap(60, 60, 60)
-                                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel27Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
                                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel63)
-                                    .addComponent(jLabel64))
-                                .addGap(67, 67, 67)
-                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cebo_crearGrupo, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                    .addComponent(cebo_crearFabricante)))))
+                                    .addGroup(jPanel27Layout.createSequentialGroup()
+                                        .addComponent(rb_animal)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(rb_vegetal, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel27Layout.createSequentialGroup()
+                                        .addComponent(rb_natural)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rb_artificial)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(rb_mixto))))
+                            .addGroup(jPanel27Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cebo_crearColor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cebo_crearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cebo_crearPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cebo_crearTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel27Layout.createSequentialGroup()
-                        .addGap(194, 194, 194)
-                        .addComponent(jButton22)))
+                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel64))
+                        .addGap(67, 67, 67)
+                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton22)
+                            .addComponent(cebo_crearGrupo, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(cebo_crearFabricante))))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel27Layout.setVerticalGroup(
@@ -1802,24 +1859,25 @@ public class Main extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cebo_crearNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cebo_crearColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel58))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cebo_crearPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel59))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cebo_crearTamaño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel61))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_natural)
                     .addComponent(rb_artificial)
-                    .addComponent(jLabel60))
+                    .addComponent(jLabel60)
+                    .addComponent(rb_mixto))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rb_animal)
@@ -1829,17 +1887,17 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel62)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63)
                     .addComponent(cebo_crearGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel64)
                     .addComponent(cebo_crearFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
+                .addGap(47, 47, 47)
                 .addComponent(jButton22)
-                .addGap(42, 42, 42))
+                .addGap(52, 52, 52))
         );
 
         jTabbedPane7.addTab("Crear", jPanel27);
@@ -1904,6 +1962,11 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane7.addTab("Listar Artificial", jPanel31);
 
         jButton23.setText("Modificar");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         cebo_cbMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cebo_cbMod.addItemListener(new java.awt.event.ItemListener() {
@@ -1928,11 +1991,11 @@ public class Main extends javax.swing.JFrame {
 
         jLabel80.setText("Tamaño");
 
-        cebo_crearGrupo1.setEnabled(false);
+        cebo_cmodGrupo.setEnabled(false);
 
         jLabel81.setText("ID");
 
-        cebo_crearFabricante1.setEnabled(false);
+        cebo_modFabricante.setEnabled(false);
 
         jt_modCebo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1989,6 +2052,14 @@ public class Main extends javax.swing.JFrame {
 
         jLabel87.setText("Tipo");
 
+        bg_tipoMod.add(rb_mixto2);
+        rb_mixto2.setText("Mixto");
+        rb_mixto2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rb_mixto2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
         jPanel29Layout.setHorizontalGroup(
@@ -1996,11 +2067,6 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addComponent(jLabel83)
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 49, Short.MAX_VALUE))
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel81)
@@ -2013,28 +2079,38 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel79)
                             .addComponent(jLabel87)
                             .addComponent(jLabel75))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rb_animal2)
-                                    .addComponent(rb_natural2))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rb_artificial2)
-                                    .addComponent(rb_vegetal2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(16, 16, 16)
+                                .addComponent(rb_animal2))
                             .addComponent(cebo_precioMod, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cebo_tamanoMod, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(cebo_crearFabricante1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cebo_crearGrupo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cebo_modFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cebo_cmodGrupo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(cebo_colorMod, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(cebo_cbMod, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cebo_nombreMod, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cebo_idMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)))
+                                .addComponent(cebo_idMod, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
+                            .addComponent(cebo_tamanoMod, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel29Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(rb_natural2)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_artificial2)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_mixto2)))
+                        .addGap(28, 28, 28))
+                    .addGroup(jPanel29Layout.createSequentialGroup()
+                        .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rb_vegetal2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel29Layout.createSequentialGroup()
+                                .addComponent(jLabel83)
+                                .addGap(40, 40, 40)
+                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(78, 78, 78))
+                .addGap(50, 50, 50))
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(jButton23)
@@ -2073,7 +2149,8 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel87)
                     .addComponent(rb_natural2)
-                    .addComponent(rb_artificial2))
+                    .addComponent(rb_artificial2)
+                    .addComponent(rb_mixto2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
@@ -2086,12 +2163,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel78)
-                    .addComponent(cebo_crearGrupo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cebo_cmodGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel79)
-                    .addComponent(cebo_crearFabricante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                    .addComponent(cebo_modFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton23)
                 .addContainerGap())
         );
@@ -2142,7 +2219,7 @@ public class Main extends javax.swing.JFrame {
         );
         CeboLayout.setVerticalGroup(
             CeboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(jTabbedPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 562, Short.MAX_VALUE)
         );
 
         jLabel77.setText("jLabel77");
@@ -2223,18 +2300,14 @@ public class Main extends javax.swing.JFrame {
     private void ButtonAfiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAfiliadosActionPerformed
         Afiliado.setVisible(true);
         Afiliado.pack();
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
-        modelo.removeAllElements();;
-        for (Affiliate afiliado : afiliados) {
-            modelo.addElement(afiliado);
-        }
-        Afiliado_Modify_SelectAfiliado.setModel(modelo);
+        
+        
         DefaultComboBoxModel model_Licencia = (DefaultComboBoxModel) Afiliado_Create_License.getModel();
         model_Licencia.removeAllElements();
         for (License lic : licencias) {
             model_Licencia.addElement(lic);
         }
-        Afiliado_Create_License.setModel(modelo);
+        Afiliado_Create_License.setModel(model_Licencia);
         Afiliado.setLocationRelativeTo(this); 
     }//GEN-LAST:event_ButtonAfiliadosActionPerformed
 
@@ -2259,15 +2332,16 @@ public class Main extends javax.swing.JFrame {
         Comercio.setLocationRelativeTo(this); 
         
         DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        for (Community temp : comunidades) {
+        for (Shop temp : comercios) {
             modelo.addElement(temp);
         }
-        cb_comBorrar.setModel(modelo);
+        comercioDelete.setModel(modelo);
         DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
-        for (Community temp : comunidades) {
+        for (Shop temp : comercios) {
             modelo2.addElement(temp);
         }
-        cb_comMod.setModel(modelo2);
+        Comercio_Modificar_SelectComercio.setModel(modelo2);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -2289,35 +2363,20 @@ public class Main extends javax.swing.JFrame {
 
     private void ButtonLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLugaresActionPerformed
         Lugar.setVisible(true);
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
-        modelo.removeAllElements();
-        for (Place lugar : lugares) {
-            modelo.addElement(lugar);
-        }
-        Lugar_Modificar_SelectLugar.setModel(modelo);
+        
         Lugar.pack();
         Lugar.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonLugaresActionPerformed
 
     private void ButtonPezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPezActionPerformed
         Pez.setVisible(true);
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Pez_Modificar_SelectPez.getModel();
-        modelo.removeAllElements();
-        for (Fish sushi : peces) {
-            modelo.addElement(sushi);
-        }
-        Pez_Modificar_SelectPez.setModel(modelo);
+        
         Pez.pack();
         Pez.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonPezActionPerformed
 
     private void ButtonLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLicenciaActionPerformed
         Licencia.setVisible(true);
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
-        modelo.removeAllElements();
-        for (License licencia : licencias) {
-            modelo.addElement(licencia);
-        }
         DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
         modelo_SelectLugar.removeAllElements();
         for (Place plc : lugares) {
@@ -2332,7 +2391,6 @@ public class Main extends javax.swing.JFrame {
         }
         Licencia_Crear_SelectComunidad.setModel(modelo_Selectcomunidad);
         Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
-        Licencia_Modificar_SelectLicencia.setModel(modelo);
         Licencia.pack();
         Licencia.setLocationRelativeTo(this);
     }//GEN-LAST:event_ButtonLicenciaActionPerformed
@@ -2341,6 +2399,8 @@ public class Main extends javax.swing.JFrame {
         Comunidad.setVisible(true);
         Comunidad.pack();
         Comunidad.setLocationRelativeTo(this);
+        
+        
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -2374,16 +2434,16 @@ public class Main extends javax.swing.JFrame {
         //falta if
         rb_animal2.setEnabled(true);
         rb_vegetal2.setEnabled(true);
-        cebo_crearGrupo1.setEnabled(false);
-        cebo_crearFabricante1.setEnabled(false);
+        cebo_cmodGrupo.setEnabled(false);
+        cebo_modFabricante.setEnabled(false);
         jt_modCebo.setEnabled(true);
     }//GEN-LAST:event_rb_natural2MouseClicked
 
     private void rb_artificial2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_artificial2MouseClicked
         rb_animal2.setEnabled(false);
         rb_vegetal2.setEnabled(false);
-        cebo_crearGrupo1.setEnabled(true);
-        cebo_crearFabricante1.setEnabled(true);
+        cebo_cmodGrupo.setEnabled(true);
+        cebo_modFabricante.setEnabled(true);
         jt_modCebo.setEnabled(false);
     }//GEN-LAST:event_rb_artificial2MouseClicked
 
@@ -2649,6 +2709,224 @@ public class Main extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Lugar Modificado.");
     }//GEN-LAST:event_Lugar_ModificarButtonActionPerformed
 
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane1.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+            for (Shop temp : comercios) {
+                modelo3.addElement(temp);
+            }
+            comercioDelete.setModel(modelo3);
+            }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane2.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+            for (Community temp : comunidades) {
+                modelo2.addElement(temp);
+            }
+            cb_comMod.setModel(modelo2);
+        }
+        if (jTabbedPane2.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Community temp : comunidades) {
+                modelo.addElement(temp);
+            }
+            cb_comBorrar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane2StateChanged
+
+    private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane3.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
+            modelo.removeAllElements();
+            for (Affiliate afiliado : afiliados) {
+                modelo.addElement(afiliado);
+            }
+            Afiliado_Modify_SelectAfiliado.setModel(modelo);
+            Licencia_Modificar_SelectLicencia.setModel(modelo);
+        }
+        if (jTabbedPane3.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Affiliate afiliado : afiliados) {
+                modelo.addElement(afiliado);
+            }
+            Afiliado_CBorrar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane3StateChanged
+
+    private void jTabbedPane4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane4StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane4.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
+            modelo.removeAllElements();
+            for (License licencia : licencias) {
+                modelo.addElement(licencia);
+            }
+            DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
+            modelo_SelectLugar.removeAllElements();
+            for (Place plc : lugares) {
+                modelo_SelectLugar.addElement(plc);
+            }
+            Licencia_Modificar_SelectLugar.setModel(modelo_SelectLugar);
+            DefaultComboBoxModel modelo_Selectcomunidad = (DefaultComboBoxModel) Licencia_Crear_SelectComunidad.getModel();
+            modelo_Selectcomunidad.removeAllElements();
+            for (Community comu : comunidades) {
+                modelo_Selectcomunidad.addElement(comu);
+            }
+            Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
+        }
+        if (jTabbedPane4.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (License lic : licencias) {
+                modelo.addElement(lic);
+            }
+            Licencia_CB_Licencia.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane4StateChanged
+
+    private void jTabbedPane5StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane5StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane5.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Pez_Modificar_SelectPez.getModel();
+            modelo.removeAllElements();
+            for (Fish sushi : peces) {
+                modelo.addElement(sushi);
+            }
+            Pez_Modificar_SelectPez.setModel(modelo);
+        }
+        if (jTabbedPane5.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Fish pez : peces) {
+                modelo.addElement(pez);
+            }
+            Pez_CB_Eliminar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane5StateChanged
+
+    private void jTabbedPane6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane6StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane6.getSelectedIndex()==2) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
+            modelo.removeAllElements();
+            for (Place lugar : lugares) {
+                modelo.addElement(lugar);
+            }
+            Lugar_Modificar_SelectLugar.setModel(modelo);
+        }
+        if (jTabbedPane6.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Place lugar : lugares) {
+                modelo.addElement(lugar);
+            }
+            Lugar_CB_Borrar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane6StateChanged
+
+    private void jTabbedPane7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane7StateChanged
+        // TODO add your handling code here:
+        if (jTabbedPane7.getSelectedIndex()==3) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Bait ceb : cebos) {
+                modelo.addElement(ceb);
+            }
+            cebo_cbMod.setModel(modelo);
+        }
+        if (jTabbedPane7.getSelectedIndex()==4) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Bait ceb : cebos) {
+                modelo.addElement(ceb);
+            }
+            cebo_cbBorrar.setModel(modelo);
+        }
+    }//GEN-LAST:event_jTabbedPane7StateChanged
+
+    private void rb_mixtoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_mixtoMouseClicked
+        rb_animal.setEnabled(true);
+        rb_vegetal.setEnabled(true);
+        cebo_crearGrupo.setEnabled(true);
+        cebo_crearFabricante.setEnabled(true);
+        Jt_crearCebo.setEnabled(true);
+    }//GEN-LAST:event_rb_mixtoMouseClicked
+
+    private void rb_mixto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rb_mixto2MouseClicked
+        rb_animal.setEnabled(true);
+        rb_vegetal.setEnabled(true);
+        cebo_crearGrupo.setEnabled(true);
+        cebo_crearFabricante.setEnabled(true);
+        Jt_crearCebo.setEnabled(true);
+    }//GEN-LAST:event_rb_mixto2MouseClicked
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        if(cebo_crearNombre.getText().equals("") || cebo_crearTamaño.getText().equals("") || cebo_crearColor.getText().equals("") || cebo_crearPrecio.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"No puede dejar campos en blanco.");
+        }else{
+            if(rb_natural.isSelected()){
+                String clasificacion;
+                if(rb_animal.isSelected()){
+                    clasificacion = "Animal";
+                }else{
+                    clasificacion = "Vegetal";
+                }
+                //Falta Materiales
+                //cebos.add(new Bait(cebo_crearNombre.getText(),"Natural",cebo_crearColor.getText(),clasificacion,Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText())));
+                JOptionPane.showMessageDialog(null,"Cebo Creado");
+            }else if(rb_artificial.isSelected()){
+                JOptionPane.showMessageDialog(null,"Cebo Creado");
+                cebos.add(new Bait(cebo_crearNombre.getText(),"Artificial",cebo_crearColor.getText(),Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText()),cebo_crearGrupo.getText(),new Company(cebo_crearFabricante.getText())));
+            }else if(rb_mixto.isSelected()){
+                String clasificacion;
+                if(rb_animal.isSelected()){
+                    clasificacion = "Animal";
+                }else{
+                    clasificacion = "Vegetal";
+                }
+                //cebos.add(new Bait(cebo_crearNombre.getText(),"Mixto",clasificacion,cebo_crearColor.getText(),Integer.parseInt(cebo_crearTamaño.getText()),Double.parseDouble(cebo_crearPrecio.getText()),cebo_crearGrupo.getText(),new Company(cebo_crearFabricante.getText())));
+                //Falta materiales
+                JOptionPane.showMessageDialog(null,"Cebo Creado");
+            }
+        }
+        
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        Bait ceboTemp = (Bait)cebo_cbMod.getSelectedItem();
+        ceboTemp.setName(cebo_nombreMod.getText());
+        ceboTemp.setColor(cebo_colorMod.getText());
+        ceboTemp.setPrice(Double.parseDouble(cebo_precioMod.getText()));
+        ceboTemp.setSize(Integer.parseInt(cebo_tamanoMod.getText()));
+        if(rb_natural2.isSelected()){
+            String clasificacion;
+            if(rb_animal2.isSelected()){
+                clasificacion = "Animal";
+            }else{
+                clasificacion = "Vegetal";
+            }
+            ceboTemp.setClassification(clasificacion);
+            //Falta Materiales
+            
+        }else if(rb_artificial2.isSelected()){
+            ceboTemp.setGroup(cebo_cmodGrupo.getText());
+            ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
+        }else if(rb_mixto2.isSelected()){
+            String clasificacion;
+            if(rb_animal2.isSelected()){
+                clasificacion = "Animal";
+            }else{
+                clasificacion = "Vegetal";
+            }
+            ceboTemp.setClassification(clasificacion);
+            //Falta Materiales
+            ceboTemp.setGroup(cebo_cmodGrupo.getText());
+            ceboTemp.setCompany(new Company(cebo_modFabricante.getText()));
+        }
+        JOptionPane.showMessageDialog(null, "Cebo modificado.");
+        
+    }//GEN-LAST:event_jButton23ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2701,6 +2979,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Afiliado;
+    private javax.swing.JComboBox<String> Afiliado_CBorrar;
     private javax.swing.JButton Afiliado_CreateButton;
     private javax.swing.JButton Afiliado_Create_AgregarLicencia;
     private javax.swing.JComboBox<String> Afiliado_Create_License;
@@ -2729,6 +3008,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Comunidad;
     private javax.swing.JTable Jt_crearCebo;
     private javax.swing.JDialog Licencia;
+    private javax.swing.JComboBox<String> Licencia_CB_Licencia;
     private javax.swing.JButton Licencia_CrearButton;
     private javax.swing.JTextField Licencia_Crear_Nombre;
     private javax.swing.JTextField Licencia_Crear_Precio;
@@ -2741,6 +3021,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Licencia_Modificar_SelectLicencia;
     private javax.swing.JComboBox<String> Licencia_Modificar_SelectLugar;
     private javax.swing.JDialog Lugar;
+    private javax.swing.JComboBox<String> Lugar_CB_Borrar;
     private javax.swing.JButton Lugar_CrearButton;
     private javax.swing.JTextField Lugar_Crear_Nombre;
     private javax.swing.JComboBox<String> Lugar_Create_SelectCommunity;
@@ -2750,6 +3031,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField Lugar_Modificar_Nombre;
     private javax.swing.JComboBox<String> Lugar_Modificar_SelectLugar;
     private javax.swing.JDialog Pez;
+    private javax.swing.JComboBox<String> Pez_CB_Eliminar;
     private javax.swing.JButton Pez_CrearButton;
     private javax.swing.JTextField Pez_Crear_Captura;
     private javax.swing.JTextField Pez_Crear_Cebo;
@@ -2768,12 +3050,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_comMod;
     private javax.swing.JComboBox<String> cebo_cbBorrar;
     private javax.swing.JComboBox<String> cebo_cbMod;
+    private javax.swing.JTextField cebo_cmodGrupo;
     private javax.swing.JTextField cebo_colorMod;
+    private javax.swing.JTextField cebo_crearColor;
     private javax.swing.JTextField cebo_crearFabricante;
-    private javax.swing.JTextField cebo_crearFabricante1;
     private javax.swing.JTextField cebo_crearGrupo;
-    private javax.swing.JTextField cebo_crearGrupo1;
+    private javax.swing.JTextField cebo_crearNombre;
+    private javax.swing.JTextField cebo_crearPrecio;
+    private javax.swing.JTextField cebo_crearTamaño;
     private javax.swing.JTextField cebo_idMod;
+    private javax.swing.JTextField cebo_modFabricante;
     private javax.swing.JTextField cebo_nombreMod;
     private javax.swing.JTextField cebo_precioMod;
     private javax.swing.JTextField cebo_tamanoMod;
@@ -2797,10 +3083,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2928,10 +3210,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable9;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
     private javax.swing.JTable jt_modCebo;
     private javax.swing.JTextField login_id;
     private javax.swing.JTextField login_pass;
@@ -2940,6 +3218,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_animal2;
     private javax.swing.JRadioButton rb_artificial;
     private javax.swing.JRadioButton rb_artificial2;
+    private javax.swing.JRadioButton rb_mixto;
+    private javax.swing.JRadioButton rb_mixto2;
     private javax.swing.JRadioButton rb_natural;
     private javax.swing.JRadioButton rb_natural2;
     private javax.swing.JRadioButton rb_vegetal;

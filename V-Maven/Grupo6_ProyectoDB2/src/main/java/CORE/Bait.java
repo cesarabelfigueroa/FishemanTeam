@@ -75,7 +75,6 @@ public class Bait {
         this.company = company;
     }
     
-
     public String getId() {
         return id;
     }
