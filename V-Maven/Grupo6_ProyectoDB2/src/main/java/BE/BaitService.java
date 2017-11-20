@@ -103,7 +103,9 @@ public class BaitService {
             if (mats.size() > 0) {
                 for (Document mat : mats) {
                     if (mat.get("materialID") != null) {
-                        materials.add(materialServ.find(mat.getString("materialID")).get(0));
+                        if (materialServ.find(mat.getString("materialID")).size() > 0) {
+                            materials.add(materialServ.find(mat.getString("materialID")).get(0));
+                        }
                     }
                 }
             }
@@ -119,12 +121,19 @@ public class BaitService {
         return results;
     }
 
+    public ArrayList<Bait> find(ObjectId id) {
+        Document filters = new Document();
+        filters.append("_id", id);
+        baitCollection.find(filters).forEach(printBlock);
+        return results;
+    }
+
     public ArrayList<Bait> find(Bait parameters) {
         Document filters = new Document();
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         baitCollection.find(filters).forEach(printBlock);
         return results;
@@ -136,10 +145,10 @@ public class BaitService {
             listdb.add(new BasicDBObject("materialID", material.getId()));
         }
         baitCollection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName()),set("materials",listdb),
-                        set("type",parameters.getType()),set("size",parameters.getSize()),
-                        set("classification",parameters.getClassification()), set("color",parameters.getColor()),
-                        set("price",parameters.getPrice()),set("group",parameters.getGroup()),set("companyID",parameters.getCompany().getId())));
+                combine(set("name", parameters.getName()), set("materials", listdb),
+                        set("type", parameters.getType()), set("size", parameters.getSize()),
+                        set("classification", parameters.getClassification()), set("color", parameters.getColor()),
+                        set("price", parameters.getPrice()), set("group", parameters.getGroup()), set("companyID", parameters.getCompany().getId())));
     }
 
     public void delete(Bait parameters) {

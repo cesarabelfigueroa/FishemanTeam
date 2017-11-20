@@ -13,6 +13,7 @@ public class Fish {
     public Fish(String id, String name) {
         this.id = id;
         this.name = name;
+        this.baits = new ArrayList();
     }
 
     

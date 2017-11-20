@@ -47,7 +47,7 @@ public class MaterialService {
         if ((parameters.getName() != null)&& (parameters.getId()== null)) {
             filters.append("name", parameters.getName());
         }else{
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         collection.find(filters).forEach(printBlock);
         return results;
@@ -58,4 +58,5 @@ public class MaterialService {
         collection.find(filters).forEach(printBlock);
         return results;
     }
+    
 }

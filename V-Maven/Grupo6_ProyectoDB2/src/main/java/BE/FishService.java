@@ -63,6 +63,7 @@ public class FishService {
         @Override
         public void apply(final Document document) {
             results = new ArrayList();
+            baits = new ArrayList();
             String name = document.get("name").toString();
             String id = document.get("_id").toString();
             List<Document> baitsd = (List<Document>)document.get("baits");
@@ -75,7 +76,7 @@ public class FishService {
                     }
                 }
             }
-            Fish temporal = new Fish(id, name);
+            Fish temporal = new Fish(id, name, baits);
             results.add(temporal);
         }
     };
@@ -85,15 +86,32 @@ public class FishService {
         if ((parameters.getName() != null) && (parameters.getId() == null)) {
             filters.append("name", parameters.getName());
         } else {
-            filters.append("_id", parameters.getId());
+            filters.append("_id", new ObjectId(parameters.getId()));
         }
         collection.find(filters).forEach(printBlock);
         return results;
     }
-
+    
+    public ArrayList<Fish> find(ObjectId id) {
+        Document filters = new Document();
+        filters.append("_id", id);
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+    public ArrayList<Fish> find(String id) {
+        Document filters = new Document();
+        filters.append("_id", new ObjectId(id));
+        collection.find(filters).forEach(printBlock);
+        return results;
+    }
+    
     public void update(Fish parameters) {
+        this.listdb = new BasicDBList();
+        for (Bait bait : parameters.getBaits()) {
+            listdb.add(new BasicDBObject("baitID", bait.getId()));
+        }
         collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
-                combine(set("name", parameters.getName())));
+                combine(set("name", parameters.getName()),set("baits",listdb)));
     }
 
     public void delete(Fish parameters) {
