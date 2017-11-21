@@ -92,7 +92,6 @@ public class FishService {
     }
 
     public ArrayList<Fish> find(ObjectId id) {
-        results = new ArrayList();
         Document filters = new Document();
         filters.append("_id", id);
         results = new ArrayList();

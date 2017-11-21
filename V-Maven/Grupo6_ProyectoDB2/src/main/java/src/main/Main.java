@@ -41,11 +41,11 @@ public class Main extends javax.swing.JFrame {
         this.compserv = new CompanyService(client, database);
         this.baitserv = new BaitService(client, database);
         this.fishserv = new FishService(client, database);
-        this.comserv = new CommunityService(client,database);
-        this.shopserv = new ShopService(client,database);
-        this.licenserv = new LicenseService(client,database);
-        this.affserv = new AffiliateService(client,database);
-        this.placeserv = new PlaceService(client,database);
+        this.comserv = new CommunityService(client, database);
+        this.shopserv = new ShopService(client, database);
+        this.licenserv = new LicenseService(client, database);
+        this.affserv = new AffiliateService(client, database);
+        this.placeserv = new PlaceService(client, database);
         this.afiliados = this.affserv.find(new Affiliate());
         this.comercios = this.shopserv.find(new Shop());
         this.lugares = this.placeserv.find(new Place());
@@ -113,7 +113,7 @@ public class Main extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        listCommunity = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         cb_comMod = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
@@ -324,9 +324,7 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setForeground(new java.awt.Color(153, 153, 255));
 
-
         jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        System.out.println(getClass().getClassLoader().getResource("./pics/stats.png"));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/stats.png"))); // NOI18N
         jButton3.setText("Tabla de Comercio");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
@@ -778,7 +776,7 @@ public class Main extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(153, 153, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        listCommunity.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -794,7 +792,7 @@ public class Main extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(listCommunity);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -898,6 +896,11 @@ public class Main extends javax.swing.JFrame {
         jButton16.setText("Borrar");
         jButton16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jButton16.setContentAreaFilled(false);
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -2892,7 +2895,10 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_artificial2MouseClicked
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        comunidades.add(new Community(Com_crearNombre.getText()));
+        Community community = new Community(Com_crearNombre.getText());
+        comserv.create(community);
+        community = comserv.find(community).get(0);
+        comunidades.add(community);
         JOptionPane.showMessageDialog(null, "Comunidad creada");
         Com_crearNombre.setText("");
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -2904,9 +2910,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_comModItemStateChanged
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        int indexComMod = cb_comMod.getSelectedIndex();
-        comunidades.get(indexComMod).setName(com_nombreMod.getText());
-        JOptionPane.showMessageDialog(null, "Comunidad modificada.");
+        try {
+            Community community = (Community)cb_comMod.getSelectedItem();
+            int index = comunidades.indexOf(community);
+            comunidades.remove(index);
+            community.setName(com_nombreMod.getText());
+            comserv.update(community);
+            JOptionPane.showMessageDialog(null, "Comunidad modificada.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
+        }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void cebo_cbModItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cebo_cbModItemStateChanged
@@ -3048,23 +3061,22 @@ public class Main extends javax.swing.JFrame {
 
     private void Licencia_Modificar_SelectLicenciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
         // TODO add your handling code here:
-        if (evt.getStateChange() == 0) {
-            License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
-            Licencia_Modificar_ID.setText(temp.getId());
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectComunidad.getModel();
-            modelo.removeAllElements();
-            for (Community comuni : comunidades) {
-                modelo.addElement(comuni);
-            }
-            Licencia_Modificar_SelectComunidad.setModel(modelo);
-            DefaultComboBoxModel modelo_lugares = (DefaultComboBoxModel) Licencia_Modificar_SelectLugar.getModel();
-            modelo_lugares.removeAllElements();
-            for (Place plc : lugares) {
-                modelo_lugares.addElement(plc);
-            }
-            Licencia_Modificar_SelectLugar.setModel(modelo_lugares);
-            Licencia_Modificar_Precio.setText(Double.toString(temp.getPrice()));
+        License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
+        Licencia_Modificar_ID.setText(temp.getId());
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectComunidad.getModel();
+        modelo.removeAllElements();
+        for (Community comuni : comunidades) {
+            modelo.addElement(comuni);
         }
+        Licencia_Modificar_SelectComunidad.setModel(modelo);
+        DefaultComboBoxModel modelo_lugares = (DefaultComboBoxModel) Licencia_Modificar_SelectLugar.getModel();
+        modelo_lugares.removeAllElements();
+        for (Place plc : lugares) {
+            modelo_lugares.addElement(plc);
+        }
+        Licencia_Modificar_SelectLugar.setModel(modelo_lugares);
+        Licencia_Modificar_Precio.setText(Double.toString(temp.getPrice()));
+
     }//GEN-LAST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
 
     private void Licencia_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ModificarButtonActionPerformed
@@ -3179,8 +3191,18 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane2.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listCommunity.getModel();
+            dtm.setRowCount(0);
+            for (Community com : comunidades) {
+                Object[] row = {com.getId(), com.getName()};
+                dtm.addRow(row);
+            }
+            listCommunity.setModel(dtm);
+        }
         if (jTabbedPane2.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+            modelo2.addElement("");
             for (Community temp : comunidades) {
                 modelo2.addElement(temp);
             }
@@ -3188,6 +3210,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (jTabbedPane2.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Community temp : comunidades) {
                 modelo.addElement(temp);
             }
@@ -3583,6 +3606,17 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Comercio_Modificar_IDActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        try {
+            Community community = (Community)cb_comBorrar.getSelectedItem();
+            comserv.delete(community);
+            comunidades.remove(community);
+            JOptionPane.showMessageDialog(null, "Se ha eliminado con éxito.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3878,12 +3912,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jt_modCebo;
     private javax.swing.JTable listArtifitial;
+    private javax.swing.JTable listCommunity;
     private javax.swing.JTable listFishes;
     private javax.swing.JTable listNatural;
     private javax.swing.JTextField login_id;
