@@ -88,19 +88,12 @@ public class Main extends javax.swing.JFrame {
         Comercio_Crear_Nombre = new javax.swing.JTextField();
         Comercio_Crear_SelectCebo = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
+        crear_agregarcebos = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel4 = new javax.swing.JPanel();
-        Comercio_Modificar_SelectComercio = new javax.swing.JComboBox<>();
-        Comercio_Modificar_ID = new javax.swing.JTextField();
-        Comercio_Modificar_Nombre = new javax.swing.JTextField();
-        Comercio_ModificarButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        Comercio_Modificar_SelectCebo = new javax.swing.JComboBox<>();
-        jLabel14 = new javax.swing.JLabel();
+        listComerce = new javax.swing.JTable();
+        comercioListCB = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         comercioDelete = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
@@ -502,25 +495,35 @@ public class Main extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         jLabel11.setText("Cebo");
 
+        crear_agregarcebos.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
+        crear_agregarcebos.setText("Agregar");
+        crear_agregarcebos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        crear_agregarcebos.setContentAreaFilled(false);
+        crear_agregarcebos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crear_agregarcebosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel11))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Comercio_CrearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel11))
-                        .addGap(32, 32, 32)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Comercio_Crear_Nombre)
-                            .addComponent(Comercio_Crear_SelectCebo, 0, 84, Short.MAX_VALUE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(Comercio_CrearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                            .addComponent(Comercio_Crear_SelectCebo, 0, 84, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(crear_agregarcebos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,145 +532,83 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(Comercio_Crear_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Comercio_Crear_SelectCebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(45, 45, 45)
+                    .addComponent(jLabel11)
+                    .addComponent(crear_agregarcebos))
+                .addGap(18, 18, 18)
                 .addComponent(Comercio_CrearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear", jPanel3);
 
         jPanel6.setBackground(new java.awt.Color(153, 153, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        listComerce.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Cebo"
+                "ID", "Nombre", "Tipo", "Tamaño", "Precio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(listComerce);
+
+        comercioListCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comercioListCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comercioListCBItemStateChanged(evt);
+            }
+        });
+        comercioListCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comercioListCBActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Comercio: ");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(comercioListCB, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comercioListCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTabbedPane1.addTab("Listar", jPanel6);
-
-        jPanel4.setBackground(new java.awt.Color(153, 153, 255));
-
-        Comercio_Modificar_SelectComercio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Comercio_Modificar_SelectComercio.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Comercio_Modificar_SelectComercioItemStateChanged(evt);
-            }
-        });
-
-        Comercio_Modificar_ID.setEnabled(false);
-        Comercio_Modificar_ID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Comercio_Modificar_IDActionPerformed(evt);
-            }
-        });
-
-        Comercio_ModificarButton.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        Comercio_ModificarButton.setText("Modificar");
-        Comercio_ModificarButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        Comercio_ModificarButton.setContentAreaFilled(false);
-        Comercio_ModificarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Comercio_ModificarButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel7.setText("Comercio");
-
-        jLabel9.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel9.setText("ID");
-
-        jLabel10.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel10.setText("Nombre");
-
-        Comercio_Modificar_SelectCebo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel14.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel14.setText("Cebo");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(Comercio_Modificar_Nombre)
-                            .addComponent(Comercio_Modificar_ID, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Comercio_Modificar_SelectComercio, javax.swing.GroupLayout.Alignment.LEADING, 0, 95, Short.MAX_VALUE)
-                            .addComponent(Comercio_Modificar_SelectCebo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(Comercio_ModificarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(Comercio_Modificar_SelectComercio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Comercio_Modificar_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Comercio_Modificar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Comercio_Modificar_SelectCebo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(45, 45, 45)
-                .addComponent(Comercio_ModificarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Modificar", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -686,7 +627,7 @@ public class Main extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(138, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addGap(38, 38, 38)
                 .addComponent(comercioDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -705,7 +646,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addGap(35, 35, 35)
                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar", jPanel5);
@@ -714,7 +655,9 @@ public class Main extends javax.swing.JFrame {
         Comercio.getContentPane().setLayout(ComercioLayout);
         ComercioLayout.setHorizontalGroup(
             ComercioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(ComercioLayout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ComercioLayout.setVerticalGroup(
             ComercioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1033,7 +976,7 @@ public class Main extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1096,7 +1039,7 @@ public class Main extends javax.swing.JFrame {
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
                     .addComponent(jLabel28)
@@ -1165,7 +1108,7 @@ public class Main extends javax.swing.JFrame {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(27, 27, 27)
                 .addComponent(Afiliado_CBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2771,8 +2714,14 @@ public class Main extends javax.swing.JFrame {
         for (Shop temp : comercios) {
             modelo2.addElement(temp);
         }
-        Comercio_Modificar_SelectComercio.setModel(modelo2);
-
+//        Comercio_Modificar_SelectComercio.setModel(modelo2);
+        
+        DefaultComboBoxModel cebo = new DefaultComboBoxModel();
+        cebo.addElement("");
+        for(Bait bait: cebos){
+            cebo.addElement(bait);
+        }
+        Comercio_Crear_SelectCebo.setModel(cebo);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -3054,39 +3003,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Afiliado_ModifyButtonActionPerformed
 
-    private void Comercio_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_CrearButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Comercio_CrearButtonActionPerformed
-
-    private void Comercio_Modificar_SelectComercioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Comercio_Modificar_SelectComercioItemStateChanged
-        // TODO add your handling code here:
-        if (evt.getStateChange() == 0) {
-            Shop temp = (Shop) Comercio_Modificar_SelectComercio.getSelectedItem();
-            Comercio_Modificar_ID.setText(temp.getId());
-            Comercio_Modificar_Nombre.setText(temp.getName());
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Comercio_Modificar_SelectCebo.getModel();
-            modelo.removeAllElements();
-            for (Bait cebo : temp.getSales()) {
-                modelo.addElement(cebo);
-            }
-            Comercio_Modificar_SelectCebo.setModel(modelo);
-        }
-    }//GEN-LAST:event_Comercio_Modificar_SelectComercioItemStateChanged
-
-    private void Comercio_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_ModificarButtonActionPerformed
-        // TODO add your handling code here:
-        if (Comercio_Modificar_Nombre.getText().equals("")) {
-            String nombre = Comercio_Modificar_Nombre.getText();
-            Shop temp = (Shop) Comercio_Modificar_SelectComercio.getSelectedItem();
-            for (Shop comercio : comercios) {
-                if (comercio.equals(temp)) {
-                    comercio.setName(nombre);
-                }
-            }
-        }
-        JOptionPane.showMessageDialog(null, "Comercio modificado correctamente.");
-    }//GEN-LAST:event_Comercio_ModificarButtonActionPerformed
-
     private void Licencia_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_CrearButtonActionPerformed
         // TODO add your handling code here:
         try {
@@ -3259,17 +3175,6 @@ public class Main extends javax.swing.JFrame {
         Lugar_Modificar_ID.setText("");
         Lugar_Modificar_Comunidad.setSelectedIndex(0);
     }//GEN-LAST:event_Lugar_ModificarButtonActionPerformed
-
-    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        // TODO add your handling code here:
-        if (jTabbedPane1.getSelectedIndex() == 2) {
-            DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
-            for (Shop temp : comercios) {
-                modelo3.addElement(temp);
-            }
-            comercioDelete.setModel(modelo3);
-        }
-    }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
         // TODO add your handling code here:
@@ -3740,10 +3645,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton19ActionPerformed
 
-    private void Comercio_Modificar_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_Modificar_IDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Comercio_Modificar_IDActionPerformed
-
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         try {
             Community community = (Community) cb_comBorrar.getSelectedItem();
@@ -3780,7 +3681,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         try {
-            Affiliate afill = (Affiliate)Afiliado_CBorrar.getSelectedItem();
+            Affiliate afill = (Affiliate) Afiliado_CBorrar.getSelectedItem();
             affserv.delete(afill);
             licencias.remove(afill);
             JOptionPane.showMessageDialog(null, "Se eliminó con éxito.");
@@ -3794,6 +3695,78 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
         }
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        if(jTabbedPane1.getSelectedIndex() == 1){
+           DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            for (Shop temp : comercios) {
+                modelo.addElement(temp);
+            }
+            comercioListCB.setModel(modelo);
+        }
+        if (jTabbedPane1.getSelectedIndex() == 2) {
+            DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+            for (Shop temp : comercios) {
+                modelo3.addElement(temp);
+            }
+            comercioDelete.setModel(modelo3);
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void comercioListCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comercioListCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comercioListCBActionPerformed
+
+    private void crear_agregarcebosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crear_agregarcebosActionPerformed
+        try {
+            boolean ban = false;
+            if (!baitsComerce.isEmpty()) {
+                for (Bait bait : baitsComerce) {
+                    if (Comercio_Crear_SelectCebo.getSelectedItem().equals(bait)) {
+                        JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
+                        ban = true;
+                    }
+                }
+            }
+            if (!ban) {
+                baitsComerce.add((Bait) Comercio_Crear_SelectCebo.getSelectedItem());
+                JOptionPane.showConfirmDialog(null, "Se agregó el cebo.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_crear_agregarcebosActionPerformed
+
+    private void Comercio_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_CrearButtonActionPerformed
+        try {
+            Shop sushi = new Shop(Comercio_Crear_Nombre.getText(), baitsComerce);
+            shopserv.create(sushi);
+            sushi = shopserv.find(sushi).get(0);
+            comercios.add(sushi);
+            JOptionPane.showMessageDialog(null, "Comercio creado");
+            Comercio_Crear_Nombre.setText("");
+            baitsComerce = new ArrayList();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
+            e.printStackTrace();
+        }
+        Comercio_Crear_Nombre.setText("");
+    }//GEN-LAST:event_Comercio_CrearButtonActionPerformed
+
+    private void comercioListCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comercioListCBItemStateChanged
+        try {
+            Shop shop = (Shop)comercioListCB.getSelectedItem();
+             DefaultTableModel dtm = (DefaultTableModel) listComerce.getModel();
+            dtm.setRowCount(0);
+            for (Bait com : shop.getSales()) {
+                Object[] row = {com.getId(), com.getName(),com.getType(),com.getSize(),com.getPrice()};
+                dtm.addRow(row);
+            }
+            listComerce.setModel(dtm);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+    }//GEN-LAST:event_comercioListCBItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -3884,11 +3857,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Comercio_CrearButton;
     private javax.swing.JTextField Comercio_Crear_Nombre;
     private javax.swing.JComboBox<String> Comercio_Crear_SelectCebo;
-    private javax.swing.JButton Comercio_ModificarButton;
-    private javax.swing.JTextField Comercio_Modificar_ID;
-    private javax.swing.JTextField Comercio_Modificar_Nombre;
-    private javax.swing.JComboBox<String> Comercio_Modificar_SelectCebo;
-    private javax.swing.JComboBox<String> Comercio_Modificar_SelectComercio;
     private javax.swing.JDialog Comunidad;
     private javax.swing.JTable Jt_crearCebo;
     private javax.swing.JDialog Licencia;
@@ -3950,6 +3918,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField com_idMod;
     private javax.swing.JTextField com_nombreMod;
     private javax.swing.JComboBox<String> comercioDelete;
+    private javax.swing.JComboBox<String> comercioListCB;
+    private javax.swing.JButton crear_agregarcebos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
@@ -3971,11 +3941,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -4020,12 +3988,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
@@ -4040,7 +4008,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4066,7 +4033,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -4089,10 +4055,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jt_modCebo;
     private javax.swing.JTable listAfiliateLicense;
     private javax.swing.JTable listArtifitial;
+    private javax.swing.JTable listComerce;
     private javax.swing.JTable listCommunity;
     private javax.swing.JTable listFishes;
     private javax.swing.JTable listLicense;
@@ -4124,6 +4090,7 @@ public class Main extends javax.swing.JFrame {
     ArrayList<License> licencias_escogidas;
     ArrayList<Material> materiales;
     ArrayList<Company> fabricantes;
+    ArrayList<Bait> baitsComerce = new ArrayList();
     ArrayList<Bait> baitsPez;
     ArrayList<Fish> peces_Lic = new ArrayList<>();
 }

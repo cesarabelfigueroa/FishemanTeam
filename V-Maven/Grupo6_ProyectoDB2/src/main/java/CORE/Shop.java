@@ -57,4 +57,9 @@ public class Shop {
         this.sales = sales;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+    
 }
