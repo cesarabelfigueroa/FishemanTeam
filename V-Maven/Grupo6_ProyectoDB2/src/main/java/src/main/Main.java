@@ -621,6 +621,11 @@ public class Main extends javax.swing.JFrame {
         jButton13.setText("Eliminar");
         jButton13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jButton13.setContentAreaFilled(false);
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -2715,10 +2720,10 @@ public class Main extends javax.swing.JFrame {
             modelo2.addElement(temp);
         }
 //        Comercio_Modificar_SelectComercio.setModel(modelo2);
-        
+
         DefaultComboBoxModel cebo = new DefaultComboBoxModel();
         cebo.addElement("");
-        for(Bait bait: cebos){
+        for (Bait bait : cebos) {
             cebo.addElement(bait);
         }
         Comercio_Crear_SelectCebo.setModel(cebo);
@@ -3697,8 +3702,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        if(jTabbedPane1.getSelectedIndex() == 1){
-           DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        if (jTabbedPane1.getSelectedIndex() == 1) {
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Shop temp : comercios) {
                 modelo.addElement(temp);
             }
@@ -3706,6 +3712,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (jTabbedPane1.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+            modelo3.addElement("");
             for (Shop temp : comercios) {
                 modelo3.addElement(temp);
             }
@@ -3755,11 +3762,11 @@ public class Main extends javax.swing.JFrame {
 
     private void comercioListCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comercioListCBItemStateChanged
         try {
-            Shop shop = (Shop)comercioListCB.getSelectedItem();
-             DefaultTableModel dtm = (DefaultTableModel) listComerce.getModel();
+            Shop shop = (Shop) comercioListCB.getSelectedItem();
+            DefaultTableModel dtm = (DefaultTableModel) listComerce.getModel();
             dtm.setRowCount(0);
             for (Bait com : shop.getSales()) {
-                Object[] row = {com.getId(), com.getName(),com.getType(),com.getSize(),com.getPrice()};
+                Object[] row = {com.getId(), com.getName(), com.getType(), com.getSize(), com.getPrice()};
                 dtm.addRow(row);
             }
             listComerce.setModel(dtm);
@@ -3767,6 +3774,22 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error");
         }
     }//GEN-LAST:event_comercioListCBItemStateChanged
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        try {
+            Shop shop = (Shop) comercioDelete.getSelectedItem();
+            shopserv.delete(shop);
+            comercios.remove(shop);
+            DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+            modelo3.addElement("");
+            for (Shop temp : comercios) {
+                modelo3.addElement(temp);
+            }
+            comercioDelete.setModel(modelo3);
+        } catch (Exception e) {
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     /**
      * @param args the command line arguments
