@@ -37,7 +37,7 @@ public class PlaceService {
         public void apply(final Document document) {
             String name = document.get("name").toString();
             String _id = document.get("_id").toString();
-            String idComunity = document.get("name").toString();
+            String idComunity = document.get("communityID").toString();
             CommunityService communityService  = new CommunityService(client, database);
             Community community = communityService.find(new Community(idComunity)).get(0);
             Place temporal = new Place(_id, name);
@@ -60,6 +60,7 @@ public class PlaceService {
         Document data = new Document();
         if ((parameters.getName() != null)) {
             data.append("name", parameters.getName());
+            data.append("communityID", parameters.getCommunity().getId());
         }
         collection.insertOne(data);
     }

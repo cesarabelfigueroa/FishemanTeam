@@ -69,7 +69,7 @@ public class AffiliateService {
     public void create(Affiliate parameters) {
         Document data = new Document();
         results = new ArrayList();
-        if ((parameters.getName() != null)) {
+        if ((parameters.getName() != null)) { 
             data.append("name", parameters.getName());
         }
 

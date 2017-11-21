@@ -9,7 +9,9 @@ public class Community {
         this.id = id;
         this.name = name;
     }
-
+    public Community(String name, Boolean bool){
+        this.name = name;
+    }
     public Community(String id) {
         this.id = id;
     }

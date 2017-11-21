@@ -43,7 +43,7 @@ public class CommunityService {
     public ArrayList<Community> find(Community parameters) {
         results = new ArrayList();
         Document filters = new Document();
-        if ((parameters.getName() != null)) {
+        if ((parameters.getName() != null) && parameters.getId() == null) {
             filters.append("name", parameters.getName());
         }
         

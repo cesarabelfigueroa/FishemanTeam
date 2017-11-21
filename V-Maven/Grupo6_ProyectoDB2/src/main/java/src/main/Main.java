@@ -227,7 +227,7 @@ public class Main extends javax.swing.JFrame {
         Lugar_Create_SelectCommunity = new javax.swing.JComboBox<>();
         jPanel24 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        lugarlist = new javax.swing.JTable();
         jPanel25 = new javax.swing.JPanel();
         Lugar_ModificarButton = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
@@ -424,19 +424,17 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel3)
-                        .addGap(107, 107, 107))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonLugares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonAfiliados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonLicencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ButtonPez, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(78, 78, 78))))
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonLugares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonAfiliados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonLicencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonPez, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(78, 78, 78))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1857,15 +1855,15 @@ public class Main extends javax.swing.JFrame {
 
         jPanel24.setBackground(new java.awt.Color(153, 153, 255));
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        lugarlist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "ID Comunidad"
+                "ID", "Nombre", "Comunidad"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(lugarlist);
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -1874,13 +1872,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel24Layout.createSequentialGroup()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
         );
 
         jTabbedPane6.addTab("Listar", jPanel24);
@@ -2660,6 +2656,7 @@ public class Main extends javax.swing.JFrame {
         jLabel30.setText("Fisherman Team");
 
         login_pass.setBackground(new java.awt.Color(51, 51, 51));
+        login_pass.setForeground(new java.awt.Color(255, 255, 255));
         login_pass.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -2787,9 +2784,14 @@ public class Main extends javax.swing.JFrame {
 
     private void ButtonLugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLugaresActionPerformed
         Lugar.setVisible(true);
-
         Lugar.pack();
         Lugar.setLocationRelativeTo(this);
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        model.addElement("");
+        for (Community lug : comunidades) {
+            model.addElement(lug);
+        }
+        Lugar_Create_SelectCommunity.setModel(model);
     }//GEN-LAST:event_ButtonLugaresActionPerformed
 
     private void ButtonPezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPezActionPerformed
@@ -2895,7 +2897,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_artificial2MouseClicked
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        Community community = new Community(Com_crearNombre.getText());
+        Community community = new Community(Com_crearNombre.getText(), true);
         comserv.create(community);
         community = comserv.find(community).get(0);
         comunidades.add(community);
@@ -2911,12 +2913,19 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         try {
-            Community community = (Community)cb_comMod.getSelectedItem();
+            Community community = (Community) cb_comMod.getSelectedItem();
             int index = comunidades.indexOf(community);
             comunidades.remove(index);
             community.setName(com_nombreMod.getText());
             comserv.update(community);
+            comunidades.add(index, community);
             JOptionPane.showMessageDialog(null, "Comunidad modificada.");
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (Community temp : comunidades) {
+                modelo.addElement(temp);
+            }
+            cb_comMod.setModel(modelo);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
         }
@@ -3140,42 +3149,54 @@ public class Main extends javax.swing.JFrame {
 
     private void Lugar_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_CrearButtonActionPerformed
         // TODO add your handling code here:
-        String nombre;
+        String nombre = Lugar_Crear_Nombre.getText();
         Community comunidad = (Community) Lugar_Create_SelectCommunity.getSelectedItem();
-        nombre = Lugar_Crear_Nombre.getText();
-
         Place lugar = new Place(nombre, comunidad);
+        placeserv.create(lugar);
+        lugar = placeserv.find(lugar).get(0);
         lugares.add(lugar);
+        Lugar_Crear_Nombre.setText("");
+        Lugar_Create_SelectCommunity.setSelectedIndex(0);
         JOptionPane.showMessageDialog(null, "Lugar creado.");
     }//GEN-LAST:event_Lugar_CrearButtonActionPerformed
 
     private void Lugar_Modificar_SelectLugarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Lugar_Modificar_SelectLugarItemStateChanged
-        if (evt.getStateChange() == 0) {
+        try {
             Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
-            DefaultComboBoxModel modelo_comunidad = (DefaultComboBoxModel) Lugar_Modificar_Comunidad.getModel();
-            modelo_comunidad.removeAllElements();
-            for (Community comunidad : comunidades) {
-                modelo_comunidad.addElement(comunidad);
-            }
-            Lugar_Modificar_Comunidad.setModel(modelo_comunidad);
+            Lugar_Modificar_ID.setText(temp.getId());
             Lugar_Modificar_Nombre.setText(temp.getName());
+        } catch (Exception e) {
         }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_Lugar_Modificar_SelectLugarItemStateChanged
 
     private void Lugar_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lugar_ModificarButtonActionPerformed
         // TODO add your handling code here:
-        String Nombre;
-        Community Comm = (Community) Lugar_Modificar_Comunidad.getSelectedItem();
-        Nombre = Lugar_Modificar_Nombre.getText();
-        Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
-        for (Place lugar : lugares) {
-            if (lugar.equals(temp)) {
-                lugar.setCommunity(Comm);
-                lugar.setName(Nombre);
+        try {
+            String Nombre = Lugar_Modificar_Nombre.getText();
+            Community Comm = (Community) Lugar_Modificar_Comunidad.getSelectedItem();
+            Place temp = (Place) Lugar_Modificar_SelectLugar.getSelectedItem();
+            int index = lugares.indexOf(temp);
+            temp.setCommunity(Comm);
+            temp.setName(Nombre);
+            placeserv.update(temp);
+            lugares.remove(temp);
+            lugares.add(index, temp);
+            JOptionPane.showMessageDialog(null, "Lugar Modificado.");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
+            modelo.removeAllElements();
+            modelo.addElement("");
+            for (Place lugar : lugares) {
+                modelo.addElement(lugar);
             }
+            Lugar_Modificar_SelectLugar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
         }
-        JOptionPane.showMessageDialog(null, "Lugar Modificado.");
+        Lugar_Modificar_Nombre.setText("");
+        Lugar_Modificar_ID.setText("");
+        Lugar_Modificar_Comunidad.setSelectedIndex(0);
     }//GEN-LAST:event_Lugar_ModificarButtonActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
@@ -3300,16 +3321,33 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane6StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane6StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane6.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) lugarlist.getModel();
+            dtm.setRowCount(0);
+            for (Place lug : lugares) {
+                Object[] row = {lug.getId(), lug.getName(), lug.getCommunity().getName()};
+                dtm.addRow(row);
+            }
+            lugarlist.setModel(dtm);
+        }
         if (jTabbedPane6.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Lugar_Modificar_SelectLugar.getModel();
             modelo.removeAllElements();
+            modelo.addElement("");
             for (Place lugar : lugares) {
                 modelo.addElement(lugar);
             }
             Lugar_Modificar_SelectLugar.setModel(modelo);
+            DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+            modelo2.addElement("");
+            for (Community lug : comunidades) {
+                modelo2.addElement(lug);
+            }
+            Lugar_Modificar_Comunidad.setModel(modelo2);
         }
         if (jTabbedPane6.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Place lugar : lugares) {
                 modelo.addElement(lugar);
             }
@@ -3608,9 +3646,15 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         try {
-            Community community = (Community)cb_comBorrar.getSelectedItem();
+            Community community = (Community) cb_comBorrar.getSelectedItem();
             comserv.delete(community);
             comunidades.remove(community);
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (Community temp : comunidades) {
+                modelo.addElement(temp);
+            }
+            cb_comBorrar.setModel(modelo);
             JOptionPane.showMessageDialog(null, "Se ha eliminado con éxito.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
@@ -3914,7 +3958,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTable jt_modCebo;
     private javax.swing.JTable listArtifitial;
     private javax.swing.JTable listCommunity;
@@ -3922,6 +3965,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable listNatural;
     private javax.swing.JTextField login_id;
     private javax.swing.JPasswordField login_pass;
+    private javax.swing.JTable lugarlist;
     private javax.swing.JDialog menuPrincipal;
     private javax.swing.JComboBox<String> pez_ceboCrear;
     private javax.swing.JComboBox<String> pez_ceboMod;
