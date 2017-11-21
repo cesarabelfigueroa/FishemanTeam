@@ -87,14 +87,15 @@ public class LicenseService {
 
     public void create(License parameters) {
         Document data = new Document();
-        if ((parameters.getName() != null)) {
+        if ((parameters.getName() != null)&& parameters.getId()==null) {
             data.append("name", parameters.getName());
-        }
-        
-        if ((parameters.getPrice() != 0)) {
+            data.append("idCommunity", parameters.getCommunity().getId());
+            data.append("idPlace", parameters.getPlace().getId());
             data.append("price", parameters.getPrice());
         }
-        
+        if(parameters.getId()!= null){
+            data.append("_id", new ObjectId(parameters.getId()));
+        }
         BasicDBList listdb = new BasicDBList();
         for (Fish fish : parameters.getFishes()) {
             listdb.add(new BasicDBObject("fishID", fish.getId()));

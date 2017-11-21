@@ -137,7 +137,7 @@ public class Main extends javax.swing.JFrame {
         Afiliado_Create_AgregarLicencia = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        listAfiliateLicense = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
         Afiliado_Modify_IDNumber = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
@@ -170,7 +170,7 @@ public class Main extends javax.swing.JFrame {
         Licencia_ADD_Dori = new javax.swing.JButton();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        listLicense = new javax.swing.JTable();
         jPanel17 = new javax.swing.JPanel();
         Licencia_ModificarButton = new javax.swing.JButton();
         Licencia_Modificar_ID = new javax.swing.JTextField();
@@ -1019,7 +1019,7 @@ public class Main extends javax.swing.JFrame {
 
         jPanel12.setBackground(new java.awt.Color(153, 153, 255));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        listAfiliateLicense.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1027,22 +1027,17 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Licencias"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(listAfiliateLicense);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Listar", jPanel12);
@@ -1101,7 +1096,7 @@ public class Main extends javax.swing.JFrame {
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
                     .addComponent(jLabel28)
@@ -1159,13 +1154,18 @@ public class Main extends javax.swing.JFrame {
         jButton17.setText("Borrar");
         jButton17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jButton17.setContentAreaFilled(false);
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+                .addContainerGap(90, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(27, 27, 27)
                 .addComponent(Afiliado_CBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1311,24 +1311,29 @@ public class Main extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(153, 153, 255));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        listLicense.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Precio", "ID Lugar", "ID Comunidad", "Peces"
+                "ID", "Nombre", "Precio", "Lugar", "Comunidad", "Peces"
             }
-        ));
-        jScrollPane4.setViewportView(jTable4);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(listLicense);
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1360,10 +1365,10 @@ public class Main extends javax.swing.JFrame {
         jLabel35.setText("Precio");
 
         jLabel36.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel36.setText("ID Lugar");
+        jLabel36.setText("Lugar");
 
         jLabel37.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jLabel37.setText("ID Comunidad");
+        jLabel37.setText("Comunidad");
 
         Licencia_Modificar_SelectLicencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         Licencia_Modificar_SelectLicencia.addItemListener(new java.awt.event.ItemListener() {
@@ -1427,7 +1432,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Licencia_ModificarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Licencia_MODADD_Dori)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1476,6 +1481,11 @@ public class Main extends javax.swing.JFrame {
         jButton18.setText("Borrar");
         jButton18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jButton18.setContentAreaFilled(false);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2819,6 +2829,7 @@ public class Main extends javax.swing.JFrame {
         Licencia.setLocationRelativeTo(this);
         DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
         modelo_SelectLugar.removeAllElements();
+        modelo_SelectLugar.addElement("");
         for (Place plc : lugares) {
             modelo_SelectLugar.addElement(plc);
         }
@@ -2826,12 +2837,14 @@ public class Main extends javax.swing.JFrame {
         Licencia_Modificar_SelectLugar.setModel(modelo_SelectLugar);
         DefaultComboBoxModel modelo_Selectcomunidad = (DefaultComboBoxModel) Licencia_Crear_SelectComunidad.getModel();
         modelo_Selectcomunidad.removeAllElements();
+        modelo_Selectcomunidad.addElement("");
         for (Community comu : comunidades) {
             modelo_Selectcomunidad.addElement(comu);
         }
         Licencia_Crear_SelectComunidad.setModel(modelo_Selectcomunidad);
         Licencia_Modificar_SelectComunidad.setModel(modelo_Selectcomunidad);
         DefaultComboBoxModel modelo_Martin = new DefaultComboBoxModel();
+        modelo_Martin.addElement("");
         for (Fish Dori : peces) {
             modelo_Martin.addElement(Dori);
         }
@@ -2943,14 +2956,21 @@ public class Main extends javax.swing.JFrame {
 
     private void Afiliado_CreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_CreateButtonActionPerformed
         // TODO add your handling code here:
-        String nombre;
-        nombre = Afiliado_Create_Nombre.getText();
-        Affiliate fili = new Affiliate();
-        fili.setName(nombre);
-        fili.setLicenses(licencias_escogidas);
-        afiliados.add(fili);
-        licencias_escogidas.clear();
-        JOptionPane.showMessageDialog(null, "Afiliado agregado correctamente.");
+        try {
+            String nombre = Afiliado_Create_Nombre.getText();
+            Affiliate fili = new Affiliate();
+            fili.setName(nombre);
+            fili.setLicenses(licencias_escogidas);
+            affserv.create(fili);
+            fili = affserv.find(fili).get(0);
+            afiliados.add(fili);
+            licencias_escogidas.clear();
+            JOptionPane.showMessageDialog(null, "Afiliado agregado correctamente.");
+            Afiliado_Create_Nombre.setText("");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
+        }
     }//GEN-LAST:event_Afiliado_CreateButtonActionPerformed
 
     private void Afiliado_Create_AgregarLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_Create_AgregarLicenciaActionPerformed
@@ -2992,32 +3012,46 @@ public class Main extends javax.swing.JFrame {
 
     private void Afiliado_Modify_AgregarLicenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_Modify_AgregarLicenciaActionPerformed
         // TODO add your handling code here:
-        boolean ban = false;
-        if (!licencias_escogidas.isEmpty()) {
-            for (License lic : licencias_escogidas) {
-                if (Afiliado_Modify_Licencia.getSelectedItem().equals(lic)) {
-                    JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
-                    ban = true;
+        try {
+            boolean ban = false;
+            if (!licencias_escogidas.isEmpty()) {
+                for (License lic : licencias_escogidas) {
+                    if (Afiliado_Modify_Licencia.getSelectedItem().equals(lic)) {
+                        JOptionPane.showConfirmDialog(null, "El afiliado ya tiene esa licencia.");
+                        ban = true;
+                    }
                 }
             }
-        }
-        if (!ban) {
-            licencias_escogidas.add((License) Afiliado_Create_License.getSelectedItem());
+            if (!ban) {
+                licencias_escogidas.add((License) Afiliado_Create_License.getSelectedItem());
+                JOptionPane.showConfirmDialog(null, "Se agregó la licencia.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Ha ingresado una opción invállda.");
         }
     }//GEN-LAST:event_Afiliado_Modify_AgregarLicenciaActionPerformed
 
     private void Afiliado_ModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Afiliado_ModifyButtonActionPerformed
         // TODO add your handling code here:
-        String nombre = Afiliado_Modify_Nombre.getText();
-        Affiliate temp = (Affiliate) Afiliado_Modify_SelectAfiliado.getSelectedItem();
-        for (Affiliate afiliado : afiliados) {
-            if (afiliado.equals(temp)) {
-                afiliado.setName(nombre);
-                afiliado.setLicenses(licencias_escogidas);
+        try {
+            String nombre = Afiliado_Modify_Nombre.getText();
+            Affiliate temp = (Affiliate) Afiliado_Modify_SelectAfiliado.getSelectedItem();
+            int index = afiliados.indexOf(temp);
+            afiliados.remove(temp);
+            temp.setName(nombre);
+            temp.setLicenses(licencias_escogidas);
+            affserv.update(temp);
+            licencias_escogidas.clear();
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
+            modelo.removeAllElements();
+            modelo.addElement("");
+            for (Affiliate afiliado : afiliados) {
+                modelo.addElement(afiliado);
             }
+            JOptionPane.showMessageDialog(null, "Afiliado Modificado");
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Ha ingresado una opción invállida.");
         }
-        licencias_escogidas.clear();
-        JOptionPane.showMessageDialog(null, "Afiliado Modificado");
     }//GEN-LAST:event_Afiliado_ModifyButtonActionPerformed
 
     private void Comercio_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Comercio_CrearButtonActionPerformed
@@ -3055,56 +3089,83 @@ public class Main extends javax.swing.JFrame {
 
     private void Licencia_CrearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_CrearButtonActionPerformed
         // TODO add your handling code here:
-        String nombreLicencia;
-        double precio;
-        String idLugar;
-        nombreLicencia = Licencia_Crear_Nombre.getText();
-        Place lugar = (Place) Licencia_Crear_SelectLugar.getSelectedItem();
-        Community comunidad = (Community) Licencia_Crear_SelectComunidad.getSelectedItem();
-        precio = Double.parseDouble(Licencia_Crear_Precio.getText());
-        License lic = new License(nombreLicencia, precio, lugar, comunidad, peces_Lic);
-        licencias.add(lic);
-        peces_Lic = new ArrayList<>();
-        JOptionPane.showMessageDialog(null, "Licencia creada.");
+        try {
+            String nombreLicencia = Licencia_Crear_Nombre.getText();
+            double precio = Double.parseDouble(Licencia_Crear_Precio.getText());
+            Place lugar = (Place) Licencia_Crear_SelectLugar.getSelectedItem();
+            Community comunidad = (Community) Licencia_Crear_SelectComunidad.getSelectedItem();
+            License lic = new License(nombreLicencia, precio, lugar, comunidad, peces_Lic);
+            licenserv.create(lic);
+            lic = licenserv.find(lic).get(0);
+            licencias.add(lic);
+            peces_Lic = new ArrayList<>();
+            JOptionPane.showMessageDialog(null, "Licencia creada.");
+            Licencia_Crear_Nombre.setText("");
+            Licencia_Crear_Precio.setText("");
+            Licencia_Crear_SelectLugar.setSelectedIndex(0);
+            Licencia_Crear_SelectComunidad.setSelectedIndex(0);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido una opción inválida.");
+        }
     }//GEN-LAST:event_Licencia_CrearButtonActionPerformed
 
     private void Licencia_Modificar_SelectLicenciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
         // TODO add your handling code here:
-        License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
-        Licencia_Modificar_ID.setText(temp.getId());
-        DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectComunidad.getModel();
-        modelo.removeAllElements();
-        for (Community comuni : comunidades) {
-            modelo.addElement(comuni);
+        try {
+            License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
+            Licencia_Modificar_ID.setText(temp.getId());
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectComunidad.getModel();
+            modelo.removeAllElements();
+            modelo.addElement("");
+            for (Community comuni : comunidades) {
+                modelo.addElement(comuni);
+            }
+            Licencia_Modificar_SelectComunidad.setModel(modelo);
+            DefaultComboBoxModel modelo_lugares = (DefaultComboBoxModel) Licencia_Modificar_SelectLugar.getModel();
+            modelo_lugares.removeAllElements();
+            for (Place plc : lugares) {
+                modelo_lugares.addElement(plc);
+            }
+            Licencia_Modificar_SelectLugar.setModel(modelo_lugares);
+            Licencia_Modificar_Precio.setText(Double.toString(temp.getPrice()));
+        } catch (Exception e) {
         }
-        Licencia_Modificar_SelectComunidad.setModel(modelo);
-        DefaultComboBoxModel modelo_lugares = (DefaultComboBoxModel) Licencia_Modificar_SelectLugar.getModel();
-        modelo_lugares.removeAllElements();
-        for (Place plc : lugares) {
-            modelo_lugares.addElement(plc);
-        }
-        Licencia_Modificar_SelectLugar.setModel(modelo_lugares);
-        Licencia_Modificar_Precio.setText(Double.toString(temp.getPrice()));
 
     }//GEN-LAST:event_Licencia_Modificar_SelectLicenciaItemStateChanged
 
     private void Licencia_ModificarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ModificarButtonActionPerformed
         // TODO add your handling code here:       
-        double precio;
-        Community comunidad = (Community) Licencia_Modificar_SelectComunidad.getSelectedItem();
-        Place lugar = (Place) Licencia_Modificar_SelectComunidad.getSelectedItem();
-        precio = Double.parseDouble(Licencia_Modificar_Precio.getText());
-        License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
-        for (License lizy : licencias) {
-            if (lizy.equals(temp)) {
-                lizy.setCommunity(comunidad);
-                lizy.setPlace(lugar);
-                lizy.setPrice(precio);
-                lizy.setFishes(peces_Lic);
+        try {
+            double precio;
+            Community comunidad = (Community) Licencia_Modificar_SelectComunidad.getSelectedItem();
+            Place lugar = (Place) Licencia_Modificar_SelectLugar.getSelectedItem();
+            precio = Double.parseDouble(Licencia_Modificar_Precio.getText());
+            License temp = (License) Licencia_Modificar_SelectLicencia.getSelectedItem();
+            int index = licencias.indexOf(temp);
+            licencias.remove(temp);
+            temp.setCommunity(comunidad);
+            temp.setPlace(lugar);
+            temp.setPrice(precio);
+            temp.setFishes(peces_Lic);
+            licenserv.update(temp);
+            licencias.add(index, temp);
+            peces_Lic = new ArrayList<>();
+            JOptionPane.showMessageDialog(null, "Licencia Modificada.");
+            Licencia_Modificar_SelectComunidad.setSelectedIndex(0);
+            Licencia_Modificar_SelectLugar.setSelectedIndex(0);
+            Licencia_Modificar_ID.setText("");
+            Licencia_Modificar_Precio.setText("");
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
+            modelo.removeAllElements();
+            modelo.addElement("");
+            for (License licencia : licencias) {
+                modelo.addElement(licencia);
             }
+            Licencia_Modificar_SelectLicencia.setModel(modelo);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha elegido opciones inválidas.");
         }
-        peces_Lic = new ArrayList<>();
-        JOptionPane.showMessageDialog(null, "Licencia Modificada.");
     }//GEN-LAST:event_Licencia_ModificarButtonActionPerformed
 
     private void Pez_Modificar_SelectPezItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Pez_Modificar_SelectPezItemStateChanged
@@ -3241,17 +3302,34 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane3.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listAfiliateLicense.getModel();
+            dtm.setRowCount(0);
+            for (Affiliate af : afiliados) {
+                Object[] row = {af.getId(), af.getName(), af.getLicenses()};
+                dtm.addRow(row);
+            }
+            listAfiliateLicense.setModel(dtm);
+        }
         if (jTabbedPane3.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Afiliado_Modify_SelectAfiliado.getModel();
             modelo.removeAllElements();
+            modelo.addElement("");
             for (Affiliate afiliado : afiliados) {
                 modelo.addElement(afiliado);
             }
             Afiliado_Modify_SelectAfiliado.setModel(modelo);
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
+            modelo.removeAllElements();
+            modelo.addElement("");
+            for (License lic : licencias) {
+                modelo.addElement(lic);
+            }
             Licencia_Modificar_SelectLicencia.setModel(modelo);
         }
         if (jTabbedPane3.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (Affiliate afiliado : afiliados) {
                 modelo.addElement(afiliado);
             }
@@ -3261,20 +3339,33 @@ public class Main extends javax.swing.JFrame {
 
     private void jTabbedPane4StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane4StateChanged
         // TODO add your handling code here:
+        if (jTabbedPane4.getSelectedIndex() == 1) {
+            DefaultTableModel dtm = (DefaultTableModel) listLicense.getModel();
+            dtm.setRowCount(0);
+            for (License lic : licencias) {
+                Object[] row = {lic.getId(), lic.getName(), lic.getPrice(), lic.getPlace().getName(), lic.getCommunity().getName(), lic.getFishes()};
+                dtm.addRow(row);
+            }
+            listLicense.setModel(dtm);
+        }
         if (jTabbedPane4.getSelectedIndex() == 2) {
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) Licencia_Modificar_SelectLicencia.getModel();
             modelo.removeAllElements();
+            modelo.addElement("");
             for (License licencia : licencias) {
                 modelo.addElement(licencia);
             }
+            Licencia_Modificar_SelectLicencia.setModel(modelo);
             DefaultComboBoxModel modelo_SelectLugar = (DefaultComboBoxModel) Licencia_Crear_SelectLugar.getModel();
             modelo_SelectLugar.removeAllElements();
+            modelo_SelectLugar.addElement("");
             for (Place plc : lugares) {
                 modelo_SelectLugar.addElement(plc);
             }
             Licencia_Modificar_SelectLugar.setModel(modelo_SelectLugar);
             DefaultComboBoxModel modelo_Selectcomunidad = (DefaultComboBoxModel) Licencia_Crear_SelectComunidad.getModel();
             modelo_Selectcomunidad.removeAllElements();
+            modelo_Selectcomunidad.addElement("");
             for (Community comu : comunidades) {
                 modelo_Selectcomunidad.addElement(comu);
             }
@@ -3282,6 +3373,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (jTabbedPane4.getSelectedIndex() == 3) {
             DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
             for (License lic : licencias) {
                 modelo.addElement(lic);
             }
@@ -3523,21 +3615,29 @@ public class Main extends javax.swing.JFrame {
 
     private void Licencia_ADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_ADD_DoriActionPerformed
         // TODO add your handling code here:
-        if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
-            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
-        } else {
-            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
-            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        try {
+            if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
+                JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+            } else {
+                peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+                JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No ha elegido un sushi válido.");
         }
     }//GEN-LAST:event_Licencia_ADD_DoriActionPerformed
 
     private void Licencia_MODADD_DoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Licencia_MODADD_DoriActionPerformed
         // TODO add your handling code here:
-        if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
-            JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
-        } else {
-            peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
-            JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+        try {
+            if (peces_Lic.contains((Fish) Licencia_Crear_CB_Peces.getSelectedItem())) {
+                JOptionPane.showMessageDialog(null, "Pez ya incluido en la licencia.");
+            } else {
+                peces_Lic.add((Fish) Licencia_Crear_CB_Peces.getSelectedItem());
+                JOptionPane.showMessageDialog(null, "Pez agregado a la licencia.");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha agregado una opción inválida.");
         }
     }//GEN-LAST:event_Licencia_MODADD_DoriActionPerformed
 
@@ -3660,6 +3760,40 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
         }
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        try {
+            License licen = (License) Licencia_CB_Licencia.getSelectedItem();
+            licenserv.delete(licen);
+            licencias.remove(licen);
+            JOptionPane.showMessageDialog(null, "Se ha eliminado con éxito.");
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (License lic : licencias) {
+                modelo.addElement(lic);
+            }
+            Licencia_CB_Licencia.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        try {
+            Affiliate afill = (Affiliate)Afiliado_CBorrar.getSelectedItem();
+            affserv.delete(afill);
+            licencias.remove(afill);
+            JOptionPane.showMessageDialog(null, "Se eliminó con éxito.");
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+            modelo.addElement("");
+            for (Affiliate afiliado : afiliados) {
+                modelo.addElement(afiliado);
+            }
+            Afiliado_CBorrar.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ingresado una opción inválida.");
+        }
+    }//GEN-LAST:event_jButton17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3956,12 +4090,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jt_modCebo;
+    private javax.swing.JTable listAfiliateLicense;
     private javax.swing.JTable listArtifitial;
     private javax.swing.JTable listCommunity;
     private javax.swing.JTable listFishes;
+    private javax.swing.JTable listLicense;
     private javax.swing.JTable listNatural;
     private javax.swing.JTextField login_id;
     private javax.swing.JPasswordField login_pass;

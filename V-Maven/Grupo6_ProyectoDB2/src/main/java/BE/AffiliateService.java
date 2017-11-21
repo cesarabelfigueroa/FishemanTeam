@@ -12,10 +12,13 @@ import com.mongodb.client.model.Filters;
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Projections.*;
 import com.mongodb.client.model.Sorts;
+import static com.mongodb.client.model.Updates.combine;
+import static com.mongodb.client.model.Updates.set;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 public class AffiliateService {
 
@@ -41,9 +44,9 @@ public class AffiliateService {
             ArrayList<License> licenses = new ArrayList();
             List<Document> Licenses = (List<Document>) document.get("licenses");
 
-            if (Licenses!=null && Licenses.size() > 0) {
+            if (Licenses != null && Licenses.size() > 0) {
                 for (Document License : Licenses) {
-                    if (License.get("fishID") != null) {
+                    if (License.get("licenseID") != null) {
                         if (licenseService.find(License.getString("licenseID")).size() > 0) {
                             licenses.add(licenseService.find(License.getString("licenseID")).get(0));
                         }
@@ -69,10 +72,12 @@ public class AffiliateService {
     public void create(Affiliate parameters) {
         Document data = new Document();
         results = new ArrayList();
-        if ((parameters.getName() != null)) { 
+        if ((parameters.getName() != null) && parameters.getId() == null) {
             data.append("name", parameters.getName());
         }
-
+        if (parameters.getId() != null) {
+            data.append("_id", new ObjectId(parameters.getId()));
+        }
         BasicDBList listdb = new BasicDBList();
         for (License license : parameters.getLicenses()) {
             listdb.add(new BasicDBObject("licenseID", license.getId()));
@@ -80,5 +85,18 @@ public class AffiliateService {
 
         data.append("licenses", listdb);
         collection.insertOne(data);
+    }
+
+    public void update(Affiliate parameters) {
+        BasicDBList listdb = new BasicDBList();
+        for (License lic : parameters.getLicenses()) {
+            listdb.add(new BasicDBObject("licenseID", lic.getId()));
+        }
+        collection.updateOne(eq("_id", new ObjectId(parameters.getId())),
+                combine(set("name", parameters.getName()), set("licenses", listdb)));
+    }
+
+    public void delete(Affiliate parameters) {
+        collection.deleteOne(eq("_id", new ObjectId(parameters.getId())));
     }
 }
